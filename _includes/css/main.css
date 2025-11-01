@@ -1,0 +1,9 @@
+/*
+* Markdown CSS classes
+* Used in the content markdown class.
+* Use the ".md-" prefix to identify them.
+* ***************************************/
+
+.md-title {
+	text-align: center;
+}
