@@ -13,10 +13,20 @@
 	<body>
 		<div class="container">
 			<header>
-				<nav>
+				<nav class="main" class="flex-between">
 					<a href="/">
 						<img src="/assets/dulceilustra-signature.png" alt="@dulceilustra" />
 					</a>
+					<ul>
+						{%- for link in navigation -%}
+						<li>
+							<a href={{ link.url }} class="link flex-column">
+								<span class="es">{{  link.es  }}</span>
+								<span class="en">{{ link.en }}</span>
+							</a>
+						</li>
+						{%- endfor -%}
+					</ul>
 				</nav>
 			</header>
 			<main>

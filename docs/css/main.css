@@ -1,3 +1,38 @@
+html, body {
+	font-size: 10px;
+}
+
+/*
+* Layout Elements
+* *************/
+
+nav.main {
+	height: 8rem;
+}
+
+nav.main img {
+	display: block;
+	height: 100%;
+}
+
+/*
+* Utilities
+* *********/
+
+.flex-between {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 /*
 * Markdown CSS classes
 * Used in the content markdown class.
