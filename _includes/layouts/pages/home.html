@@ -1,0 +1,208 @@
+---
+layout: layouts/main.html
+---
+
+<main class="home">
+    <!-- ⬆️ Home "Top" section: New Art -->
+    <section class="home__section home__section--top">
+        <a href="/gallery" class="home__new-art--link">
+            <h1 class="home__new-art--title">
+                <span class="es">Lo más reciente</span>
+                <span class="en">New art</span>
+            </h1>
+        </a>
+        <ul class="home__new-art--pictures">
+            {%- for item in collections.newArt -%}
+            <li>
+                <a href="{{ item.url }}">
+                    <img
+                        src=".{{ item.url }}{{ item.data.cover }}"
+                        alt="{{ item.data.title }} cover"
+                    />
+                </a>
+            </li>
+            {%- endfor -%}
+        </ul>
+    </section>
+
+    <!-- ↔️ Home "Middle" section -->
+    <section class="home__section home__section--middle">
+        <div class="home__animation">
+            <video autoplay loop muted playsinline>
+                <source src="/media/home_animation.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="home__comics">
+            <h1 class="home__comics--title">
+                <span class="es">Viñetas</span>
+                <span class="en">Comics</span>
+            </h1>
+            <div class="home__comics--carousel">
+                <div class="carousel__button">
+                    <button class="carousel__button--left">
+                        <img
+                            src="/images/dulceilustra_arrow.svg"
+                            alt="Previous image"
+                        />
+                    </button>
+                </div>
+                <div class="carousel__track-container">
+                    <div class="carousel__track">
+                        {%- for item in collections.comics -%}
+                        <div class="carousel__slide">
+                            <img
+                                src=".{{ item.url }}{{ item.data.cover }}"
+                                alt="{{ item.data.title }} cover"
+                            />
+                        </div>
+                        {%- endfor -%}
+                    </div>
+                </div>
+                <div class="carousel__button">
+                    <button class="carousel__button--right">
+                        <img
+                            src="/images/dulceilustra_arrow.svg"
+                            alt="Next image"
+                        />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⬇️ Home "Bottom" section -->
+    <section class="home__section home__section--bottom">
+        <a href="/contact" class="home__contact-link">
+            <h1>
+                <span class="es">Contacto</span>
+                <span class="en">Contact</span>
+            </h1>
+            <img
+                src="/images/dulceilustra__contacto.gif"
+                alt="Contacto: @dulceilustra"
+            />
+        </a>
+        {% include "components/social-links.html", containerClass:
+        "home__social-media", showHeading: true %}
+        <a href="/gallery" class="home__gallery-link">
+            <span class="es">Galería</span>
+            <span class="en">Gallery</span>
+        </a>
+    </section>
+</main>
+
+{{ content }}
+
+<script>
+    // Carousel functionality
+    const trackContainer = document.querySelector(".carousel__track-container");
+    const track = document.querySelector(".carousel__track");
+    const slides = Array.from(track.children);
+
+    const leftButton = document.querySelector(".carousel__button--left");
+    const rightButton = document.querySelector(".carousel__button--right");
+
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isDragging = false;
+
+    const moveToSlide = (targetIndex) => {
+        if (!slides.length) return;
+
+        // Wrap around if going past the end
+        if (targetIndex >= slides.length) {
+            targetIndex = 0;
+        } else if (targetIndex < 0) {
+            targetIndex = slides.length - 1;
+        }
+
+        currentIndex = targetIndex;
+
+        const percentage = 100 / slides.length;
+        const amountToMove = percentage * currentIndex * -1;
+        track.style.transform = `translateX(${amountToMove}%)`;
+    };
+
+    const handleSwipe = () => {
+        // Minimum distance in pixels to trigger a swipe
+        const swipeThreshold = 50;
+
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swiped left
+                moveToSlide(currentIndex + 1);
+            } else {
+                // Swiped right
+                moveToSlide(currentIndex - 1);
+            }
+        }
+    };
+
+    // Next button click
+    leftButton.addEventListener("click", () => {
+        moveToSlide(currentIndex - 1);
+    });
+
+    // Previous button click
+    rightButton.addEventListener("click", () => {
+        moveToSlide(currentIndex + 1);
+    });
+
+    // Touch events for mobile swipe
+    trackContainer.addEventListener(
+        "touchstart",
+        (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            isDragging = true;
+        },
+        { passive: true },
+    );
+
+    trackContainer.addEventListener(
+        "touchmove",
+        (e) => {
+            if (!isDragging) return;
+            touchEndX = e.changedTouches[0].screenX;
+        },
+        { passive: true },
+    );
+
+    trackContainer.addEventListener("touchend", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        handleSwipe();
+    });
+
+    // Mouse events for desktop drag (optional, for better UX)
+    trackContainer.addEventListener("mousedown", (e) => {
+        touchStartX = e.screenX;
+        isDragging = true;
+        trackContainer.style.cursor = "grabbing";
+    });
+
+    trackContainer.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        touchEndX = e.screenX;
+    });
+
+    trackContainer.addEventListener("mouseup", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        trackContainer.style.cursor = "grab";
+        handleSwipe();
+    });
+
+    trackContainer.addEventListener("mouseleave", () => {
+        if (isDragging) {
+            isDragging = false;
+            trackContainer.style.cursor = "grab";
+        }
+    });
+
+    // Set initial cursor style
+    trackContainer.style.cursor = "grab";
+</script>

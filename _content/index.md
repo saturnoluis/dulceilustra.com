@@ -1,6 +1,4 @@
 ---
 title: dulceilustra.com
-layout: layouts/home.html
+layout: home
 ---
-
-# Hello world! {.md-title}

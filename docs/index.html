@@ -1,17 +1,363 @@
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="robots" content="noindex, nofollow" />
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex, nofollow" />
 
-		<link rel="stylesheet" href="/static/css/pico.min.css" />
-		<link rel="stylesheet" href="/static/css/main.css" />
+        <link rel="stylesheet" href="/css/main.css" />
 
-		<title>dulceilustra.com</title>
-	</head>
-	<body>
-		<main class="container"><h1 class="md-title">Hello world!</h1>
+        <title>dulceilustra.com</title>
+    </head>
+
+    <body>
+        <div class="main-container">
+            <header class="header margin-bottom">
+                <nav class="header__nav">
+                    <a class="header__logo" href="/">
+                        <img
+                            src="/images/dulceilustra__firma.png"
+                            alt="@dulceilustra"
+                        />
+                    </a>
+                    <ul><li>
+                            <a href="/" class="header__link">
+                                <span class="es">Inicio</span>
+                                <span class="en">Home</span>
+                            </a>
+                        </li><li>
+                            <a href="/gallery" class="header__link">
+                                <span class="es">Galería</span>
+                                <span class="en">Gallery</span>
+                            </a>
+                        </li><li>
+                            <a href="/contact" class="header__link">
+                                <span class="es">Contacto</span>
+                                <span class="en">Contact</span>
+                            </a>
+                        </li></ul>
+                </nav>
+            </header>
+            <div class="content">
+<main class="home">
+    <!-- ⬆️ Home "Top" section: New Art -->
+    <section class="home__section home__section--top">
+        <a href="/gallery" class="home__new-art--link">
+            <h1 class="home__new-art--title">
+                <span class="es">Lo más reciente</span>
+                <span class="en">New art</span>
+            </h1>
+        </a>
+        <ul class="home__new-art--pictures"><li>
+                <a href="/gallery/paintings/26-003/">
+                    <img
+                        src="./gallery/paintings/26-003/26-003.cover.webp"
+                        alt="dulceilustra.com - 26-003 cover"
+                    />
+                </a>
+            </li><li>
+                <a href="/gallery/paintings/26-002/">
+                    <img
+                        src="./gallery/paintings/26-002/26-002.cover.webp"
+                        alt="dulceilustra.com - 26-002 cover"
+                    />
+                </a>
+            </li></ul>
+    </section>
+
+    <!-- ↔️ Home "Middle" section -->
+    <section class="home__section home__section--middle">
+        <div class="home__animation">
+            <video autoplay loop muted playsinline>
+                <source src="/media/home_animation.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="home__comics">
+            <h1 class="home__comics--title">
+                <span class="es">Viñetas</span>
+                <span class="en">Comics</span>
+            </h1>
+            <div class="home__comics--carousel">
+                <div class="carousel__button">
+                    <button class="carousel__button--left">
+                        <img
+                            src="/images/dulceilustra_arrow.svg"
+                            alt="Previous image"
+                        />
+                    </button>
+                </div>
+                <div class="carousel__track-container">
+                    <div class="carousel__track"><div class="carousel__slide">
+                            <img
+                                src="./gallery/comics/2025-11-04/cover.png"
+                                alt="dulceilustra.com cover"
+                            />
+                        </div><div class="carousel__slide">
+                            <img
+                                src="./gallery/comics/2025-10-27/cover.png"
+                                alt="dulceilustra.com cover"
+                            />
+                        </div><div class="carousel__slide">
+                            <img
+                                src="./gallery/comics/2025-10-05/cover.png"
+                                alt="dulceilustra.com cover"
+                            />
+                        </div><div class="carousel__slide">
+                            <img
+                                src="./gallery/comics/2025-08-15/cover.png"
+                                alt="dulceilustra.com cover"
+                            />
+                        </div></div>
+                </div>
+                <div class="carousel__button">
+                    <button class="carousel__button--right">
+                        <img
+                            src="/images/dulceilustra_arrow.svg"
+                            alt="Next image"
+                        />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⬇️ Home "Bottom" section -->
+    <section class="home__section home__section--bottom">
+        <a href="/contact" class="home__contact-link">
+            <h1>
+                <span class="es">Contacto</span>
+                <span class="en">Contact</span>
+            </h1>
+            <img
+                src="/images/dulceilustra__contacto.gif"
+                alt="Contacto: @dulceilustra"
+            />
+        </a>
+        <div class="home__social-media">
+    
+    <h2 class="social-media__heading">
+        <span class="es">Redes Sociales</span>
+        <span class="en">Social Media</span>
+    </h2>
+    
+    <ul class="social-media__list">
+        <li class="social-media__item instagram">
+            <a
+                class="social-media__link"
+                href="https://www.instagram.com/dulceilustra/"
+                target="_blank"
+                rel="noopener"
+            >
+                @dulceilustra
+            </a>
+        </li>
+        <li class="social-media__item tiktok">
+            <a
+                class="social-media__link"
+                href="https://www.tiktok.com/@dulceilustra"
+                target="_blank"
+                rel="noopener"
+            >
+                @dulceilustra
+            </a>
+        </li>
+        <li class="social-media__item pinterest">
+            <a
+                class="social-media__link"
+                href="https://www.pinterest.com/dulceilustra/"
+                target="_blank"
+                rel="noopener"
+            >
+                @dulceilustra
+            </a>
+        </li>
+    </ul>
+</div>
+
+        <a href="/gallery" class="home__gallery-link">
+            <span class="es">Galería</span>
+            <span class="en">Gallery</span>
+        </a>
+    </section>
 </main>
-	</body>
+
+
+
+<script>
+    // Carousel functionality
+    const trackContainer = document.querySelector(".carousel__track-container");
+    const track = document.querySelector(".carousel__track");
+    const slides = Array.from(track.children);
+
+    const leftButton = document.querySelector(".carousel__button--left");
+    const rightButton = document.querySelector(".carousel__button--right");
+
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isDragging = false;
+
+    const moveToSlide = (targetIndex) => {
+        if (!slides.length) return;
+
+        // Wrap around if going past the end
+        if (targetIndex >= slides.length) {
+            targetIndex = 0;
+        } else if (targetIndex < 0) {
+            targetIndex = slides.length - 1;
+        }
+
+        currentIndex = targetIndex;
+
+        const percentage = 100 / slides.length;
+        const amountToMove = percentage * currentIndex * -1;
+        track.style.transform = `translateX(${amountToMove}%)`;
+    };
+
+    const handleSwipe = () => {
+        // Minimum distance in pixels to trigger a swipe
+        const swipeThreshold = 50;
+
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swiped left
+                moveToSlide(currentIndex + 1);
+            } else {
+                // Swiped right
+                moveToSlide(currentIndex - 1);
+            }
+        }
+    };
+
+    // Next button click
+    leftButton.addEventListener("click", () => {
+        moveToSlide(currentIndex - 1);
+    });
+
+    // Previous button click
+    rightButton.addEventListener("click", () => {
+        moveToSlide(currentIndex + 1);
+    });
+
+    // Touch events for mobile swipe
+    trackContainer.addEventListener(
+        "touchstart",
+        (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            isDragging = true;
+        },
+        { passive: true },
+    );
+
+    trackContainer.addEventListener(
+        "touchmove",
+        (e) => {
+            if (!isDragging) return;
+            touchEndX = e.changedTouches[0].screenX;
+        },
+        { passive: true },
+    );
+
+    trackContainer.addEventListener("touchend", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        handleSwipe();
+    });
+
+    // Mouse events for desktop drag (optional, for better UX)
+    trackContainer.addEventListener("mousedown", (e) => {
+        touchStartX = e.screenX;
+        isDragging = true;
+        trackContainer.style.cursor = "grabbing";
+    });
+
+    trackContainer.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        touchEndX = e.screenX;
+    });
+
+    trackContainer.addEventListener("mouseup", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        trackContainer.style.cursor = "grab";
+        handleSwipe();
+    });
+
+    trackContainer.addEventListener("mouseleave", () => {
+        if (isDragging) {
+            isDragging = false;
+            trackContainer.style.cursor = "grab";
+        }
+    });
+
+    // Set initial cursor style
+    trackContainer.style.cursor = "grab";
+</script>
+</div>
+        </div>
+        <footer class="footer">
+            <div class="footer__content">
+                <p class="copyright">
+                    <span>&copy; 2026 @DulceIlustra.</span>
+                    <span class="es">Todos los derechos reservados.</span>
+                    <span class="en">All rights reserved.</span>
+                </p>
+            </div>
+        </footer>
+        <script>
+            (() => {
+                const prefetched = new Set();
+
+                const isSameOrigin = (url) => {
+                    try {
+                        return (
+                            new URL(url, window.location.href).origin ===
+                            window.location.origin
+                        );
+                    } catch {
+                        return false;
+                    }
+                };
+
+                const normalizeHref = (href) => {
+                    if (!href) return null;
+                    const url = new URL(href, window.location.href);
+                    return url.pathname + url.search + url.hash;
+                };
+
+                const prefetchLink = (href) => {
+                    if (!href || !isSameOrigin(href)) return;
+                    const normalized = normalizeHref(href);
+                    if (!normalized || prefetched.has(normalized)) return;
+                    prefetched.add(normalized);
+
+                    const link = document.createElement("link");
+                    link.rel = "prefetch";
+                    link.href = normalized;
+                    link.as = "document";
+                    document.head.appendChild(link);
+                };
+
+                window.dulcePrefetch = {
+                    prefetchLink,
+                };
+
+                const prefetchGallery = () => {
+                    prefetchLink("/gallery/");
+                };
+
+                if (document.readyState === "loading") {
+                    document.addEventListener(
+                        "DOMContentLoaded",
+                        prefetchGallery,
+                    );
+                } else {
+                    prefetchGallery();
+                }
+            })();
+        </script>
+    </body>
 </html>
