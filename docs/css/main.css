@@ -1,18 +1,55 @@
-html, body {
+/*
+* Main elements & Variables
+* *************************/
+
+html {
 	font-size: 10px;
+
+	--background-color: #ebebeb;
+	--border-color: #3c3c3c;
+	--text-color-primary: #3c3c3c;
+	--text-color-secondary: #98979a;
+}
+
+body {
+	min-height: 100dvh;
+	background-color: var(--background-color);
 }
 
 /*
-* Layout Elements
-* *************/
+* Header & Navigation
+* *******************/
 
-nav.main {
+.header {
+	padding: 1rem;
+	border-bottom: .2rem solid var(--border-color);
+}
+
+.header__nav {
 	height: 8rem;
 }
 
-nav.main img {
+.header__nav img {
 	display: block;
 	height: 100%;
+}
+
+.header__nav ul {
+	gap: 2rem;
+}
+
+.header__link {
+	font-size: 2rem;
+	font-weight: bold;
+	color: var(--text-color--primary);
+}
+
+.header__link .es {
+	font-size: 2.1rem;
+}
+
+.header__link .en {
+	color: var(--text-color-secondary);
 }
 
 /*
@@ -29,6 +66,13 @@ nav.main img {
 .flex-column {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 }

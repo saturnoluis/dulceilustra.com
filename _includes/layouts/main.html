@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,15 +12,15 @@
 	</head>
 	<body>
 		<div class="container">
-			<header>
-				<nav class="main" class="flex-between">
+			<header class="header">
+				<nav class="header__nav" class="flex-between">
 					<a href="/">
 						<img src="/assets/dulceilustra-signature.png" alt="@dulceilustra" />
 					</a>
-					<ul>
+					<ul class="flex-row">
 						{%- for link in navigation -%}
 						<li>
-							<a href={{ link.url }} class="link flex-column">
+							<a href={{ link.url }} class="header__link flex-column">
 								<span class="es">{{  link.es  }}</span>
 								<span class="en">{{ link.en }}</span>
 							</a>
