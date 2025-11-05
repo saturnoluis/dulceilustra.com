@@ -10,6 +10,21 @@ export default async function (eleventyConfig) {
 
 	const markdownLib = markdownIt({ html: true }).use(markdownItAttrs);
 	eleventyConfig.setLibrary('md', markdownLib);
+
+	eleventyConfig.addCollection("gallery", function (collectionApi) {
+		const galleryItems = collectionApi.getAll().filter((item) => {
+			return item.filePathStem?.startsWith('/gallery/');
+		}).reverse();
+		return galleryItems;
+	});
+
+	eleventyConfig.addCollection("newArt", function (collectionApi) {
+		const limit = 2;
+		const galleryItems = collectionApi.getAll().filter((item) => {
+			return item.filePathStem?.startsWith('/gallery/');
+		}).reverse().slice(0, 2);
+		return galleryItems;
+	});
 }
 
 export const config = {

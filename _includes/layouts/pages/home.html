@@ -2,6 +2,16 @@
 layout: layouts/main.html
 ---
 <main>
-  {{ content }}
+	{{ content }}
+
+	<ul>
+		{%- for item in collections.newArt -%}
+		<li>
+			<a href={{ item.url }} class="header__link flex-column">
+				<span>{{ item.data.title }}</span>
+			</a>
+		</li>
+		{%- endfor -%}
+	</ul>
 </main>
 
