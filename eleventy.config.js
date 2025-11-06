@@ -2,8 +2,9 @@ import markdownIt from 'markdown-it';
 import markdownItAttrs from 'markdown-it-attrs';
 
 export default async function (eleventyConfig) {
-	eleventyConfig.addPassthroughCopy({ '_includes/assets': 'assets' });
+	eleventyConfig.addPassthroughCopy({ '_includes/images': 'images' });
 	eleventyConfig.addPassthroughCopy({ '_includes/css': 'css' });
+	eleventyConfig.addPassthroughCopy({ '_content/gallery/**/*.{png,jpg,jpeg,gif,webp}': 'gallery' });
 
 	eleventyConfig.addPassthroughCopy('CNAME');
 	eleventyConfig.addPassthroughCopy('robots.txt');
