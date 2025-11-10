@@ -1,5 +1,5 @@
 ---
 title: dulceilustra.com
+cover: cover.png
 ---
 
-# 2025-11-05

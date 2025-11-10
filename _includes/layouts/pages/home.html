@@ -5,13 +5,17 @@ layout: layouts/main.html
 	{{ content }}
 
 	<ul>
+		<li>
+			<a href="/gallery" class="header__link flex-column">
+				<img src="/images/dulceilustra__hero_image.png" alt="Gallery" />
+			</a>
+		</li>
 		{%- for item in collections.newArt -%}
 		<li>
-			<a href={{ item.url }} class="header__link flex-column">
-				<span>{{ item.data.title }}</span>
+			<a href="{{ item.url }}" class="header__link flex-column">
+				<img src=".{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 			</a>
 		</li>
 		{%- endfor -%}
 	</ul>
 </main>
-

@@ -21,9 +21,10 @@ export default async function (eleventyConfig) {
 
 	eleventyConfig.addCollection("newArt", function (collectionApi) {
 		const limit = 2;
-		const galleryItems = collectionApi.getAll().filter((item) => {
+		const galleryItems = collectionApi.getAllSorted().filter((item) => {
 			return item.filePathStem?.startsWith('/gallery/');
 		}).reverse().slice(0, 2);
+		console.log(galleryItems);
 		return galleryItems;
 	});
 }
