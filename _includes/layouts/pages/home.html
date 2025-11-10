@@ -1,18 +1,18 @@
 ---
 layout: layouts/main.html
 ---
-<main>
+<main class="home">
 	{{ content }}
 
-	<ul>
+	<ul class="home__new-art-hero">
 		<li>
-			<a href="/gallery" class="header__link flex-column">
-				<img src="/images/dulceilustra__hero_image.png" alt="Gallery" />
+			<a href="/gallery" class="home__hero-link flex-column">
+				<img src="/images/dulceilustra__new-art-hero.png" alt="Gallery" />
 			</a>
 		</li>
 		{%- for item in collections.newArt -%}
 		<li>
-			<a href="{{ item.url }}" class="header__link flex-column">
+			<a href="{{ item.url }}" class="home__new-art-link flex-column">
 				<img src=".{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 			</a>
 		</li>
