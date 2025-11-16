@@ -4,4 +4,3 @@ cover: cover.png
 tags: ['digital-art']
 ---
 
-Hola

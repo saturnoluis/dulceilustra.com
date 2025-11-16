@@ -12,22 +12,48 @@ export default async function (eleventyConfig) {
 	const markdownLib = markdownIt({ html: true }).use(markdownItAttrs);
 	eleventyConfig.setLibrary('md', markdownLib);
 
-	eleventyConfig.addCollection("gallery", function (collectionApi) {
-		const galleryItems = collectionApi.getAll().filter((item) => {
-			return item.filePathStem?.startsWith('/gallery/');
-		}).reverse();
+	/** Collections **/
+
+	/* newArt */
+	eleventyConfig.addCollection('newArt', function (collectionApi) {
+		const limit = 2;
+		const galleryItems = collectionApi
+			.getAllSorted()
+			.filter(isGalleryItem)
+			.reverse()
+			.slice(0, limit);
+
 		return galleryItems;
 	});
 
-	eleventyConfig.addCollection("newArt", function (collectionApi) {
-		const limit = 2;
-		const galleryItems = collectionApi.getAllSorted().filter((item) => {
-			return item.filePathStem?.startsWith('/gallery/');
-		}).reverse().slice(0, 2);
-		console.log(galleryItems);
+	/* digitalArt */
+	eleventyConfig.addCollection('digitalArt', function (collectionApi) {
+		const galleryItems = collectionApi
+			.getAllSorted()
+			.filter(isGalleryItem)
+			.filter(isDigitalArt)
+			.reverse();
+
 		return galleryItems;
 	});
 }
+
+/** ******************** Util Functions ******************** **/
+
+// Check if the given item is part of the art gallery.
+function isGalleryItem(item) {
+	/* Excluding /gallery/index.md */
+	const isNotIndex = !item.inputPath?.includes('/gallery/index.md');
+	return item.url?.startsWith('/gallery/') && isNotIndex;
+}
+
+// Check if an item belongs to tag: digital-art
+function isDigitalArt(item) {
+	console.log(item.data.tags);
+	return item?.data?.tags?.includes('digital-art');
+}
+
+/** ******************** Config export ******************** **/
 
 export const config = {
 	dir: {

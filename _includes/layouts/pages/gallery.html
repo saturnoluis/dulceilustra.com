@@ -4,18 +4,11 @@ layout: layouts/main.html
 <main class="home">
 	{{ content }}
 
-	<ul class="home__new-art-hero">
-		<li>
-			<a href="/gallery" class="home__hero-link flex-column">
-				<img src="/images/dulceilustra__new-art-hero.png" alt="Gallery" />
-			</a>
-		</li>
-		{%- for item in collections.newArt -%}
+	{%- for item in collections.digitalArt -%}
 		<li>
 			<a href="/gallery#{{ item.fileSlug }}" class="home__new-art-link flex-column">
 				<img src=".{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 			</a>
 		</li>
-		{%- endfor -%}
-	</ul>
+	{%- endfor -%}
 </main>
