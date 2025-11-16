@@ -31,7 +31,7 @@ export default async function (eleventyConfig) {
 		const galleryItems = collectionApi
 			.getAllSorted()
 			.filter(isGalleryItem)
-			.filter(isDigitalArt)
+			.filter(hasTag('digital-art'))
 			.reverse();
 
 		return galleryItems;
@@ -47,10 +47,12 @@ function isGalleryItem(item) {
 	return item.url?.startsWith('/gallery/') && isNotIndex;
 }
 
-// Check if an item belongs to tag: digital-art
-function isDigitalArt(item) {
-	console.log(item.data.tags);
-	return item?.data?.tags?.includes('digital-art');
+// Check if an item belongs to a given tag name.
+function hasTag(tagName) {
+	return function (item) {
+		console.log(item.data.tags);
+		return item?.data?.tags?.includes(tagName);
+	}
 }
 
 /** ******************** Config export ******************** **/
