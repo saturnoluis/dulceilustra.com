@@ -6,7 +6,7 @@
 	"homepage": "https://dulceilustra.com",
 	"main": "index.js",
 	"scripts": {
-		"dev": "eleventy --serve",
+		"dev": "./rebuild.sh && eleventy --serve",
 		"build": "eleventy",
 		"format": "npx prettier . --write"
 	},

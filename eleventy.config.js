@@ -50,7 +50,7 @@ function isGalleryItem(item) {
 // Check if an item belongs to a given tag name.
 function hasTag(tagName) {
 	return function (item) {
-		console.log(item.data.tags);
+		console.log(item.data.tags, tagName, item.data.page.inputPath);
 		return item?.data?.tags?.includes(tagName);
 	}
 }

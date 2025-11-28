@@ -6,17 +6,38 @@ layout: layouts/main.html
 
 	{%- for item in collections.digitalArt -%}
 		<li>
-			<a href="/gallery#{{ item.fileSlug }}" class="home__new-art-link flex-column">
+			<a
+				href="/gallery/{{ item.fileSlug }}"
+				onclick="handleArtClick(event, '{{ item.fileSlug }}')"
+				class="home__new-art-link flex-column"
+			>
 				<img src=".{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 			</a>
 		</li>
 	{%- endfor -%}
 
-	<iframe
-  id="inlineFrameExample"
-  title="Inline Frame Example"
-  width="300"
-  height="200"
-  src="/gallery/2025-11-16">
-</iframe>
+	<div id="iframeContainer">
+	</div>
 </main>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const slugFromHash = window.location.hash.substring(1);
+
+		const iframe = document.createElement("iframe");
+		iframe.id = "inlineFrameExample";
+		iframe.src = slugFromHash ? `/gallery/${slugFromHash}` : "";
+		iframe.style.width = "100%";
+		iframe.style.height = "600px";
+
+		const iframeContainer = document.getElementById("iframeContainer");
+		iframeContainer.appendChild(iframe);
+	});
+
+	function handleArtClick(event, fileSlug) {
+		event.preventDefault();
+		const iframe = document.getElementById("inlineFrameExample");
+		iframe.src = `/gallery/${fileSlug}`;
+		window.location.hash = fileSlug;
+	}
+</script>
