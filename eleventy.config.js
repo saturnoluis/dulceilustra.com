@@ -2,8 +2,9 @@ import markdownIt from 'markdown-it';
 import markdownItAttrs from 'markdown-it-attrs';
 
 export default async function (eleventyConfig) {
-	eleventyConfig.addPassthroughCopy({ '_includes/images': 'images' });
 	eleventyConfig.addPassthroughCopy({ '_includes/css': 'css' });
+	eleventyConfig.addPassthroughCopy({ '_includes/images': 'images' });
+	eleventyConfig.addPassthroughCopy({ '_includes/media': 'media' });
 	eleventyConfig.addPassthroughCopy('_content/gallery/**/*.{png,jpg,jpeg,gif,webp}');
 
 	eleventyConfig.addPassthroughCopy('CNAME');
