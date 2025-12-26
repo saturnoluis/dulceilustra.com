@@ -1,7 +1,7 @@
 ---
 title: dulceilustra.com
 cover: cover.png
-tags: ["comics"]
+tags: comics
 layout: artwork
 ---
 

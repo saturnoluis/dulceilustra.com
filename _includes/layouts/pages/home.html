@@ -37,32 +37,41 @@ layout: layouts/main.html
             <span class="en">Comics</span>
         </div>
         <div class="carousel flex-row">
-            <button
-                class="carousel__button carousel__button--prev"
-                aria-label="Previous"
-            >
-                &#9664;
-            </button>
-
-            {%- for item in collections.comics -%}
-            <div>
-                <a
-                    href="/gallery#{{ item.fileSlug }}"
-                    class="home__gallery_link flex-column"
+            <div class="carousel__button-container">
+                <button
+                    class="carousel__button carousel__button--prev"
+                    aria-label="Previous"
                 >
-                    <img
-                        src=".{{ item.url }}{{ item.data.cover }}"
-                        alt="{{ item.data.title }} cover"
-                    />
-                </a>
+                    &#9664;
+                </button>
             </div>
-            {%- endfor -%}
-            <button
-                class="carousel__button carousel__button--next"
-                aria-label="Next"
-            >
-                &#9654;
-            </button>
+
+            <div class="carousel__track-container">
+                <div class="carousel__track">
+                    {%- for item in collections.comics -%}
+                    <div class="carousel__slide">
+                        <a
+                            href="/gallery#{{ item.fileSlug }}"
+                            class="home__gallery_link"
+                        >
+                            <img
+                                src=".{{ item.url }}{{ item.data.cover }}"
+                                alt="{{ item.data.title }} cover"
+                            />
+                        </a>
+                    </div>
+                    {%- endfor -%}
+                </div>
+            </div>
+
+            <div class="carousel__button-container">
+                <button
+                    class="carousel__button carousel__button--next"
+                    aria-label="Next"
+                >
+                    &#9654;
+                </button>
+            </div>
         </div>
     </div>
 
