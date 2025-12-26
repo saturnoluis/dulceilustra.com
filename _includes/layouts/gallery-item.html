@@ -1,29 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{{ title }}</title>
-	</head>
-	<body>
-		<main>
-			<header id="pageHeader" style="display: none;">
-				<h1>{{ title }}</h1>
-			</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <main>
+      <header id="pageHeader" style="display: none">
+        <h1>{{ title }}</h1>
+      </header>
 
-			<article>
-				{{ content }}
-			</article>
-		</main>
-	</body>
+      <article>{{ content }}</article>
+    </main>
+  </body>
 </html>
 
 <script>
-	document.addEventListener("DOMContentLoaded", function() {
-		const pageHeader = document.getElementById("pageHeader");
+  document.addEventListener("DOMContentLoaded", function () {
+    const pageHeader = document.getElementById("pageHeader");
 
-		if (window.self === window.top) {
-			pageHeader.style.display = "block";
-		}
-	});
+    if (window.self === window.top) {
+      pageHeader.style.display = "block";
+    }
+  });
 </script>

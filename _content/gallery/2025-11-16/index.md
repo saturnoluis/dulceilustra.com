@@ -1,7 +1,7 @@
 ---
 title: dulceilustra.com
 cover: cover.png
-tags: ['digital-art']
+tags: ["digital-art"]
 layout: layouts/gallery-item.html
 ---
 

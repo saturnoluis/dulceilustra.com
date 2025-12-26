@@ -1,36 +1,54 @@
 ---
 layout: layouts/main.html
 ---
+
 <main class="home">
-		<li>
-			<a href="/gallery" class="flex-column">
-				<img src="/images/dulceilustra__new-art-hero.png" alt="Gallery" />
-			</a>
-		</li>
-	<ul class="home__new-art">
-		{%- for item in collections.newArt -%}
-		<li>
-			<a href="/gallery#{{ item.fileSlug }}" class="home__gallery_link flex-column">
-				<img src=".{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
-			</a>
-		</li>
-		{%- endfor -%}
-	</ul>
+  <ul class="home__new-art">
+    <li>
+      <a href="/gallery" class="flex-column">
+        <img src="/images/dulceilustra__new-art-hero.png" alt="Gallery" />
+      </a>
+    </li>
+    {%- for item in collections.newArt -%}
+    <li>
+      <a
+        href="/gallery#{{ item.fileSlug }}"
+        class="home__gallery_link flex-column"
+      >
+        <img
+          src=".{{ item.url }}{{ item.data.cover }}"
+          alt="{{ item.data.title }} cover"
+        />
+      </a>
+    </li>
+    {%- endfor -%}
+  </ul>
 
-	<div class="home__animation">
-		<div class="home__animation_video">
-			<video autoplay loop muted playsinline>
-				<source src="/media/home_animation.mp4" type="video/mp4" />
-				Your browser does not support the video tag.
-			</video>
-		</div>
-		<div class="home__animation_comics flex-row">
-			<div class="home__animation_comics_title flex-column">
-				<span class="es">Viñetas</span>
-				<span class="en">Comics</span>
-			</div>
-		</div>
-	</div>
+  <div class="flex-row">
+    <video class="home__animation_video" autoplay loop muted playsinline>
+      <source src="/media/home_animation.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="home__comics_title flex-column">
+      <span class="es">Viñetas</span>
+      <span class="en">Comics</span>
+    </div>
+    <div class="home__comics_carousel flex-row">
+      {%- for item in collections.newArt -%}
+      <div>
+        <a
+          href="/gallery#{{ item.fileSlug }}"
+          class="home__gallery_link flex-column"
+        >
+          <img
+            src=".{{ item.url }}{{ item.data.cover }}"
+            alt="{{ item.data.title }} cover"
+          />
+        </a>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
 
-	{{ content }}
+  {{ content }}
 </main>

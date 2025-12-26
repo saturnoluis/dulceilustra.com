@@ -1,93 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="light">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="robots" content="noindex, nofollow" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
 
-		<link rel="stylesheet" href="/css/pico.min.css" />
-		<link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/pico.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
 
-		<title>dulceilustra.com</title>
-	</head>
-	<body>
-		<div class="container">
-			<header class="header">
-				<nav class="header__nav" class="flex-between">
-					<a href="/">
-						<img src="/images/dulceilustra__signature.png" alt="@dulceilustra" />
-					</a>
-					<ul class="flex-row"><li>
-							<a href=/ class="header__link flex-column">
-								<span class="es">Inicio</span>
-								<span class="en">Home</span>
-							</a>
-						</li><li>
-							<a href=/gallery class="header__link flex-column">
-								<span class="es">Galería</span>
-								<span class="en">Gallery</span>
-							</a>
-						</li><li>
-							<a href=/contacto class="header__link flex-column">
-								<span class="es">Contacto</span>
-								<span class="en">Contact</span>
-							</a>
-						</li></ul>
-				</nav>
-			</header>
-			<div class="content">
-				<main class="home">
-	<li>
-			<a
-				href="/gallery/2025-11-16"
-				onclick="handleArtClick(event, '2025-11-16')"
-				class="home__new-art-link flex-column"
-			>
-				<img src="./gallery/2025-11-16/cover.png" alt="dulceilustra.com cover" />
-			</a>
-		</li><li>
-			<a
-				href="/gallery/2025-11-13"
-				onclick="handleArtClick(event, '2025-11-13')"
-				class="home__new-art-link flex-column"
-			>
-				<img src="./gallery/2025-11-13/cover.png" alt="dulceilustra.com cover" />
-			</a>
-		</li><li>
-			<a
-				href="/gallery/2025-11-05"
-				onclick="handleArtClick(event, '2025-11-05')"
-				class="home__new-art-link flex-column"
-			>
-				<img src="./gallery/2025-11-05/cover.png" alt="dulceilustra.com cover" />
-			</a>
-		</li><div id="iframeContainer">
-	</div>
+    <title>dulceilustra.com</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <nav class="header__nav" class="flex-between">
+          <a href="/">
+            <img
+              src="/images/dulceilustra__signature.png"
+              alt="@dulceilustra"
+            />
+          </a>
+          <ul class="flex-row"><li>
+              <a href="/" class="header__link flex-column">
+                <span class="es">Inicio</span>
+                <span class="en">Home</span>
+              </a>
+            </li><li>
+              <a href="/gallery" class="header__link flex-column">
+                <span class="es">Galería</span>
+                <span class="en">Gallery</span>
+              </a>
+            </li><li>
+              <a href="/contacto" class="header__link flex-column">
+                <span class="es">Contacto</span>
+                <span class="en">Contact</span>
+              </a>
+            </li></ul>
+        </nav>
+      </header>
+      <div class="content">
+<main class="home">
+  <li>
+    <a
+      href="/gallery/2025-11-16"
+      onclick="handleArtClick(event, '2025-11-16')"
+      class="home__new-art-link flex-column"
+    >
+      <img
+        src="./gallery/2025-11-16/cover.png"
+        alt="dulceilustra.com cover"
+      />
+    </a>
+  </li><li>
+    <a
+      href="/gallery/2025-11-13"
+      onclick="handleArtClick(event, '2025-11-13')"
+      class="home__new-art-link flex-column"
+    >
+      <img
+        src="./gallery/2025-11-13/cover.png"
+        alt="dulceilustra.com cover"
+      />
+    </a>
+  </li><li>
+    <a
+      href="/gallery/2025-11-05"
+      onclick="handleArtClick(event, '2025-11-05')"
+      class="home__new-art-link flex-column"
+    >
+      <img
+        src="./gallery/2025-11-05/cover.png"
+        alt="dulceilustra.com cover"
+      />
+    </a>
+  </li><div id="iframeContainer"></div>
 </main>
 
 <script>
-	document.addEventListener("DOMContentLoaded", function() {
-		const slugFromHash = window.location.hash.substring(1);
+  document.addEventListener("DOMContentLoaded", function () {
+    const slugFromHash = window.location.hash.substring(1);
 
-		const iframe = document.createElement("iframe");
-		iframe.id = "inlineFrameExample";
-		iframe.src = slugFromHash ? `/gallery/${slugFromHash}` : "";
-		iframe.style.width = "100%";
-		iframe.style.height = "600px";
+    const iframe = document.createElement("iframe");
+    iframe.id = "inlineFrameExample";
+    iframe.src = slugFromHash ? `/gallery/${slugFromHash}` : "";
+    iframe.style.width = "100%";
+    iframe.style.height = "600px";
 
-		const iframeContainer = document.getElementById("iframeContainer");
-		iframeContainer.appendChild(iframe);
-	});
+    const iframeContainer = document.getElementById("iframeContainer");
+    iframeContainer.appendChild(iframe);
+  });
 
-	function handleArtClick(event, fileSlug) {
-		event.preventDefault();
-		const iframe = document.getElementById("inlineFrameExample");
-		iframe.src = `/gallery/${fileSlug}`;
-		window.location.hash = fileSlug;
-	}
+  function handleArtClick(event, fileSlug) {
+    event.preventDefault();
+    const iframe = document.getElementById("inlineFrameExample");
+    iframe.src = `/gallery/${fileSlug}`;
+    window.location.hash = fileSlug;
+  }
 </script>
-
-			</div>
-		</div>
-	</body>
+</div>
+    </div>
+  </body>
 </html>
