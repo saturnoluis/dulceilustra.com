@@ -15,6 +15,12 @@ export default async function (eleventyConfig) {
   const markdownLib = markdownIt({ html: true }).use(markdownItAttrs);
   eleventyConfig.setLibrary("md", markdownLib);
 
+  // Layout aliases
+  eleventyConfig.addLayoutAlias('main', 'layouts/main.html');
+  eleventyConfig.addLayoutAlias('home', 'layouts/pages/home.html');
+  eleventyConfig.addLayoutAlias('gallery', 'layouts/pages/gallery.html');
+  eleventyConfig.addLayoutAlias('artwork', 'layouts/embeds/artwork.html');
+
   /** Collections **/
 
   /* newArt */
@@ -35,6 +41,17 @@ export default async function (eleventyConfig) {
       .getAllSorted()
       .filter(isGalleryItem)
       .filter(hasTag("digital-art"))
+      .reverse();
+
+    return galleryItems;
+  });
+
+  /* comics */
+  eleventyConfig.addCollection("comics", function (collectionApi) {
+    const galleryItems = collectionApi
+      .getAllSorted()
+      .filter(isGalleryItem)
+      .filter(hasTag("comics"))
       .reverse();
 
     return galleryItems;

@@ -2,7 +2,7 @@
 title: dulceilustra.com
 cover: cover.png
 tags: ["digital-art"]
-layout: layouts/gallery-item.html
+layout: artwork
 ---
 
 Foo bar 16 de Nov

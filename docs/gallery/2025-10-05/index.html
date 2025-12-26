@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dulceilustra.com</title>
+  </head>
+  <body>
+    <main>
+      <header id="pageHeader" style="display: none">
+        <h1>dulceilustra.com</h1>
+      </header>
+
+      <article><p>Comic de 05 de Octubre</p>
+</article>
+    </main>
+  </body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const pageHeader = document.getElementById("pageHeader");
+
+    if (window.self === window.top) {
+      pageHeader.style.display = "block";
+    }
+  });
+</script>
