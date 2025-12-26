@@ -183,6 +183,14 @@ h6 {
   color: var(--text-color-secondary);
 }
 
+/* Carousel of images */
+
+.carousel {
+  width: 100%;
+  padding: 4rem 0;
+	background-color: red;
+}
+
 /*
 * Utilities
 * *********/

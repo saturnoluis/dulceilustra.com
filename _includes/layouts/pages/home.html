@@ -33,7 +33,10 @@ layout: layouts/main.html
       <span class="es">Viñetas</span>
       <span class="en">Comics</span>
     </div>
-    <div class="home__comics_carousel flex-row">
+    <div class="carousel flex-row">
+						<button class="carousel__button carousel__button--prev"
+							aria-label="Previous">&#9664;</button>
+
       {%- for item in collections.comics -%}
       <div>
         <a
@@ -47,6 +50,8 @@ layout: layouts/main.html
         </a>
       </div>
       {%- endfor -%}
+				  <button class="carousel__button carousel__button--next"
+		aria-label="Next">&#9654;</button>
     </div>
   </div>
 
