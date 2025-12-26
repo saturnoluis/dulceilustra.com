@@ -1,17 +1,17 @@
 [
-  {
-    "es": "Inicio",
-    "en": "Home",
-    "url": "/"
-  },
-  {
-    "es": "Galería",
-    "en": "Gallery",
-    "url": "/gallery"
-  },
-  {
-    "es": "Contacto",
-    "en": "Contact",
-    "url": "/contacto"
-  }
+    {
+        "es": "Inicio",
+        "en": "Home",
+        "url": "/"
+    },
+    {
+        "es": "Galería",
+        "en": "Gallery",
+        "url": "/gallery"
+    },
+    {
+        "es": "Contacto",
+        "en": "Contact",
+        "url": "/contacto"
+    }
 ]

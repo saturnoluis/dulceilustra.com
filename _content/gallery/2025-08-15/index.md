@@ -4,4 +4,5 @@ cover: cover.png
 tags: ["comics"]
 layout: artwork
 ---
+
 Comic 15/08
