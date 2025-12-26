@@ -156,6 +156,67 @@
     <h1 class="md-title">Hello world!</h1>
 
 </main>
+
+<script>
+    // Carousel functionality
+    const track = document.querySelector('.carousel__track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel__button--next');
+    const prevButton = document.querySelector('.carousel__button--prev');
+    
+    let currentIndex = 0;
+    
+    const moveToSlide = (targetIndex) => {
+        // Ensure index is within bounds
+        if (targetIndex < 0) {
+            targetIndex = 0;
+        } else if (targetIndex >= slides.length) {
+            targetIndex = slides.length - 1;
+        }
+        
+        currentIndex = targetIndex;
+        
+        // Move the track
+        const amountToMove = -100 * currentIndex;
+        track.style.transform = `translateX(${amountToMove}%)`;
+        
+        // Update button states
+        updateButtons();
+    };
+    
+    const updateButtons = () => {
+        // Disable prev button at start
+        if (currentIndex === 0) {
+            prevButton.disabled = true;
+            prevButton.style.opacity = '0.3';
+        } else {
+            prevButton.disabled = false;
+            prevButton.style.opacity = '1';
+        }
+        
+        // Disable next button at end
+        if (currentIndex === slides.length - 1) {
+            nextButton.disabled = true;
+            nextButton.style.opacity = '0.3';
+        } else {
+            nextButton.disabled = false;
+            nextButton.style.opacity = '1';
+        }
+    };
+    
+    // Next button click
+    nextButton.addEventListener('click', () => {
+        moveToSlide(currentIndex + 1);
+    });
+    
+    // Previous button click
+    prevButton.addEventListener('click', () => {
+        moveToSlide(currentIndex - 1);
+    });
+    
+    // Initialize button states
+    updateButtons();
+</script>
 </div>
         </div>
     </body>
