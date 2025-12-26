@@ -79,11 +79,12 @@
             </a>
         </li></ul>
 
-    <div class="flex-row">
+    <div class="flex-row margin-bottom">
         <video class="home__animation_video" autoplay loop muted playsinline>
             <source src="/media/home_animation.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
+		<div class="flex-row">
         <div class="home__comics_title flex-column">
             <span class="es">Viñetas</span>
             <span class="en">Comics</span>
@@ -97,7 +98,6 @@
                     &#9664;
                 </button>
             </div>
-
             <div class="carousel__track-container">
                 <div class="carousel__track"><div class="carousel__slide">
                         <a
@@ -141,7 +141,6 @@
                         </a>
                     </div></div>
             </div>
-
             <div class="carousel__button-container">
                 <button
                     class="carousel__button carousel__button--next"
@@ -151,6 +150,7 @@
                 </button>
             </div>
         </div>
+		</div>
     </div>
 
     <h1 class="md-title">Hello world!</h1>
@@ -167,10 +167,10 @@
     let currentIndex = 0;
     
     const moveToSlide = (targetIndex) => {
-        // Ensure index is within bounds
-        if (targetIndex < 0) {
+        // Wrap around if going past the end
+        if (targetIndex >= slides.length) {
             targetIndex = 0;
-        } else if (targetIndex >= slides.length) {
+        } else if (targetIndex < 0) {
             targetIndex = slides.length - 1;
         }
         
@@ -179,29 +179,6 @@
         // Move the track
         const amountToMove = -100 * currentIndex;
         track.style.transform = `translateX(${amountToMove}%)`;
-        
-        // Update button states
-        updateButtons();
-    };
-    
-    const updateButtons = () => {
-        // Disable prev button at start
-        if (currentIndex === 0) {
-            prevButton.disabled = true;
-            prevButton.style.opacity = '0.3';
-        } else {
-            prevButton.disabled = false;
-            prevButton.style.opacity = '1';
-        }
-        
-        // Disable next button at end
-        if (currentIndex === slides.length - 1) {
-            nextButton.disabled = true;
-            nextButton.style.opacity = '0.3';
-        } else {
-            nextButton.disabled = false;
-            nextButton.style.opacity = '1';
-        }
     };
     
     // Next button click
@@ -213,9 +190,6 @@
     prevButton.addEventListener('click', () => {
         moveToSlide(currentIndex - 1);
     });
-    
-    // Initialize button states
-    updateButtons();
 </script>
 </div>
         </div>
