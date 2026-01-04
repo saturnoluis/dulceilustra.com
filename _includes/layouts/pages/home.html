@@ -81,24 +81,61 @@ layout: layouts/main.html
     </div>
 
     <!-- Contact Section -->
-    <div class="home__contact flex-row--start margin-bottom">
+    <div class="home__contact-wrapper margin-bottom">
         <a href="" class="home__contact-section">
-            <h1 class="flex-column">
+            <h1>
                 <span class="es">Contácto</span>
                 <span class="en">Contact</span>
             </h1>
             <img
+                class="home__contact-image"
                 src="/images/dulceilustra_contacto.gif"
                 alt="Contacto: @dulceilustra"
             />
         </a>
         <div class="home__contact-section">
-			<h1 class="flex-column">
-				<span class="es">Redes Sociales</span>
-				<span class="en">Social Media</span>
-			</h1>
-		</div>
-        <div class="home__contact-section">3</div>
+            <h1>
+                <span class="es">Redes Sociales</span>
+                <span class="en">Social Media</span>
+            </h1>
+            <ul class="home__social-media-list flex-column">
+                <li class="instagram">
+                    <a
+                        href="https://www.instagram.com/dulceilustra/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        @dulceilustra
+                    </a>
+                </li>
+                <li class="tiktok">
+                    <a
+                        href="https://www.tiktok.com/@dulceilustra"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        @dulceilustra
+                    </a>
+                </li>
+                <li class="pinterest">
+                    <a
+                        href="https://www.pinterest.com/dulceilustra/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        @dulceilustra
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <a href="/gallery" class="flex-column">
+            {%- for i in (1..2) -%}
+            <h1 class="flex-column">
+                <span class="es">Galería</span>
+                <span class="en">Gallery</span>
+            </h1>
+            {%- endfor -%}
+        </a>
     </div>
 
     {{ content }}

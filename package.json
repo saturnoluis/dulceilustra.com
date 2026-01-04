@@ -1,24 +1,24 @@
 {
-  "name": "dulceilustra.com",
-  "type": "module",
-  "version": "1.0.0",
-  "description": "Personal website for @dulceilustra",
-  "homepage": "https://dulceilustra.com",
-  "main": "index.js",
-  "scripts": {
-    "dev": "./rm-build.sh && eleventy --serve",
-	"build": "./rm-build.sh && eleventy",
-    "format": "npx prettier . --write"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/saturnoluis/dulceilustra.com.git"
-  },
-  "license": "ISC",
-  "author": "Luis Saturno",
-  "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "markdown-it": "^14.1.0",
-    "markdown-it-attrs": "^4.3.1"
-  }
+    "name": "dulceilustra.com",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "Personal website for @dulceilustra",
+    "homepage": "https://dulceilustra.com",
+    "main": "index.js",
+    "scripts": {
+        "dev": "./rm-build.sh && eleventy --serve",
+        "build": "./rm-build.sh && eleventy",
+        "format": "npx prettier . --write"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saturnoluis/dulceilustra.com.git"
+    },
+    "license": "ISC",
+    "author": "Luis Saturno",
+    "devDependencies": {
+        "@11ty/eleventy": "^3.1.2",
+        "markdown-it": "^14.1.0",
+        "markdown-it-attrs": "^4.3.1"
+    }
 }
