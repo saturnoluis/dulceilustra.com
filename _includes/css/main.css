@@ -108,7 +108,6 @@ h6 {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     list-style: none;
-    padding: 6rem 0;
     margin: 0;
 }
 
@@ -148,7 +147,7 @@ h6 {
     height: auto;
     max-width: 50%;
     max-height: 80vh;
-    padding: 4rem;
+    padding: 0 4rem;
 }
 
 .home__animation_comics {
@@ -254,6 +253,14 @@ h6 {
     text-align: center;
 }
 
+.home__contact-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: calc(var(--font-size-base) * 40);
+	object-fit: contain;
+}
+
 .home__social-media-list {
     gap: 2rem;
     padding: 0;
@@ -270,6 +277,7 @@ h6 {
     padding-left: 9rem;
     padding-top: 2rem;
     font-size: calc(var(--font-size-base) * 4);
+	line-height: 1;
     color: var(--text-color-primary);
     text-decoration: none;
     background-image: url;
@@ -294,6 +302,27 @@ h6 {
 /* Pinterest icon */
 .home__social-media-list li.pinterest a {
     background-image: url("icons/pinterest.svg");
+}
+
+/* Gallery Gallery Gallery Gallery */
+.home__gallery-gallery {
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	margin: 0;
+	font-family: var(--font-family-heading);
+	font-size: calc(var(--font-size-base) * 14);
+	line-height: 0.8;
+	text-align: center;
+	text-decoration: none;
+}
+
+.home__gallery-gallery span {
+	transform: scaleY(1.2);
+	transition: transform 0.2s ease;
+}
+
+.home__gallery-gallery span:hover {
+	transform: scaleY(1);
 }
 
 /*
@@ -336,7 +365,7 @@ h6 {
 }
 
 .margin-bottom {
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
 }
 
 .es {

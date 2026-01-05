@@ -1,3 +1,3 @@
-rm -rf /docs
+rm -rf docs
 echo "/docs folder removed, rebuilding..."
 

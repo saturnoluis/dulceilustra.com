@@ -4,7 +4,7 @@ layout: layouts/main.html
 
 <main class="home">
     <!-- New Art Section -->
-    <ul class="home__new-art">
+    <ul class="home__new-art margin-bottom">
         <li>
             <a href="/gallery" class="flex-column">
                 <img
@@ -128,12 +128,10 @@ layout: layouts/main.html
                 </li>
             </ul>
         </div>
-        <a href="/gallery" class="flex-column">
+        <a href="/gallery" class="home__gallery-gallery">
             {%- for i in (1..2) -%}
-            <h1 class="flex-column">
-                <span class="es">Galería</span>
-                <span class="en">Gallery</span>
-            </h1>
+            <span class="es">Galería</span>
+            <span class="en">Gallery</span>
             {%- endfor -%}
         </a>
     </div>
