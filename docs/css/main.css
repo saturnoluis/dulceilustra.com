@@ -254,11 +254,11 @@ h6 {
 }
 
 .home__contact-image {
-	display: block;
-	width: 100%;
-	height: auto;
-	max-height: calc(var(--font-size-base) * 40);
-	object-fit: contain;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: calc(var(--font-size-base) * 40);
+    object-fit: contain;
 }
 
 .home__social-media-list {
@@ -277,7 +277,7 @@ h6 {
     padding-left: 9rem;
     padding-top: 2rem;
     font-size: calc(var(--font-size-base) * 4);
-	line-height: 1;
+    line-height: 1;
     color: var(--text-color-primary);
     text-decoration: none;
     background-image: url;
@@ -306,23 +306,23 @@ h6 {
 
 /* Gallery Gallery Gallery Gallery */
 .home__gallery-gallery {
-	display: grid;
-	grid-template-rows: repeat(4, 1fr);
-	margin: 0;
-	font-family: var(--font-family-heading);
-	font-size: calc(var(--font-size-base) * 14);
-	line-height: 0.8;
-	text-align: center;
-	text-decoration: none;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    margin: 0;
+    font-family: var(--font-family-heading);
+    font-size: calc(var(--font-size-base) * 14);
+    line-height: 0.8;
+    text-align: center;
+    text-decoration: none;
 }
 
 .home__gallery-gallery span {
-	transform: scaleY(1.2);
-	transition: transform 0.2s ease;
+    transform: scaleY(1.2);
+    transition: transform 0.2s ease;
 }
 
 .home__gallery-gallery span:hover {
-	transform: scaleY(1);
+    transform: scaleY(1);
 }
 
 /*
