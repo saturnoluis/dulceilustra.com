@@ -325,6 +325,20 @@ h6 {
     transform: scaleY(1);
 }
 
+/* Home > Footer */
+
+.home__footer {
+	padding: 2rem 0 0 0;
+	margin-top: 4rem;
+	font-size: calc(var(--font-size-base) * 1.2);
+	color: var(--text-color-secondary);
+	text-align: center;
+	background-image: url("../images/dulceilustra_footer-bg.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: contain;
+}
+
 /*
 * Utilities
 * *********/
