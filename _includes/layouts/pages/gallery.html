@@ -3,15 +3,15 @@ layout: layouts/main.html
 ---
 
 <main class="gallery">
-    <ul>
-        {%- for item in collections.digitalArt -%}
+		<span class="es">Arte Digital</span>
+		<span class="en">Digital Art</span>
+		<ul>
+		{%- for item in collections.digitalArtLatest -%}
         <li>
             <a
                 href="{{ item.url }}"
                 onclick="handleArtClick(event, '{{ item.url }}')"
             >
-                <span class="es">Arte Digital</span>
-                <span class="en">Digital Art</span>
                 <img
                     src="{{ item.url }}{{ item.data.cover }}"
                     alt="{{ item.data.title }} cover"
