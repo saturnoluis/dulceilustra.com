@@ -27,7 +27,6 @@ export default async function (eleventyConfig) {
     eleventyConfig.addLayoutAlias("gallery", "layouts/pages/gallery.html");
     eleventyConfig.addLayoutAlias("artwork", "layouts/embeds/artwork.html");
 
-    /** Collections **/
 
     /* newArt */
     eleventyConfig.addCollection("newArt", function (collectionApi) {
@@ -35,11 +34,14 @@ export default async function (eleventyConfig) {
         const galleryItems = collectionApi
             .getAllSorted()
             .filter(isGalleryItem())
+			.filter(isNot("comics"))
             .reverse()
             .slice(0, limit);
 
         return galleryItems;
     });
+	
+	/**	******************** 🌻 Collections 🐝 ******************** **/
 
     /* digitalArt */
     eleventyConfig.addCollection("digitalArt", function (collectionApi) {
@@ -53,7 +55,6 @@ export default async function (eleventyConfig) {
 
     /* comics */
     eleventyConfig.addCollection("comics", function (collectionApi) {
-        console.log({ ...collectionApi });
         const galleryItems = collectionApi
             .getAllSorted()
             .filter(isGalleryItem("comics"))
@@ -75,11 +76,11 @@ function isGalleryItem(category = null) {
     };
 }
 
-// Check if an item belongs to a given tag name.
-function hasTag(tagName) {
-    return function (item) {
-        return item?.data?.tags?.includes(tagName);
-    };
+function isNot(category) {
+	return (item) => {
+		const target = `/gallery/${category}/`;
+		return !item.url?.startsWith(target);
+	};
 }
 
 /** ******************** Config export ******************** **/
