@@ -41,7 +41,8 @@ layout: layouts/main.html
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const urlFromHash = window.location.hash.substring(1);
+        const hash = window.location.hash.substring(1);
+		const urlFromHash = hash ? hash.replaceAll("__", "/") : null;
 
         const iframe = document.createElement("iframe");
         iframe.id = "inlineFrameExample";
@@ -57,6 +58,6 @@ layout: layouts/main.html
         event.preventDefault();
         const iframe = document.getElementById("inlineFrameExample");
 		iframe.src = `${url}`;
-        window.location.hash = url;
+		window.location.hash = url.replaceAll("/", "__");
     }
 </script>

@@ -23,7 +23,7 @@ layout: layouts/main.html
         {%- for item in collections.newArt -%}
         <li>
             <a
-                href="/gallery#{{ item.url }}"
+				href="/gallery#{{ item.url | replace: '/', '__' }}"
                 class="home__gallery-link_item flex-column"
             >
                 <img
@@ -63,7 +63,7 @@ layout: layouts/main.html
                         {%- for item in collections.comics -%}
                         <div class="carousel__slide">
                             <a
-                                href="/gallery#{{ item.fileSlug }}"
+								href="/gallery#{{ item.url | replace: '/', '__' }}"
                                 class="home__gallery-link_item"
                             >
                                 <img
