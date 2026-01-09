@@ -48,12 +48,11 @@
                 </nav>
             </header>
             <div class="content">
-<main class="home">
+<main class="gallery">
     <ul><li>
             <a
-                href="/gallery/2025-11-16"
-                onclick="handleArtClick(event, '2025-11-16')"
-                class="home__new-art-link flex-column"
+                href="/gallery/digital-art/2025-11-16/"
+                onclick="handleArtClick(event, '/gallery/digital-art/2025-11-16/')"
             >
                 <span class="es">Arte Digital</span>
                 <span class="en">Digital Art</span>
@@ -64,9 +63,8 @@
             </a>
         </li><li>
             <a
-                href="/gallery/2025-11-13"
-                onclick="handleArtClick(event, '2025-11-13')"
-                class="home__new-art-link flex-column"
+                href="/gallery/digital-art/2025-11-13/"
+                onclick="handleArtClick(event, '/gallery/digital-art/2025-11-13/')"
             >
                 <span class="es">Arte Digital</span>
                 <span class="en">Digital Art</span>
@@ -77,9 +75,8 @@
             </a>
         </li><li>
             <a
-                href="/gallery/2025-11-05"
-                onclick="handleArtClick(event, '2025-11-05')"
-                class="home__new-art-link flex-column"
+                href="/gallery/digital-art/2025-11-05/"
+                onclick="handleArtClick(event, '/gallery/digital-art/2025-11-05/')"
             >
                 <span class="es">Arte Digital</span>
                 <span class="en">Digital Art</span>
@@ -127,11 +124,11 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const slugFromHash = window.location.hash.substring(1);
+        const urlFromHash = window.location.hash.substring(1);
 
         const iframe = document.createElement("iframe");
         iframe.id = "inlineFrameExample";
-        iframe.src = slugFromHash ? `/gallery/${slugFromHash}` : "";
+        iframe.src = urlFromHash ? `${urlFromHash}` : "";
         iframe.style.width = "100%";
         iframe.style.height = "600px";
 
@@ -139,11 +136,11 @@
         iframeContainer.appendChild(iframe);
     });
 
-    function handleArtClick(event, fileSlug) {
+    function handleArtClick(event, url) {
         event.preventDefault();
         const iframe = document.getElementById("inlineFrameExample");
-        iframe.src = `/gallery/${fileSlug}`;
-        window.location.hash = fileSlug;
+		iframe.src = `${url}`;
+        window.location.hash = url;
     }
 </script>
 </div>

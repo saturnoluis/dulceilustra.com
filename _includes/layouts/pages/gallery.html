@@ -2,14 +2,13 @@
 layout: layouts/main.html
 ---
 
-<main class="home">
+<main class="gallery">
     <ul>
         {%- for item in collections.digitalArt -%}
         <li>
             <a
-                href="/gallery/{{ item.fileSlug }}"
-                onclick="handleArtClick(event, '{{ item.fileSlug }}')"
-                class="home__new-art-link flex-column"
+                href="{{ item.url }}"
+                onclick="handleArtClick(event, '{{ item.url }}')"
             >
                 <span class="es">Arte Digital</span>
                 <span class="en">Digital Art</span>
@@ -42,11 +41,11 @@ layout: layouts/main.html
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const slugFromHash = window.location.hash.substring(1);
+        const urlFromHash = window.location.hash.substring(1);
 
         const iframe = document.createElement("iframe");
         iframe.id = "inlineFrameExample";
-        iframe.src = slugFromHash ? `/gallery/${slugFromHash}` : "";
+        iframe.src = urlFromHash ? `${urlFromHash}` : "";
         iframe.style.width = "100%";
         iframe.style.height = "600px";
 
@@ -54,10 +53,10 @@ layout: layouts/main.html
         iframeContainer.appendChild(iframe);
     });
 
-    function handleArtClick(event, fileSlug) {
+    function handleArtClick(event, url) {
         event.preventDefault();
         const iframe = document.getElementById("inlineFrameExample");
-        iframe.src = `/gallery/${fileSlug}`;
-        window.location.hash = fileSlug;
+		iframe.src = `${url}`;
+        window.location.hash = url;
     }
 </script>

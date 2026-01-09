@@ -49,6 +49,7 @@ export default async function (eleventyConfig) {
             .getAllSorted()
             .filter(isGalleryItem("digital-art"))
             .reverse();
+		console.log("Digital Art Items:", { ...galleryItems });
 
         return galleryItems;
     });
