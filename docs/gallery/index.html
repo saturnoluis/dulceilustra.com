@@ -49,14 +49,16 @@
             </header>
             <div class="content">
 <main class="home">
-    <li>
+    <ul><li>
         <a
             href="/gallery/2025-11-16"
             onclick="handleArtClick(event, '2025-11-16')"
             class="home__new-art-link flex-column"
         >
+			<span class="es">Arte Digital</span>
+			<span class="en">Digital Art</span>
             <img
-                src="./gallery/2025-11-16/cover.png"
+                src="/gallery/2025-11-16/cover.png"
                 alt="dulceilustra.com cover"
             />
         </a>
@@ -66,8 +68,10 @@
             onclick="handleArtClick(event, '2025-11-13')"
             class="home__new-art-link flex-column"
         >
+			<span class="es">Arte Digital</span>
+			<span class="en">Digital Art</span>
             <img
-                src="./gallery/2025-11-13/cover.png"
+                src="/gallery/2025-11-13/cover.png"
                 alt="dulceilustra.com cover"
             />
         </a>
@@ -77,12 +81,49 @@
             onclick="handleArtClick(event, '2025-11-05')"
             class="home__new-art-link flex-column"
         >
+			<span class="es">Arte Digital</span>
+			<span class="en">Digital Art</span>
             <img
-                src="./gallery/2025-11-05/cover.png"
+                src="/gallery/2025-11-05/cover.png"
                 alt="dulceilustra.com cover"
             />
         </a>
-    </li><div id="iframeContainer"></div>
+    </li></ul>
+
+    <h1>Foo Section:</h1>
+    <div style="background: #f0f0f0; padding: 1rem; margin-bottom: 2rem;">
+        <h1>This is the Foo Section</h1>
+<p>This content is <strong>stored in front matter</strong> and rendered as markdown using the <code>| markdown</code> filter.</p>
+<p>You can use all markdown features:</p>
+<ul>
+<li>Lists</li>
+<li><strong>Bold text</strong></li>
+<li><a href="#">Links</a></li>
+</ul>
+
+    </div>
+
+    <h1>Main Content:</h1>
+    <div style="background: #e0e0ff; padding: 1rem; margin-bottom: 2rem;">
+        <p>This is the main content area rendered by .</p>
+<p>It comes from the markdown body after the front matter.</p>
+
+    </div>
+
+    <h1>Bar Section:</h1>
+    <div style="background: #ffe0e0; padding: 1rem; margin-bottom: 2rem;">
+        <h2>This is the Bar Section</h2>
+<p>Another section with <em>italic text</em> and more <strong>markdown</strong> support!</p>
+<ol>
+<li>Numbered lists work too</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+
+    </div>
+
+
+    <div id="iframeContainer"></div>
 </main>
 
 <script>

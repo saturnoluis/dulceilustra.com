@@ -15,6 +15,12 @@ export default async function (eleventyConfig) {
     const markdownLib = markdownIt({ html: true }).use(markdownItAttrs);
     eleventyConfig.setLibrary("md", markdownLib);
 
+    // Add markdown filter for rendering markdown strings from front matter
+    eleventyConfig.addFilter("markdown", function (content) {
+        if (!content) return "";
+        return markdownLib.render(content);
+    });
+
     // Layout aliases
     eleventyConfig.addLayoutAlias("main", "layouts/main.html");
     eleventyConfig.addLayoutAlias("home", "layouts/pages/home.html");

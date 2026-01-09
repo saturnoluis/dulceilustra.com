@@ -3,20 +3,40 @@ layout: layouts/main.html
 ---
 
 <main class="home">
-    {{ content }} {%- for item in collections.digitalArt -%}
+    <ul>
+    {%- for item in collections.digitalArt -%}
     <li>
         <a
             href="/gallery/{{ item.fileSlug }}"
             onclick="handleArtClick(event, '{{ item.fileSlug }}')"
             class="home__new-art-link flex-column"
         >
+			<span class="es">Arte Digital</span>
+			<span class="en">Digital Art</span>
             <img
-                src=".{{ item.url }}{{ item.data.cover }}"
+                src="{{ item.url }}{{ item.data.cover }}"
                 alt="{{ item.data.title }} cover"
             />
         </a>
     </li>
     {%- endfor -%}
+    </ul>
+
+    <h1>Foo Section:</h1>
+    <div style="background: #f0f0f0; padding: 1rem; margin-bottom: 2rem;">
+        {{ foo | markdown }}
+    </div>
+
+    <h1>Main Content:</h1>
+    <div style="background: #e0e0ff; padding: 1rem; margin-bottom: 2rem;">
+        {{ content }}
+    </div>
+
+    <h1>Bar Section:</h1>
+    <div style="background: #ffe0e0; padding: 1rem; margin-bottom: 2rem;">
+        {{ bar | markdown }}
+    </div>
+
 
     <div id="iframeContainer"></div>
 </main>
