@@ -17,7 +17,7 @@
 }
 
 html {
-	--font-family-heading: "Paper Flowers", cursive;
+    --font-family-heading: "Paper Flowers", cursive;
     --font-family-base: "Shantell Sans", sans-serif;
     --font-size-base: 9px;
     --background-color: #ebebeb;
@@ -72,7 +72,7 @@ h6 {
 .header {
     padding: 2rem 1rem;
     border-bottom: 0.2rem solid var(--border-color);
-	margin-bottom: 6rem;
+    margin-bottom: 6rem;
 }
 
 .header__nav {
@@ -109,7 +109,7 @@ h6 {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     list-style: none;
-	padding: 0;
+    padding: 0;
 }
 
 .home__new-art li {
@@ -120,9 +120,9 @@ h6 {
 }
 
 .home__new-art li a {
-	margin: 0;
-	padding: 0;
-	text-decoration: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
 .home__new-art li:nth-child(1) {
@@ -138,44 +138,44 @@ h6 {
 }
 
 img.home__new-art_decoration {
-	display: block;
-	width: 16rem;
-	height: auto;
-	margin: 0;
-	padding: 0 0 2rem 0;
+    display: block;
+    width: 16rem;
+    height: auto;
+    margin: 0;
+    padding: 0 0 2rem 0;
 }
 
 .home__new-art_text {
-	line-height: 1;
-	text-align: center;
-	padding: 0 2rem;
+    line-height: 1;
+    text-align: center;
+    padding: 0 2rem;
 }
 
 .home__new-art_text span {
-	display: block;
-	transform: scale(1);
-	transition: transform 0.4s ease;
-	white-space: nowrap;
+    display: block;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+    white-space: nowrap;
 }
 
 .home__new-art_text span:hover {
-	transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .home__new-art_text span.es {
-	font-size: calc(var(--font-size-base) * 5);
-	font-family: var(--font-family-base);
-	padding-top: 1rem;
+    font-size: calc(var(--font-size-base) * 5);
+    font-family: var(--font-family-base);
+    padding-top: 1rem;
 }
 
 .home__new-art_text span.en {
-	font-size: calc(var(--font-size-base) * 5);
-	text-transform: uppercase;
-	margin-top: 0.5rem;
+    font-size: calc(var(--font-size-base) * 5);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
 }
 
 .home__gallery-link {
-	gap: 6rem;
+    gap: 6rem;
 }
 
 .home__gallery-link_item {
@@ -190,7 +190,7 @@ img.home__new-art_decoration {
 /* Home > Middle: Animation and Comics Section */
 
 .home__animation-comics {
-	margin: 0;
+    margin: 0;
 }
 
 .home__animation_video {
@@ -381,15 +381,15 @@ img.home__new-art_decoration {
 /* Home > Footer */
 
 .home__footer {
-	padding: 13rem 0 0 0;
-	margin-top: 4rem;
-	font-size: calc(var(--font-size-base) * 2);
-	color: var(--text-color-secondary);
-	text-align: center;
-	background-image: url("../images/dulceilustra__pie-de-pagina.png");
-	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: contain;
+    padding: 13rem 0 0 0;
+    margin-top: 4rem;
+    font-size: calc(var(--font-size-base) * 2);
+    color: var(--text-color-secondary);
+    text-align: center;
+    background-image: url("../images/dulceilustra__pie-de-pagina.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
 }
 
 /*
@@ -432,7 +432,7 @@ img.home__new-art_decoration {
 }
 
 .es {
-	font-size: 1em;
+    font-size: 1em;
     color: var(--text-color-primary);
 }
 
