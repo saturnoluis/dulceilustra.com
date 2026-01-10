@@ -49,10 +49,11 @@
             </header>
             <div class="content">
 <main class="gallery">
-    <span class="es">Arte Digital</span>
-    <span class="en">Digital Art</span>
-    <ul><li>
-            <a
+    <nav class="categories">
+		<!-- Category: Digital Art -->
+		<div class="category flex-column--start">
+            <span class="es">Arte Digital</span>
+            <span class="en">Digital Art</span><a
                 href="/gallery/digital-art/2025-11-16/"
                 onclick="handleArtClick(event, '/gallery/digital-art/2025-11-16/')"
             >
@@ -60,8 +61,34 @@
                     src="/gallery/digital-art/2025-11-16/cover.png"
                     alt="dulceilustra.com cover"
                 />
-            </a>
-        </li></ul>
+            </a></div>
+
+		<!-- Category: Paintings -->
+		<div class="category flex-column--start">
+			<span class="es">Pinturas</span>
+			<span class="en">Paintings</span><a
+				href="/gallery/paintings/2025-01-10/"
+				onclick="handleArtClick(event, '/gallery/paintings/2025-01-10/')"
+			>
+				<img
+					src="/gallery/paintings/2025-01-10/cover.png"
+					alt="dulceilustra.com cover"
+				/>
+			</a></div>
+
+		<!-- Category: Drawings -->
+		<div class="category flex-column--start">
+			<span class="es">Dibujos</span>
+			<span class="en">Drawings</span><a
+				href="/gallery/drawings/2025-01-10/"
+				onclick="handleArtClick(event, '/gallery/drawings/2025-01-10/')"
+			>
+				<img
+					src="/gallery/drawings/2025-01-10/cover.png"
+					alt="dulceilustra.com cover"
+				/>
+			</a></div>
+    </nav>
 
     <h1>Foo Section:</h1>
     <div style="background: #f0f0f0; padding: 1rem; margin-bottom: 2rem">

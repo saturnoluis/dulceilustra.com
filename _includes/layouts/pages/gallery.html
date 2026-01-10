@@ -3,11 +3,12 @@ layout: layouts/main.html
 ---
 
 <main class="gallery">
-    <span class="es">Arte Digital</span>
-    <span class="en">Digital Art</span>
-    <ul>
-        {%- for item in collections.digitalArtLatest -%}
-        <li>
+    <nav class="categories">
+		<!-- Category: Digital Art -->
+		<div class="category flex-column--start">
+            <span class="es">Arte Digital</span>
+            <span class="en">Digital Art</span>
+            {%- for item in collections.digitalArtLatest -%}
             <a
                 href="{{ item.url }}"
                 onclick="handleArtClick(event, '{{ item.url }}')"
@@ -17,9 +18,43 @@ layout: layouts/main.html
                     alt="{{ item.data.title }} cover"
                 />
             </a>
-        </li>
-        {%- endfor -%}
-    </ul>
+            {%- endfor -%}
+        </div>
+
+		<!-- Category: Paintings -->
+		<div class="category flex-column--start">
+			<span class="es">Pinturas</span>
+			<span class="en">Paintings</span>
+			{%- for item in collections.paintingsLatest -%}
+			<a
+				href="{{ item.url }}"
+				onclick="handleArtClick(event, '{{ item.url }}')"
+			>
+				<img
+					src="{{ item.url }}{{ item.data.cover }}"
+					alt="{{ item.data.title }} cover"
+				/>
+			</a>
+			{%- endfor -%}
+		</div>
+
+		<!-- Category: Drawings -->
+		<div class="category flex-column--start">
+			<span class="es">Dibujos</span>
+			<span class="en">Drawings</span>
+			{%- for item in collections.drawingsLatest -%}
+			<a
+				href="{{ item.url }}"
+				onclick="handleArtClick(event, '{{ item.url }}')"
+			>
+				<img
+					src="{{ item.url }}{{ item.data.cover }}"
+					alt="{{ item.data.title }} cover"
+				/>
+			</a>
+			{%- endfor -%}
+		</div>
+    </nav>
 
     <h1>Foo Section:</h1>
     <div style="background: #f0f0f0; padding: 1rem; margin-bottom: 2rem">

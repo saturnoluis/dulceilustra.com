@@ -1,6 +1,6 @@
 /*
 * Main elements & Variables
- * *************************/
+* ****************************************** */ 
 
 @font-face {
     font-family: "Paper Flowers";
@@ -67,11 +67,11 @@ h6 {
 
 /*
 * Header & Navigation
-* *******************/
+* ****************************************** */ 
 
 .header {
+	border-bottom: 0.2rem solid var(--border-color);
     padding: 2rem 1rem;
-    border-bottom: 0.2rem solid var(--border-color);
     margin-bottom: 6rem;
 }
 
@@ -99,8 +99,24 @@ h6 {
 }
 
 /*
-* Home page
-* *********/
+* Page Footer
+* ****************************************** */ 
+
+.home__footer {
+    padding: 13rem 0 0 0;
+    margin-top: 4rem;
+    font-size: calc(var(--font-size-base) * 2);
+    color: var(--text-color-secondary);
+    text-align: center;
+    background-image: url("../images/dulceilustra__pie-de-pagina.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+}
+
+/*
+* Home Layout
+* ****************************************** */ 
 
 /* Home > Top: New Art Section */
 
@@ -224,7 +240,7 @@ img.home__new-art_decoration {
     color: var(--text-color-secondary);
 }
 
-/* Carousel of images */
+/* Home > Carousel of images */
 
 .carousel {
     display: grid;
@@ -356,7 +372,7 @@ img.home__new-art_decoration {
     background-image: url("icons/pinterest.svg");
 }
 
-/* Gallery Gallery Gallery Gallery */
+/* Home > Gallery Gallery Gallery Gallery */
 
 .home__gallery-gallery {
     display: grid;
@@ -378,23 +394,47 @@ img.home__new-art_decoration {
     transform: scaleY(1);
 }
 
-/* Home > Footer */
+/*
+* Gallery Layout
+* ****************************************** */ 
 
-.home__footer {
-    padding: 13rem 0 0 0;
-    margin-top: 4rem;
-    font-size: calc(var(--font-size-base) * 2);
-    color: var(--text-color-secondary);
-    text-align: center;
-    background-image: url("../images/dulceilustra__pie-de-pagina.png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: contain;
+.gallery .categories {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 0 0 6rem 0;
+	margin: 0 0 6rem 0;
+	border-bottom: 0.2rem solid var(--border-color);
+	transition: transform 0.2s ease;
+}
+
+.gallery .category {
+	transform: scale(1);
+	transition: transform 0.2s ease;
+}
+
+.gallery .category:hover {
+	transform: scale(1.05);
+}
+
+.gallery .category a {
+	display: block;
+	text-decoration: none;
+	padding: 0.5rem 0;
+}
+.gallery .category span.es {
+	font-size: calc(var(--font-size-base) * 3.2);
+	line-height: 1;
+}
+.gallery .category span.en {
+	font-size: calc(var(--font-size-base) * 3);
+	line-height: 1;
 }
 
 /*
 * Utilities
-* *********/
+* ****************************************** */ 
 
 .flex-between {
     display: flex;
@@ -413,8 +453,8 @@ img.home__new-art_decoration {
 .flex-column--start {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .flex-row {
