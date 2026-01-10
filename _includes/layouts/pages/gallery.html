@@ -3,10 +3,10 @@ layout: layouts/main.html
 ---
 
 <main class="gallery">
-		<span class="es">Arte Digital</span>
-		<span class="en">Digital Art</span>
-		<ul>
-		{%- for item in collections.digitalArtLatest -%}
+    <span class="es">Arte Digital</span>
+    <span class="en">Digital Art</span>
+    <ul>
+        {%- for item in collections.digitalArtLatest -%}
         <li>
             <a
                 href="{{ item.url }}"
@@ -42,7 +42,7 @@ layout: layouts/main.html
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const hash = window.location.hash.substring(1);
-		const urlFromHash = hash ? hash.replaceAll("__", "/") : null;
+        const urlFromHash = hash ? hash.replaceAll("__", "/") : null;
 
         const iframe = document.createElement("iframe");
         iframe.id = "inlineFrameExample";
@@ -57,7 +57,7 @@ layout: layouts/main.html
     function handleArtClick(event, url) {
         event.preventDefault();
         const iframe = document.getElementById("inlineFrameExample");
-		iframe.src = `${url}`;
-		window.location.hash = url.replaceAll("/", "__");
+        iframe.src = `${url}`;
+        window.location.hash = url.replaceAll("/", "__");
     }
 </script>

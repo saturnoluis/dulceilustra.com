@@ -1,9 +1,16 @@
 import markdownIt from "markdown-it";
 import markdownItAttrs from "markdown-it-attrs";
 
-export default async function (eleventyConfig) {
+// Gallery categories for collections
+const CATEGORIES = {
+    digitalArt: "digital-art",
+    paintings: "paintings",
+    drawings: "drawings",
+    comics: "comics",
+};
 
-	/**	******************** Passthrough Copy ******************** **/
+export default async function (eleventyConfig) {
+    /**	******************** Passthrough Copy ******************** **/
     eleventyConfig.addPassthroughCopy({ "_includes/css": "css" });
     eleventyConfig.addPassthroughCopy({ "_includes/images": "images" });
     eleventyConfig.addPassthroughCopy({ "_includes/media": "media" });
@@ -11,13 +18,13 @@ export default async function (eleventyConfig) {
         "_content/gallery/**/*.{png,jpg,jpeg,gif,webp}",
     );
 
-	// Root files
+    // Root files
     eleventyConfig.addPassthroughCopy("CNAME");
     eleventyConfig.addPassthroughCopy("robots.txt");
 
-	/**	******************** Plugins and Libraries ******************** **/
+    /**	******************** Plugins and Libraries ******************** **/
 
-	// Markdown configuration
+    // Markdown configuration
     const markdownLib = markdownIt({ html: true }).use(markdownItAttrs);
     eleventyConfig.setLibrary("md", markdownLib);
 
@@ -27,7 +34,7 @@ export default async function (eleventyConfig) {
         return markdownLib.render(content);
     });
 
-	/**	******************** Layouts ******************** **/
+    /**	******************** Layouts ******************** **/
 
     // Layout aliases
     eleventyConfig.addLayoutAlias("main", "layouts/main.html");
@@ -35,53 +42,49 @@ export default async function (eleventyConfig) {
     eleventyConfig.addLayoutAlias("gallery", "layouts/pages/gallery.html");
     eleventyConfig.addLayoutAlias("artwork", "layouts/embeds/artwork.html");
 
-	/**	******************** Collections ******************** **/
+    /**	******************** Collections ******************** **/
 
-	const CATEGORIES = {
-		digitalArt: 'digital-art',
-		paintings: 'paintings',
-		drawings: 'drawings',
-		comics: 'comics',
-	};
+    // Collections for each gallery category
 
-	// Collections for each gallery category
+    for (const categoryKey in CATEGORIES) {
+        const category = CATEGORIES[categoryKey];
 
-	for (const categoryKey in CATEGORIES) {
-		const category = CATEGORIES[categoryKey];
+        // Collection to get all items in the category
+        // (e.g., digitalArt, paintings, drawings, comics)
+        eleventyConfig.addCollection(categoryKey, function (collectionApi) {
+            const galleryItems = collectionApi
+                .getAllSorted()
+                .filter(isGalleryItem(category))
+                .reverse();
 
-		// Collection to get all items in the category
-		// (e.g., digitalArt, paintings, drawings, comics)
-		eleventyConfig.addCollection(categoryKey, function (collectionApi) {
-			const galleryItems = collectionApi
-				.getAllSorted()
-				.filter(isGalleryItem(category))
-				.reverse();
+            return galleryItems;
+        });
 
-			return galleryItems;
-		});
+        // Collection to get the latest item in the category
+        // (e.g., digitalArtLatest, paintingsLatest, drawingsLatest, comicsLatest)
+        eleventyConfig.addCollection(
+            `${categoryKey}Latest`,
+            function (collectionApi) {
+                const galleryItems = collectionApi
+                    .getAllSorted()
+                    .filter(isGalleryItem(category))
+                    .reverse();
 
-		// Collection to get the latest item in the category
-		// (e.g., digitalArtLatest, paintingsLatest, drawingsLatest, comicsLatest)
-		eleventyConfig.addCollection(`${categoryKey}Latest`, function (collectionApi) {
-			const galleryItems = collectionApi
-				.getAllSorted()
-				.filter(isGalleryItem(category))
-				.reverse();
-			
-			return galleryItems.length > 0 ? [galleryItems[0]] : [];
-		});
-	}
+                return galleryItems.length > 0 ? [galleryItems[0]] : [];
+            },
+        );
+    }
 
-	// Collections to get all gallery items across categories
-	
-	/* newArt:
-	 * Latest 2 items from the gallery (excluding comics) */
+    // Collections to get all gallery items across categories
+
+    /* newArt:
+     * Latest 2 items from the gallery (excluding comics) */
     eleventyConfig.addCollection("newArt", function (collectionApi) {
         const limit = 2;
         const galleryItems = collectionApi
             .getAllSorted()
             .filter(isGalleryItem())
-			.filter(isNot(CATEGORIES.comics))
+            .filter(isNot(CATEGORIES.comics))
             .reverse()
             .slice(0, limit);
 
@@ -101,10 +104,10 @@ function isGalleryItem(category = null) {
 }
 
 function isNot(category) {
-	return (item) => {
-		const target = `/gallery/${category}/`;
-		return !item.url?.startsWith(target);
-	};
+    return (item) => {
+        const target = `/gallery/${category}/`;
+        return !item.url?.startsWith(target);
+    };
 }
 
 /** ******************** Config export ******************** **/

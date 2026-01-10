@@ -49,9 +49,9 @@
             </header>
             <div class="content">
 <main class="gallery">
-		<span class="es">Arte Digital</span>
-		<span class="en">Digital Art</span>
-		<ul><li>
+    <span class="es">Arte Digital</span>
+    <span class="en">Digital Art</span>
+    <ul><li>
             <a
                 href="/gallery/digital-art/2025-11-16/"
                 onclick="handleArtClick(event, '/gallery/digital-art/2025-11-16/')"
@@ -101,7 +101,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const hash = window.location.hash.substring(1);
-		const urlFromHash = hash ? hash.replaceAll("__", "/") : null;
+        const urlFromHash = hash ? hash.replaceAll("__", "/") : null;
 
         const iframe = document.createElement("iframe");
         iframe.id = "inlineFrameExample";
@@ -116,8 +116,8 @@
     function handleArtClick(event, url) {
         event.preventDefault();
         const iframe = document.getElementById("inlineFrameExample");
-		iframe.src = `${url}`;
-		window.location.hash = url.replaceAll("/", "__");
+        iframe.src = `${url}`;
+        window.location.hash = url.replaceAll("/", "__");
     }
 </script>
 </div>
