@@ -60,8 +60,10 @@ layout: layouts/main.html
 
 	<!-- Section: Digital Art -->
     <section>
+		<div class="gallery__section-description">
         {{ digitalArtDescription | markdown }}
-        <ul>
+		</div>
+		<ul class="gallery__section-artworks">
             {%- for item in collections.digitalArt -%}
             <li>
                 <a
@@ -80,8 +82,10 @@ layout: layouts/main.html
 
 	<!-- Section: Paintings -->
 	<section>
+		<div class="gallery__section-description">
 		{{ paintingsDescription | markdown }}
-		<ul>
+		</div>
+		<ul class="gallery__section-artworks">
 			{%- for item in collections.paintings -%}
 			<li>
 				<a
@@ -100,8 +104,10 @@ layout: layouts/main.html
 
 	<!-- Section: Paintings -->
 	<section>
+		<div class="gallery__section-description">
 		{{ drawingsDescription | markdown }}
-		<ul>
+		</div>
+		<ul class="gallery__section-artworks">
 			{%- for item in collections.drawings -%}
 			<li>
 				<a
