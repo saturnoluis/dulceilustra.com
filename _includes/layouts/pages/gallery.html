@@ -4,8 +4,8 @@ layout: layouts/main.html
 
 <main class="gallery">
     <nav class="categories">
-		<!-- Category: Digital Art -->
-		<div class="category flex-column--start">
+        <!-- Category: Digital Art -->
+        <div class="category flex-column--start">
             <span class="es">Arte Digital</span>
             <span class="en">Digital Art</span>
             {%- for item in collections.digitalArtLatest -%}
@@ -21,55 +21,102 @@ layout: layouts/main.html
             {%- endfor -%}
         </div>
 
-		<!-- Category: Paintings -->
-		<div class="category flex-column--start">
-			<span class="es">Pinturas</span>
-			<span class="en">Paintings</span>
-			{%- for item in collections.paintingsLatest -%}
-			<a
-				href="{{ item.url }}"
-				onclick="handleArtClick(event, '{{ item.url }}')"
-			>
-				<img
-					src="{{ item.url }}{{ item.data.cover }}"
-					alt="{{ item.data.title }} cover"
-				/>
-			</a>
-			{%- endfor -%}
-		</div>
+        <!-- Category: Paintings -->
+        <div class="category flex-column--start">
+            <span class="es">Pinturas</span>
+            <span class="en">Paintings</span>
+            {%- for item in collections.paintingsLatest -%}
+            <a
+                href="{{ item.url }}"
+                onclick="handleArtClick(event, '{{ item.url }}')"
+            >
+                <img
+                    src="{{ item.url }}{{ item.data.cover }}"
+                    alt="{{ item.data.title }} cover"
+                />
+            </a>
+            {%- endfor -%}
+        </div>
 
-		<!-- Category: Drawings -->
-		<div class="category flex-column--start">
-			<span class="es">Dibujos</span>
-			<span class="en">Drawings</span>
-			{%- for item in collections.drawingsLatest -%}
-			<a
-				href="{{ item.url }}"
-				onclick="handleArtClick(event, '{{ item.url }}')"
-			>
-				<img
-					src="{{ item.url }}{{ item.data.cover }}"
-					alt="{{ item.data.title }} cover"
-				/>
-			</a>
-			{%- endfor -%}
-		</div>
+        <!-- Category: Drawings -->
+        <div class="category flex-column--start">
+            <span class="es">Dibujos</span>
+            <span class="en">Drawings</span>
+            {%- for item in collections.drawingsLatest -%}
+            <a
+                href="{{ item.url }}"
+                onclick="handleArtClick(event, '{{ item.url }}')"
+            >
+                <img
+                    src="{{ item.url }}{{ item.data.cover }}"
+                    alt="{{ item.data.title }} cover"
+                />
+            </a>
+            {%- endfor -%}
+        </div>
     </nav>
 
-    <h1>Foo Section:</h1>
-    <div style="background: #f0f0f0; padding: 1rem; margin-bottom: 2rem">
-        {{ foo | markdown }}
-    </div>
+	<!-- ---------------------------------------------------------- -->
 
-    <h1>Main Content:</h1>
-    <div style="background: #e0e0ff; padding: 1rem; margin-bottom: 2rem">
-        {{ content }}
-    </div>
+	<!-- Section: Digital Art -->
+    <section>
+        {{ digitalArtDescription | markdown }}
+        <ul>
+            {%- for item in collections.digitalArt -%}
+            <li>
+                <a
+                    href="{{ item.url }}"
+                    onclick="handleArtClick(event, '{{ item.url }}')"
+                >
+                    <img
+                        src="{{ item.url }}{{ item.data.cover }}"
+                        alt="{{ item.data.title }} cover"
+                    />
+                </a>
+            </li>
+            {%- endfor -%}
+        </ul>
+    </section>
 
-    <h1>Bar Section:</h1>
-    <div style="background: #ffe0e0; padding: 1rem; margin-bottom: 2rem">
-        {{ bar | markdown }}
-    </div>
+	<!-- Section: Paintings -->
+	<section>
+		{{ paintingsDescription | markdown }}
+		<ul>
+			{%- for item in collections.paintings -%}
+			<li>
+				<a
+					href="{{ item.url }}"
+					onclick="handleArtClick(event, '{{ item.url }}')"
+				>
+					<img
+						src="{{ item.url }}{{ item.data.cover }}"
+						alt="{{ item.data.title }} cover"
+					/>
+				</a>
+			</li>
+			{%- endfor -%}
+		</ul>
+	</section>
+
+	<!-- Section: Paintings -->
+	<section>
+		{{ drawingsDescription | markdown }}
+		<ul>
+			{%- for item in collections.drawings -%}
+			<li>
+				<a
+					href="{{ item.url }}"
+					onclick="handleArtClick(event, '{{ item.url }}')"
+				>
+					<img
+						src="{{ item.url }}{{ item.data.cover }}"
+						alt="{{ item.data.title }} cover"
+					/>
+				</a>
+			</li>
+			{%- endfor -%}
+		</ul>
+	</section>
 
     <div id="iframeContainer"></div>
 </main>

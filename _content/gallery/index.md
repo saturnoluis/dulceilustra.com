@@ -1,24 +1,61 @@
 ---
 title: dulceilustra.com
 layout: gallery
-foo: |
-    # This is the Foo Section
-    This content is **stored in front matter** and rendered as markdown using the `| markdown` filter.
 
-    You can use all markdown features:
-    - Lists
-    - **Bold text**
-    - [Links](#)
-bar: |
-    ## This is the Bar Section
+digitalArtDescription: |
+    # Arte Digital{.es}
 
-    Another section with *italic text* and more **markdown** support!
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl nec risus
+    laoreet scelerisque. Sed euismod, nisl sit amet convallis consequat, turpis ligula
+    luctus elit, at dictum est erat sed mauris. Nam faucibus, justo vitae consequat
+    gravida, metus lacus tincidunt arcu, sed pretium lorem odio id nunc. Integer nec
+    sapien vel sem bibendum dictum. Duis vel ligula ut libero tristique dictum at a
+    erat.
 
-    1. Numbered lists work too
-    2. Second item
-    3. Third item
+    ## Digital Art{.en}
+
+    Dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    labore et dolore magna aliqua. Viverra suspendisse potenti nullam ac tortor vitae
+    purus. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Nibh tortor id
+    aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit duis
+    tristique sollicitudin nibh sit.
+
+
+paintingsDescription: |
+    # Pinturas{.es}
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl nec risus
+    laoreet scelerisque. Sed euismod, nisl sit amet convallis consequat, turpis ligula
+    luctus elit, at dictum est erat sed mauris. Nam faucibus, justo vitae consequat
+    gravida, metus lacus tincidunt arcu, sed pretium lorem odio id nunc. Integer nec
+    sapien vel sem bibendum dictum. Duis vel ligula ut libero tristique dictum at a
+    erat.
+
+    ## Paintings{.en}
+
+    Dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    labore et dolore magna aliqua. Viverra suspendisse potenti nullam ac tortor vitae
+    purus. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Nibh tortor id
+    aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit duis
+    tristique sollicitudin nibh sit.
+
+drawingsDescription: |
+    # Dibujos{.es}
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl nec risus
+    laoreet scelerisque. Sed euismod, nisl sit amet convallis consequat, turpis ligula
+    luctus elit, at dictum est erat sed mauris. Nam faucibus, justo vitae consequat
+    gravida, metus lacus tincidunt arcu, sed pretium lorem odio id nunc. Integer nec
+    sapien vel sem bibendum dictum. Duis vel ligula ut libero tristique dictum at a
+    erat.
+
+    ## Drawings{.en}
+
+    Dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    labore et dolore magna aliqua. Viverra suspendisse potenti nullam ac tortor vitae
+    purus. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Nibh tortor id
+    aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit duis
+    tristique sollicitudin nibh sit.
+
 ---
 
-This is the main content area rendered by {{ content }}.
-
-It comes from the markdown body after the front matter.
