@@ -3,99 +3,69 @@ layout: layouts/main.html
 ---
 
 <main class="gallery">
-    <nav class="categories">
-        <!-- Category: Digital Art -->
-        <div class="category flex-column--start">
-            <span class="es">Arte Digital</span>
-            <span class="en">Digital Art</span>
-            {%- for item in collections.digitalArtLatest -%}
-            <a
-                href="{{ item.url }}"
-                onclick="handleArtClick(event, '{{ item.url }}')"
-            >
-                <img
-                    src="{{ item.url }}{{ item.data.cover }}"
-                    alt="{{ item.data.title }} cover"
-                />
-            </a>
-            {%- endfor -%}
-        </div>
+	<nav class="categories">
+		<!-- Category: Digital Art -->
+		<div class="category flex-column--start">
+			<span class="es">Arte Digital</span>
+			<span class="en">Digital Art</span>
+			{%- for item in collections.digitalArtLatest -%}
+			<a href="#digital-art">
+				<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
+			</a>
+			{%- endfor -%}
+		</div>
 
-        <!-- Category: Paintings -->
-        <div class="category flex-column--start">
-            <span class="es">Pinturas</span>
-            <span class="en">Paintings</span>
-            {%- for item in collections.paintingsLatest -%}
-            <a
-                href="{{ item.url }}"
-                onclick="handleArtClick(event, '{{ item.url }}')"
-            >
-                <img
-                    src="{{ item.url }}{{ item.data.cover }}"
-                    alt="{{ item.data.title }} cover"
-                />
-            </a>
-            {%- endfor -%}
-        </div>
+		<!-- Category: Paintings -->
+		<div class="category flex-column--start">
+			<span class="es">Pinturas</span>
+			<span class="en">Paintings</span>
+			{%- for item in collections.paintingsLatest -%}
+			<a href="#paintings">
+				<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
+			</a>
+			{%- endfor -%}
+		</div>
 
-        <!-- Category: Drawings -->
-        <div class="category flex-column--start">
-            <span class="es">Dibujos</span>
-            <span class="en">Drawings</span>
-            {%- for item in collections.drawingsLatest -%}
-            <a
-                href="{{ item.url }}"
-                onclick="handleArtClick(event, '{{ item.url }}')"
-            >
-                <img
-                    src="{{ item.url }}{{ item.data.cover }}"
-                    alt="{{ item.data.title }} cover"
-                />
-            </a>
-            {%- endfor -%}
-        </div>
-    </nav>
+		<!-- Category: Drawings -->
+		<div class="category flex-column--start">
+			<span class="es">Dibujos</span>
+			<span class="en">Drawings</span>
+			{%- for item in collections.drawingsLatest -%}
+			<a href="#drawings">
+				<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
+			</a>
+			{%- endfor -%}
+		</div>
+	</nav>
 
 	<!-- ---------------------------------------------------------- -->
 
 	<!-- Section: Digital Art -->
-	<section class="gallery__section--digital-art">
+	<section id="digital-art" class="gallery__section--digital-art">
 		<div class="gallery__section_info">
-        {{ digitalArtDescription | markdown }}
+			{{ digitalArtDescription | markdown }}
 		</div>
 		<ul class="gallery__section_images">
-            {%- for item in collections.digitalArt -%}
-            <li>
-                <a
-                    href="{{ item.url }}"
-                    onclick="handleArtClick(event, '{{ item.url }}')"
-                >
-                    <img
-                        src="{{ item.url }}{{ item.data.cover }}"
-                        alt="{{ item.data.title }} cover"
-                    />
-                </a>
-            </li>
-            {%- endfor -%}
-        </ul>
-    </section>
+			{%- for item in collections.digitalArt -%}
+			<li id="{{ item.urlHash }}">
+				<a href="#{{ item.urlHash }}" onclick="handleArtClick(event, '{{ item.urlHash }}')">
+					<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
+				</a>
+			</li>
+			{%- endfor -%}
+		</ul>
+	</section>
 
 	<!-- Section: Paintings -->
-	<section class="gallery__section--paintings">
+	<section id="paintings" class="gallery__section--paintings">
 		<div class="gallery__section_info">
-		{{ paintingsDescription | markdown }}
+			{{ paintingsDescription | markdown }}
 		</div>
 		<ul class="gallery__section_images">
 			{%- for item in collections.paintings -%}
-			<li>
-				<a
-					href="{{ item.url }}"
-					onclick="handleArtClick(event, '{{ item.url }}')"
-				>
-					<img
-						src="{{ item.url }}{{ item.data.cover }}"
-						alt="{{ item.data.title }} cover"
-					/>
+			<li id="{{ item.urlHash }}">
+				<a href="#{{ item.urlHash }}" onclick="handleArtClick(event, '{{ item.urlHash }}')">
+					<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 				</a>
 			</li>
 			{%- endfor -%}
@@ -103,49 +73,46 @@ layout: layouts/main.html
 	</section>
 
 	<!-- Section: Drawings -->
-	<section class="gallery__section--drawings">
+	<section id="drawings" class="gallery__section--drawings">
 		<div class="gallery__section_info">
-		{{ drawingsDescription | markdown }}
+			{{ drawingsDescription | markdown }}
 		</div>
 		<ul class="gallery__section_images">
 			{%- for item in collections.drawings -%}
-			<li>
-				<a
-					href="{{ item.url }}"
-					onclick="handleArtClick(event, '{{ item.url }}')"
-				>
-					<img
-						src="{{ item.url }}{{ item.data.cover }}"
-						alt="{{ item.data.title }} cover"
-					/>
+			<li id="{{ item.urlHash }}">
+				<a href="#{{ item.urlHash }}" onclick="handleArtClick(event, '{{ item.urlHash }}')">
+					<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 				</a>
 			</li>
 			{%- endfor -%}
 		</ul>
 	</section>
 
-    <div id="iframeContainer"></div>
+	<div id="iframeContainer"></div>
 </main>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const hash = window.location.hash.substring(1);
-        const urlFromHash = hash ? hash.replaceAll("__", "/") : null;
+	document.addEventListener("DOMContentLoaded", function () {
+		const hash = window.location.hash.substring(1);
+		const urlFromHash = hash ? hash.replaceAll("+", "/") : null;
 
-        const iframe = document.createElement("iframe");
-        iframe.id = "inlineFrameExample";
-        iframe.src = urlFromHash ? `${urlFromHash}` : "";
-        iframe.style.width = "100%";
-        iframe.style.height = "600px";
+		const iframe = document.createElement("iframe");
+		iframe.id = "inlineFrameExample";
+		iframe.src = urlFromHash ? `/${urlFromHash}/` : "";
+		iframe.style.width = "100%";
+		iframe.style.height = "600px";
 
-        const iframeContainer = document.getElementById("iframeContainer");
-        iframeContainer.appendChild(iframe);
-    });
+		const iframeContainer = document.getElementById("iframeContainer");
+		iframeContainer.appendChild(iframe);
+	});
 
-    function handleArtClick(event, url) {
-        event.preventDefault();
-        const iframe = document.getElementById("inlineFrameExample");
-        iframe.src = `${url}`;
-        window.location.hash = url.replaceAll("/", "__");
-    }
+	function handleArtClick(event, urlHash) {
+		event.preventDefault();
+		const iframeSrc = urlHash ? urlHash.replaceAll("+", "/") : null;
+
+		const iframe = document.getElementById("inlineFrameExample");
+		iframe.src = `/${iframeSrc}/`;
+
+		window.location.hash = urlHash;
+	}
 </script>

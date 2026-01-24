@@ -389,6 +389,13 @@ img.home__new-art_decoration {
 	line-height: 0.8;
 	text-align: center;
 	text-decoration: none;
+	transform: scaleY(1);
+	transition: transform 0.2s ease;
+}
+
+.home__gallery-gallery:hover {
+	transform: scaleY(1.05);
+	transition: transform 0.2s ease;
 }
 
 .home__gallery-gallery span {
