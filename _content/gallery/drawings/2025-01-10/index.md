@@ -1,7 +1,29 @@
 ---
 title: dulceilustra.com
 cover: cover.png
-layout: artwork
+layout: gallery
 ---
 
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
+January 10th drawing.
 January 10th drawing.

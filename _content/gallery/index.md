@@ -20,7 +20,6 @@ digitalArtDescription: |
     aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit duis
     tristique sollicitudin nibh sit.
 
-
 paintingsDescription: |
     # Pinturas{.es}
 
@@ -56,6 +55,4 @@ drawingsDescription: |
     purus. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Nibh tortor id
     aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit duis
     tristique sollicitudin nibh sit.
-
 ---
-

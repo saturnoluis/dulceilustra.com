@@ -1,5 +1,5 @@
 ---
-layout: layouts/main.html
+layout: main
 ---
 
 <main class="gallery">
@@ -38,7 +38,13 @@ layout: layouts/main.html
 		</div>
 	</nav>
 
-	<!-- ---------------------------------------------------------- -->
+	<!-- ================================================================================ -->
+
+	<div id="gallery__modal-wrapper">
+		{{ content }}
+	</div>
+
+	<!-- ================================================================================ -->
 
 	<!-- Section: Digital Art -->
 	<section id="digital-art" class="gallery__section--digital-art">
@@ -48,7 +54,7 @@ layout: layouts/main.html
 		<ul class="gallery__section_images">
 			{%- for item in collections.digitalArt -%}
 			<li id="{{ item.urlHash }}">
-				<a href="#{{ item.urlHash }}" onclick="handleArtClick(event, '{{ item.urlHash }}')">
+				<a href="{{ item.url }}#{{ item.urlHash }}">
 					<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 				</a>
 			</li>
@@ -64,7 +70,7 @@ layout: layouts/main.html
 		<ul class="gallery__section_images">
 			{%- for item in collections.paintings -%}
 			<li id="{{ item.urlHash }}">
-				<a href="#{{ item.urlHash }}" onclick="handleArtClick(event, '{{ item.urlHash }}')">
+				<a href="{{ item.url }}#{{ item.urlHash }}">
 					<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 				</a>
 			</li>
@@ -80,39 +86,10 @@ layout: layouts/main.html
 		<ul class="gallery__section_images">
 			{%- for item in collections.drawings -%}
 			<li id="{{ item.urlHash }}">
-				<a href="#{{ item.urlHash }}" onclick="handleArtClick(event, '{{ item.urlHash }}')">
+				<a href="{{ item.url }}#{{ item.urlHash }}">
 					<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 				</a>
-			</li>
-			{%- endfor -%}
+			</li>{%- endfor -%}
 		</ul>
 	</section>
-
-	<div id="iframeContainer"></div>
 </main>
-
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-		const hash = window.location.hash.substring(1);
-		const urlFromHash = hash ? hash.replaceAll("+", "/") : null;
-
-		const iframe = document.createElement("iframe");
-		iframe.id = "inlineFrameExample";
-		iframe.src = urlFromHash ? `/${urlFromHash}/` : "";
-		iframe.style.width = "100%";
-		iframe.style.height = "600px";
-
-		const iframeContainer = document.getElementById("iframeContainer");
-		iframeContainer.appendChild(iframe);
-	});
-
-	function handleArtClick(event, urlHash) {
-		event.preventDefault();
-		const iframeSrc = urlHash ? urlHash.replaceAll("+", "/") : null;
-
-		const iframe = document.getElementById("inlineFrameExample");
-		iframe.src = `/${iframeSrc}/`;
-
-		window.location.hash = urlHash;
-	}
-</script>

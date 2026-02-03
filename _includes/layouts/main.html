@@ -1,48 +1,45 @@
 <!doctype html>
 <html lang="en" data-theme="light">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="noindex, nofollow" />
 
-        <link rel="stylesheet" href="/css/pico.min.css" />
-        <link rel="stylesheet" href="/css/main.css" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow" />
 
-        <title>{{ title }}</title>
-    </head>
-    <body>
-        <div class="container">
-            <header class="header margin-bottom">
-                <nav class="header__nav" class="flex-between">
-                    <a href="/">
-                        <img
-                            src="/images/dulceilustra__firma.png"
-                            alt="@dulceilustra"
-                        />
-                    </a>
-                    <ul class="flex-row">
-                        {%- for link in navigation -%}
-                        <li>
-                            <a
-                                href="{{ link.url }}"
-                                class="header__link flex-column"
-                            >
-                                <span class="es">{{ link.es }}</span>
-                                <span class="en">{{ link.en }}</span>
-                            </a>
-                        </li>
-                        {%- endfor -%}
-                    </ul>
-                </nav>
-            </header>
-            <div class="content">{{ content }}</div>
-            <footer class="home__footer">
-                <p class="footer__text">
-                    &copy; {{ "now" | date: "%Y" }} @DulceIlustra.
-                    <span class="es">Todos los derechos reservados.</span>
-                    <span class="en">All rights reserved.</span>
-                </p>
-            </footer>
-        </div>
-    </body>
+	<link rel="stylesheet" href="/css/pico.min.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+
+	<title>{{ title }}</title>
+</head>
+
+<body>
+	<div class="main-container">
+		<header class="header margin-bottom">
+			<nav class="header__nav" class="flex-between">
+				<a href="/">
+					<img src="/images/dulceilustra__firma.png" alt="@dulceilustra" />
+				</a>
+				<ul class="flex-row">
+					{%- for link in navigation -%}
+					<li>
+						<a href="{{ link.url }}" class="header__link flex-column">
+							<span class="es">{{ link.es }}</span>
+							<span class="en">{{ link.en }}</span>
+						</a>
+					</li>
+					{%- endfor -%}
+				</ul>
+			</nav>
+		</header>
+		<div class="content">{{ content }}</div>
+		<footer class="home__footer">
+			<p class="footer__text">
+				&copy; {{ "now" | date: "%Y" }} @DulceIlustra.
+				<span class="es">Todos los derechos reservados.</span>
+				<span class="en">All rights reserved.</span>
+			</p>
+		</footer>
+	</div>
+</body>
+
 </html>

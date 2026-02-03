@@ -1,53 +1,43 @@
 <!doctype html>
 <html lang="en" data-theme="light">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="noindex, nofollow" />
 
-        <link rel="stylesheet" href="/css/pico.min.css" />
-        <link rel="stylesheet" href="/css/main.css" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow" />
 
-        <title>dulceilustra.com</title>
-    </head>
-    <body>
-        <div class="container">
-            <header class="header margin-bottom">
-                <nav class="header__nav" class="flex-between">
-                    <a href="/">
-                        <img
-                            src="/images/dulceilustra__firma.png"
-                            alt="@dulceilustra"
-                        />
-                    </a>
-                    <ul class="flex-row"><li>
-                            <a
-                                href="/"
-                                class="header__link flex-column"
-                            >
-                                <span class="es">Inicio</span>
-                                <span class="en">Home</span>
-                            </a>
-                        </li><li>
-                            <a
-                                href="/gallery"
-                                class="header__link flex-column"
-                            >
-                                <span class="es">Galería</span>
-                                <span class="en">Gallery</span>
-                            </a>
-                        </li><li>
-                            <a
-                                href="/contacto"
-                                class="header__link flex-column"
-                            >
-                                <span class="es">Contacto</span>
-                                <span class="en">Contact</span>
-                            </a>
-                        </li></ul>
-                </nav>
-            </header>
-            <div class="content">
+	<link rel="stylesheet" href="/css/pico.min.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+
+	<title>dulceilustra.com</title>
+</head>
+
+<body>
+	<div class="main-container">
+		<header class="header margin-bottom">
+			<nav class="header__nav" class="flex-between">
+				<a href="/">
+					<img src="/images/dulceilustra__firma.png" alt="@dulceilustra" />
+				</a>
+				<ul class="flex-row"><li>
+						<a href="/" class="header__link flex-column">
+							<span class="es">Inicio</span>
+							<span class="en">Home</span>
+						</a>
+					</li><li>
+						<a href="/gallery" class="header__link flex-column">
+							<span class="es">Galería</span>
+							<span class="en">Gallery</span>
+						</a>
+					</li><li>
+						<a href="/contacto" class="header__link flex-column">
+							<span class="es">Contacto</span>
+							<span class="en">Contact</span>
+						</a>
+					</li></ul>
+			</nav>
+		</header>
+		<div class="content">
 <main class="gallery">
 	<nav class="categories">
 		<!-- Category: Digital Art -->
@@ -72,7 +62,13 @@
 			</a></div>
 	</nav>
 
-	<!-- ---------------------------------------------------------- -->
+	<!-- ================================================================================ -->
+
+	<div id="gallery__modal-wrapper">
+		
+	</div>
+
+	<!-- ================================================================================ -->
 
 	<!-- Section: Digital Art -->
 	<section id="digital-art" class="gallery__section--digital-art">
@@ -93,15 +89,15 @@ tristique sollicitudin nibh sit.</p>
 
 		</div>
 		<ul class="gallery__section_images"><li id="gallery+digital-art+2025-11-16">
-				<a href="#gallery+digital-art+2025-11-16" onclick="handleArtClick(event, 'gallery+digital-art+2025-11-16')">
+				<a href="/gallery/digital-art/2025-11-16/#gallery+digital-art+2025-11-16">
 					<img src="/gallery/digital-art/2025-11-16/cover.png" alt="dulceilustra.com cover" />
 				</a>
 			</li><li id="gallery+digital-art+2025-11-13">
-				<a href="#gallery+digital-art+2025-11-13" onclick="handleArtClick(event, 'gallery+digital-art+2025-11-13')">
+				<a href="/gallery/digital-art/2025-11-13/#gallery+digital-art+2025-11-13">
 					<img src="/gallery/digital-art/2025-11-13/cover.png" alt="dulceilustra.com cover" />
 				</a>
 			</li><li id="gallery+digital-art+2025-11-05">
-				<a href="#gallery+digital-art+2025-11-05" onclick="handleArtClick(event, 'gallery+digital-art+2025-11-05')">
+				<a href="/gallery/digital-art/2025-11-05/#gallery+digital-art+2025-11-05">
 					<img src="/gallery/digital-art/2025-11-05/cover.png" alt="dulceilustra.com cover" />
 				</a>
 			</li></ul>
@@ -126,7 +122,7 @@ tristique sollicitudin nibh sit.</p>
 
 		</div>
 		<ul class="gallery__section_images"><li id="gallery+paintings+2025-01-10">
-				<a href="#gallery+paintings+2025-01-10" onclick="handleArtClick(event, 'gallery+paintings+2025-01-10')">
+				<a href="/gallery/paintings/2025-01-10/#gallery+paintings+2025-01-10">
 					<img src="/gallery/paintings/2025-01-10/cover.png" alt="dulceilustra.com cover" />
 				</a>
 			</li></ul>
@@ -151,48 +147,21 @@ tristique sollicitudin nibh sit.</p>
 
 		</div>
 		<ul class="gallery__section_images"><li id="gallery+drawings+2025-01-10">
-				<a href="#gallery+drawings+2025-01-10" onclick="handleArtClick(event, 'gallery+drawings+2025-01-10')">
+				<a href="/gallery/drawings/2025-01-10/#gallery+drawings+2025-01-10">
 					<img src="/gallery/drawings/2025-01-10/cover.png" alt="dulceilustra.com cover" />
 				</a>
 			</li></ul>
 	</section>
-
-	<div id="iframeContainer"></div>
 </main>
-
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-		const hash = window.location.hash.substring(1);
-		const urlFromHash = hash ? hash.replaceAll("+", "/") : null;
-
-		const iframe = document.createElement("iframe");
-		iframe.id = "inlineFrameExample";
-		iframe.src = urlFromHash ? `/${urlFromHash}/` : "";
-		iframe.style.width = "100%";
-		iframe.style.height = "600px";
-
-		const iframeContainer = document.getElementById("iframeContainer");
-		iframeContainer.appendChild(iframe);
-	});
-
-	function handleArtClick(event, urlHash) {
-		event.preventDefault();
-		const iframeSrc = urlHash ? urlHash.replaceAll("+", "/") : null;
-
-		const iframe = document.getElementById("inlineFrameExample");
-		iframe.src = `/${iframeSrc}/`;
-
-		window.location.hash = urlHash;
-	}
-</script>
 </div>
-            <footer class="home__footer">
-                <p class="footer__text">
-                    &copy; 2026 @DulceIlustra.
-                    <span class="es">Todos los derechos reservados.</span>
-                    <span class="en">All rights reserved.</span>
-                </p>
-            </footer>
-        </div>
-    </body>
+		<footer class="home__footer">
+			<p class="footer__text">
+				&copy; 2026 @DulceIlustra.
+				<span class="es">Todos los derechos reservados.</span>
+				<span class="en">All rights reserved.</span>
+			</p>
+		</footer>
+	</div>
+</body>
+
 </html>

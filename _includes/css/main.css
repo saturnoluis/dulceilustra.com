@@ -28,12 +28,13 @@ html {
 	font-family: var(--font-family-base);
 	font-size: var(--font-size-base);
 	background-color: var(--background-color);
+	scroll-padding-top: 8rem;
 }
 
 body {
 	min-height: 100dvh;
 	background-color: var(--background-color);
-	padding: 0 2rem 4rem 2rem;
+	scroll-padding-top: 8rem;
 }
 
 h1,
@@ -66,6 +67,27 @@ h4,
 h5,
 h6 {
 	font-size: calc(var(--font-size-base) * 1);
+}
+
+/*
+* Main layout elements
+* ****************************************** */
+
+.main-container {
+	position: relative;
+	margin: 0 auto;
+	padding: 1rem 2rem 4rem 2rem;
+}
+
+#main-modal-container {
+	position: fixed;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
 }
 
 /*

@@ -40,7 +40,6 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addLayoutAlias("main", "layouts/main.html");
 	eleventyConfig.addLayoutAlias("home", "layouts/pages/home.html");
 	eleventyConfig.addLayoutAlias("gallery", "layouts/pages/gallery.html");
-	eleventyConfig.addLayoutAlias("artwork", "layouts/embeds/artwork.html");
 
 	/**	******************** Collections ******************** **/
 
@@ -70,7 +69,8 @@ export default async function(eleventyConfig) {
 					.filter(isGalleryItem(category))
 					.reverse();
 
-				const latestItem = galleryItems.length > 0 ? [galleryItems[0]] : [];
+				const latestItem =
+					galleryItems.length > 0 ? [galleryItems[0]] : [];
 
 				return latestItem.map(insertUrlHash);
 			},

@@ -1,7 +1,7 @@
 ---
 title: dulceilustra.com
 cover: cover.png
-layout: artwork
+layout: gallery
 ---
 
 Comic 11 de Nov
