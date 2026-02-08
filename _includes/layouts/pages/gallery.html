@@ -3,112 +3,94 @@ layout: main
 ---
 
 <main class="gallery">
-    <nav class="categories">
-        <!-- Category: Digital Art -->
-        <div class="category flex-column--start">
-            <span class="es">Arte Digital</span>
-            <span class="en">Digital Art</span>
-            {%- for item in collections.digitalArtLatest -%}
-            <a href="/gallery#digital-art">
-                <img
-                    src="{{ item.url }}{{ item.data.cover }}"
-                    alt="{{ item.data.title }} cover"
-                />
-            </a>
-            {%- endfor -%}
-        </div>
+	<nav class="categories">
+		<!-- Category: Digital Art -->
+		<div class="category flex-column--start">
+			<span class="es">Arte Digital</span>
+			<span class="en">Digital Art</span>
+			{%- for item in collections.digitalArtLatest -%}
+			<a href="/gallery#digital-art">
+				<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
+			</a>
+			{%- endfor -%}
+		</div>
 
-        <!-- Category: Paintings -->
-        <div class="category flex-column--start">
-            <span class="es">Pinturas</span>
-            <span class="en">Paintings</span>
-            {%- for item in collections.paintingsLatest -%}
-            <a href="/gallery#paintings">
-                <img
-                    src="{{ item.url }}{{ item.data.cover }}"
-                    alt="{{ item.data.title }} cover"
-                />
-            </a>
-            {%- endfor -%}
-        </div>
+		<!-- Category: Paintings -->
+		<div class="category flex-column--start">
+			<span class="es">Pinturas</span>
+			<span class="en">Paintings</span>
+			{%- for item in collections.paintingsLatest -%}
+			<a href="/gallery#paintings">
+				<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
+			</a>
+			{%- endfor -%}
+		</div>
 
-        <!-- Category: Drawings -->
-        <div class="category flex-column--start">
-            <span class="es">Dibujos</span>
-            <span class="en">Drawings</span>
-            {%- for item in collections.drawingsLatest -%}
-            <a href="/gallery#drawings">
-                <img
-                    src="{{ item.url }}{{ item.data.cover }}"
-                    alt="{{ item.data.title }} cover"
-                />
-            </a>
-            {%- endfor -%}
-        </div>
-    </nav>
+		<!-- Category: Drawings -->
+		<div class="category flex-column--start">
+			<span class="es">Dibujos</span>
+			<span class="en">Drawings</span>
+			{%- for item in collections.drawingsLatest -%}
+			<a href="/gallery#drawings">
+				<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
+			</a>
+			{%- endfor -%}
+		</div>
+	</nav>
 
-    <!-- ================================================================================ -->
+	<!-- ================================================================================ -->
 
-    {% if content != '' %}
-    <div class="gallery__modal-wrapper">{{ content }}</div>
-    {% endif %}
+	{% if content != '' %}
+	<div id="gallery__modal-wrapper">{{ content }}</div>
+	{% endif %}
 
-    <!-- ================================================================================ -->
+	<!-- ================================================================================ -->
 
-    <!-- Section: Digital Art -->
-    <section id="digital-art" class="gallery__section--digital-art">
-        <div class="gallery__section_info">
-            {{ gallery.digitalArtDescription | markdown }}
-        </div>
-        <ul class="gallery__section_images">
-            {%- for item in collections.digitalArt -%}
-            <li id="{{ item.urlHash }}">
-                <a href="{{ item.url }}#digital-art">
-                    <img
-                        src="{{ item.url }}{{ item.data.cover }}"
-                        alt="{{ item.data.title }} cover"
-                    />
-                </a>
-            </li>
-            {%- endfor -%}
-        </ul>
-    </section>
+	<!-- Section: Digital Art -->
+	<section id="digital-art" class="gallery__section--digital-art">
+		<div class="gallery__section_info">
+			{{ gallery.digitalArtDescription | markdown }}
+		</div>
+		<ul class="gallery__section_images">
+			{%- for item in collections.digitalArt -%}
+			<li id="{{ item.urlHash }}">
+				<a href="{{ item.url }}#digital-art">
+					<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
+				</a>
+			</li>
+			{%- endfor -%}
+		</ul>
+	</section>
 
-    <!-- Section: Paintings -->
-    <section id="paintings" class="gallery__section--paintings">
-        <div class="gallery__section_info">
-            {{ gallery.paintingsDescription | markdown }}
-        </div>
-        <ul class="gallery__section_images">
-            {%- for item in collections.paintings -%}
-            <li id="{{ item.urlHash }}">
-                <a href="{{ item.url }}#paintings">
-                    <img
-                        src="{{ item.url }}{{ item.data.cover }}"
-                        alt="{{ item.data.title }} cover"
-                    />
-                </a>
-            </li>
-            {%- endfor -%}
-        </ul>
-    </section>
+	<!-- Section: Paintings -->
+	<section id="paintings" class="gallery__section--paintings">
+		<div class="gallery__section_info">
+			{{ gallery.paintingsDescription | markdown }}
+		</div>
+		<ul class="gallery__section_images">
+			{%- for item in collections.paintings -%}
+			<li id="{{ item.urlHash }}">
+				<a href="{{ item.url }}#paintings">
+					<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
+				</a>
+			</li>
+			{%- endfor -%}
+		</ul>
+	</section>
 
-    <!-- Section: Drawings -->
-    <section id="drawings" class="gallery__section--drawings">
-        <div class="gallery__section_info">
-            {{ gallery.drawingsDescription | markdown }}
-        </div>
-        <ul class="gallery__section_images">
-            {%- for item in collections.drawings -%}
-            <li id="{{ item.urlHash }}">
-                <a href="{{ item.url }}#drawings">
-                    <img
-                        src="{{ item.url }}{{ item.data.cover }}"
-                        alt="{{ item.data.title }} cover"
-                    />
-                </a>
-            </li>
-            {%- endfor -%}
-        </ul>
-    </section>
+	<!-- Section: Drawings -->
+	<section id="drawings" class="gallery__section--drawings">
+		<div class="gallery__section_info">
+			{{ gallery.drawingsDescription | markdown }}
+		</div>
+		<ul class="gallery__section_images">
+			{%- for item in collections.drawings -%}
+			<li id="{{ item.urlHash }}">
+				<a href="{{ item.url }}#drawings">
+					<img src="{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
+				</a>
+			</li>
+			{%- endfor -%}
+		</ul>
+	</section>
 </main>

@@ -1,7 +1,7 @@
 ---
 title: dulceilustra.com
 cover: cover.png
-layout: gallery
+layout: gallery.item
 ---
 
 January 10th drawing.
