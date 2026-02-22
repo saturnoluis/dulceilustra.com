@@ -3,8 +3,18 @@ layout: gallery
 ---
 
 <div class="gallery-item">
-	<a href="/gallery" class="gallery-item__back-link">
+	<a href="/gallery" id="go-back" class="gallery-item__back-link">
 		X
 	</a>
 	{{ content }}
 </div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const hash = window.location.hash;
+		if (hash) {
+			const goBackLink = document.getElementById('go-back');
+			goBackLink.href = '/gallery' + hash;
+		}
+	});
+</script>
