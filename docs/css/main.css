@@ -101,6 +101,17 @@ h6 {
 	margin-bottom: 6rem;
 }
 
+.header__logo {
+	display: block;
+	text-decoration: none;
+	height: 9rem;
+	transition: height 0.2s ease;
+}
+
+.header__logo:hover {
+	height: 10rem;
+}
+
 .header__nav {
 	height: 10rem;
 }
@@ -128,7 +139,7 @@ h6 {
 * Page Footer
 * ****************************************** */
 
-.home__footer {
+.footer {
 	padding: 13rem 0 0 0;
 	margin-top: 4rem;
 	font-size: calc(var(--font-size-base) * 2);
@@ -171,7 +182,7 @@ h6 {
 	grid-column: 1 / span 2;
 }
 
-.home__new_art li:nth-child(2) {
+.home__new-art li:nth-child(2) {
 	grid-column: 3;
 }
 
@@ -179,7 +190,7 @@ h6 {
 	grid-column: 4;
 }
 
-img.home__new-art_decoration {
+img.home__new-art-decoration {
 	display: block;
 	width: 16rem;
 	height: auto;
@@ -187,30 +198,30 @@ img.home__new-art_decoration {
 	padding: 0 0 2rem 0;
 }
 
-.home__new-art_text {
+.home__new-art-text {
 	line-height: 1;
 	text-align: center;
 	padding: 0 2rem;
 }
 
-.home__new-art_text span {
+.home__new-art-text span {
 	display: block;
 	transform: scale(1);
 	transition: transform 0.4s ease;
 	white-space: nowrap;
 }
 
-.home__new-art_text span:hover {
+.home__new-art-text span:hover {
 	transform: scale(1.1);
 }
 
-.home__new-art_text span.es {
+.home__new-art-text span.es {
 	font-size: calc(var(--font-size-base) * 5);
 	font-family: var(--font-family-base);
 	padding-top: 1rem;
 }
 
-.home__new-art_text span.en {
+.home__new-art-text span.en {
 	font-size: calc(var(--font-size-base) * 5);
 	text-transform: uppercase;
 	margin-top: 0.5rem;
@@ -220,12 +231,12 @@ img.home__new-art_decoration {
 	gap: 6rem;
 }
 
-.home__gallery-link_item {
+.home__gallery-link-item {
 	display: block;
 	transition: transform 0.1s ease;
 }
 
-.home__gallery-link_item:hover {
+.home__gallery-link-item:hover {
 	transform: scale(1.04);
 }
 
@@ -235,7 +246,7 @@ img.home__new-art_decoration {
 	margin: 0;
 }
 
-.home__animation_video {
+.home__animation-video {
 	display: block;
 	width: 100%;
 	height: auto;
@@ -244,11 +255,11 @@ img.home__new-art_decoration {
 	padding: 0 6rem 0 1rem;
 }
 
-.home__animation_comics {
+.home__animation-comics {
 	grid-column: 2;
 }
 
-.home__comics_title {
+.home__comics-title {
 	font-family: var(--font-family-heading);
 	font-size: 8rem;
 	line-height: 0.8;
@@ -259,11 +270,11 @@ img.home__new-art_decoration {
 	transform: rotate(-90deg);
 }
 
-.home__animation_comics_title .es {
+.home__comics-title .es {
 	color: var(--text-color-primary);
 }
 
-.home__animation_comics_title .en {
+.home__comics-title .en {
 	color: var(--text-color-secondary);
 }
 
@@ -363,11 +374,11 @@ img.home__new-art_decoration {
 	height: 100%;
 }
 
-.home__social-media-list li {
+.home__social-media-item {
 	list-style: none;
 }
 
-.home__social-media-list li a {
+.home__social-media-item a {
 	display: block;
 	padding-left: 9rem;
 	padding-top: 2rem;
@@ -381,23 +392,23 @@ img.home__new-art_decoration {
 	background-size: contain;
 }
 
-.home__social-media-list li a:hover {
+.home__social-media-item a:hover {
 	transform: scale(1.04);
 	transition: transform 0.1s;
 }
 
 /* Instagram icon */
-.home__social-media-list li.instagram a {
+.home__social-media-item--instagram a {
 	background-image: url("icons/instagram.svg");
 }
 
 /* TikTok icon */
-.home__social-media-list li.tiktok a {
+.home__social-media-item--tiktok a {
 	background-image: url("icons/tiktok.svg");
 }
 
 /* Pinterest icon */
-.home__social-media-list li.pinterest a {
+.home__social-media-item--pinterest a {
 	background-image: url("icons/pinterest.svg");
 }
 
@@ -436,7 +447,7 @@ img.home__new-art_decoration {
 
 /* Gallery categories */
 
-.gallery .categories {
+.gallery__categories {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -447,27 +458,27 @@ img.home__new-art_decoration {
 	transition: transform 0.2s ease;
 }
 
-.gallery .category {
+.gallery__category {
 	transform: scale(1);
 	transition: transform 0.2s ease;
 }
 
-.gallery .category:hover {
+.gallery__category:hover {
 	transform: scale(1.05);
 }
 
-.gallery .category a {
+.gallery__category a {
 	display: block;
 	text-decoration: none;
 	padding: 0.5rem 0;
 }
 
-.gallery .category span.es {
+.gallery__category span.es {
 	font-size: calc(var(--font-size-base) * 3.2);
 	line-height: 1;
 }
 
-.gallery .category span.en {
+.gallery__category span.en {
 	font-size: calc(var(--font-size-base) * 3);
 	line-height: 1;
 }
@@ -481,7 +492,7 @@ img.home__new-art_decoration {
 	margin-bottom: 8rem;
 }
 
-.gallery__section_info {
+.gallery__section-info {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto auto;
@@ -491,7 +502,7 @@ img.home__new-art_decoration {
 	padding: 0 4rem;
 }
 
-.gallery__section_info> :nth-child(1) {
+.gallery__section-info> :nth-child(1) {
 	grid-column: 1;
 	grid-row: 1;
 	text-align: right;
@@ -501,7 +512,7 @@ img.home__new-art_decoration {
 	padding: 0;
 }
 
-.gallery__section_info> :nth-child(3) {
+.gallery__section-info> :nth-child(3) {
 	grid-column: 2;
 	grid-row: 1;
 	font-size: calc(var(--font-size-base) * 6);
@@ -510,7 +521,7 @@ img.home__new-art_decoration {
 	padding: 0;
 }
 
-.gallery__section_info> :nth-child(2) {
+.gallery__section-info> :nth-child(2) {
 	grid-column: 1;
 	grid-row: 2;
 	text-align: right;
@@ -519,7 +530,7 @@ img.home__new-art_decoration {
 	padding: 0;
 }
 
-.gallery__section_info> :nth-child(4) {
+.gallery__section-info> :nth-child(4) {
 	grid-column: 2;
 	grid-row: 2;
 	color: var(--text-color-secondary);
@@ -528,7 +539,7 @@ img.home__new-art_decoration {
 	padding: 0;
 }
 
-.gallery__section_images {
+.gallery__section-images {
 	display: flex;
 	flex-direction: row;
 	gap: 2rem;
@@ -536,7 +547,7 @@ img.home__new-art_decoration {
 	margin: 0;
 }
 
-.gallery__section_images li {
+.gallery__section-images li {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -578,35 +589,35 @@ img.home__new-art_decoration {
 * Utilities
 * ****************************************** */
 
-.flex-between {
+.u-flex-between {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.flex-column {
+.u-flex-column {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.flex-column--start {
+.u-flex-column--start {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
 }
 
-.flex-row {
+.u-flex-row {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 }
 
-.flex-row--start {
+.u-flex-row--start {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;

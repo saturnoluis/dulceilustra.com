@@ -14,17 +14,17 @@
     <body>
         <div class="main-container">
             <header class="header margin-bottom">
-                <nav class="header__nav" class="flex-between">
-                    <a href="/">
+                <nav class="header__nav u-flex-between">
+                    <a class="header__logo" href="/">
                         <img
                             src="/images/dulceilustra__firma.png"
                             alt="@dulceilustra"
                         />
                     </a>
-                    <ul class="flex-row"><li>
+                    <ul class="u-flex-row"><li>
                             <a
                                 href="/"
-                                class="header__link flex-column"
+                                class="header__link u-flex-column"
                             >
                                 <span class="es">Inicio</span>
                                 <span class="en">Home</span>
@@ -32,7 +32,7 @@
                         </li><li>
                             <a
                                 href="/gallery"
-                                class="header__link flex-column"
+                                class="header__link u-flex-column"
                             >
                                 <span class="es">Galería</span>
                                 <span class="en">Gallery</span>
@@ -40,7 +40,7 @@
                         </li><li>
                             <a
                                 href="/contacto"
-                                class="header__link flex-column"
+                                class="header__link u-flex-column"
                             >
                                 <span class="es">Contacto</span>
                                 <span class="en">Contact</span>
@@ -53,38 +53,38 @@
 	<!-- New Art Section -->
 	<ul class="home__new-art">
 		<li>
-			<a href="/gallery" class="home__gallery-link flex-row--start">
-				<img class="home__new-art_decoration" src="/images/dulceilustra__estrellas.png" alt="Gallery" />
-				<div class="home__new-art_text flex-column"><span class="es">Lo más reciente</span>
+			<a href="/gallery" class="home__gallery-link u-flex-row--start">
+				<img class="home__new-art-decoration" src="/images/dulceilustra__estrellas.png" alt="Gallery" />
+				<div class="home__new-art-text u-flex-column"><span class="es">Lo más reciente</span>
 					<span class="en">New Art</span><span class="es">Lo más reciente</span>
 					<span class="en">New Art</span><span class="es">Lo más reciente</span>
 					<span class="en">New Art</span></div>
 			</a>
 		</li><li>
-			<a href="/gallery/digital-art/2025-11-16/" class="home__gallery-link_item flex-column">
+			<a href="/gallery/digital-art/2025-11-16/" class="home__gallery-link-item u-flex-column">
 				<img src="./gallery/digital-art/2025-11-16/cover.png" alt="dulceilustra.com cover" />
 			</a>
 		</li><li>
-			<a href="/gallery/digital-art/2025-11-13/" class="home__gallery-link_item flex-column">
+			<a href="/gallery/digital-art/2025-11-13/" class="home__gallery-link-item u-flex-column">
 				<img src="./gallery/digital-art/2025-11-13/cover.png" alt="dulceilustra.com cover" />
 			</a>
 		</li></ul>
 
 	<!-- Animation & Comics Carousel Section -->
-	<div class="home__animation-comics flex-row">
+	<div class="home__animation-comics u-flex-row">
 		<!-- Home animation video -->
 		<!-- Ideal resolution: 2880x2160 -->
-		<video class="home__animation_video" autoplay loop muted playsinline>
+		<video class="home__animation-video" autoplay loop muted playsinline>
 			<source src="/media/home_animation.mp4" type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
 		<!-- Comics Carousel -->
-		<div class="flex-row">
-			<div class="home__comics_title flex-column">
+		<div class="u-flex-row">
+			<div class="home__comics-title u-flex-column">
 				<span class="es">Viñetas</span>
 				<span class="en">Comics</span>
 			</div>
-			<div class="carousel flex-row">
+			<div class="carousel u-flex-row">
 				<div class="carousel__button-container">
 					<button class="carousel__button carousel__button--prev" aria-label="Previous">
 						&#9664;
@@ -92,19 +92,19 @@
 				</div>
 				<div class="carousel__track-container">
 					<div class="carousel__track"><div class="carousel__slide">
-							<a href="/gallery#__gallery__comics__2025-11-04__" class="home__gallery-link_item">
+							<a href="/gallery#__gallery__comics__2025-11-04__" class="home__gallery-link-item">
 								<img src="./gallery/comics/2025-11-04/cover.png" alt="dulceilustra.com cover" />
 							</a>
 						</div><div class="carousel__slide">
-							<a href="/gallery#__gallery__comics__2025-10-27__" class="home__gallery-link_item">
+							<a href="/gallery#__gallery__comics__2025-10-27__" class="home__gallery-link-item">
 								<img src="./gallery/comics/2025-10-27/cover.png" alt="dulceilustra.com cover" />
 							</a>
 						</div><div class="carousel__slide">
-							<a href="/gallery#__gallery__comics__2025-10-05__" class="home__gallery-link_item">
+							<a href="/gallery#__gallery__comics__2025-10-05__" class="home__gallery-link-item">
 								<img src="./gallery/comics/2025-10-05/cover.png" alt="dulceilustra.com cover" />
 							</a>
 						</div><div class="carousel__slide">
-							<a href="/gallery#__gallery__comics__2025-08-15__" class="home__gallery-link_item">
+							<a href="/gallery#__gallery__comics__2025-08-15__" class="home__gallery-link-item">
 								<img src="./gallery/comics/2025-08-15/cover.png" alt="dulceilustra.com cover" />
 							</a>
 						</div></div>
@@ -132,18 +132,18 @@
 				<span class="es">Redes Sociales</span>
 				<span class="en">Social Media</span>
 			</h1>
-			<ul class="home__social-media-list flex-column">
-				<li class="instagram">
+			<ul class="home__social-media-list u-flex-column">
+				<li class="home__social-media-item home__social-media-item--instagram">
 					<a href="https://www.instagram.com/dulceilustra/" target="_blank" rel="noopener">
 						@dulceilustra
 					</a>
 				</li>
-				<li class="tiktok">
+				<li class="home__social-media-item home__social-media-item--tiktok">
 					<a href="https://www.tiktok.com/@dulceilustra" target="_blank" rel="noopener">
 						@dulceilustra
 					</a>
 				</li>
-				<li class="pinterest">
+				<li class="home__social-media-item home__social-media-item--pinterest">
 					<a href="https://www.pinterest.com/dulceilustra/" target="_blank" rel="noopener">
 						@dulceilustra
 					</a>
@@ -267,7 +267,7 @@
 	trackContainer.style.cursor = "grab";
 </script>
 </div>
-            <footer class="home__footer">
+            <footer class="footer">
                 <p class="footer__text">
                     &copy; 2026 @DulceIlustra.
                     <span class="es">Todos los derechos reservados.</span>

@@ -14,17 +14,17 @@
     <body>
         <div class="main-container">
             <header class="header margin-bottom">
-                <nav class="header__nav" class="flex-between">
-                    <a href="/">
+                <nav class="header__nav u-flex-between">
+                    <a class="header__logo" href="/">
                         <img
                             src="/images/dulceilustra__firma.png"
                             alt="@dulceilustra"
                         />
                     </a>
-                    <ul class="flex-row"><li>
+                    <ul class="u-flex-row"><li>
                             <a
                                 href="/"
-                                class="header__link flex-column"
+                                class="header__link u-flex-column"
                             >
                                 <span class="es">Inicio</span>
                                 <span class="en">Home</span>
@@ -32,7 +32,7 @@
                         </li><li>
                             <a
                                 href="/gallery"
-                                class="header__link flex-column"
+                                class="header__link u-flex-column"
                             >
                                 <span class="es">Galería</span>
                                 <span class="en">Gallery</span>
@@ -40,7 +40,7 @@
                         </li><li>
                             <a
                                 href="/contacto"
-                                class="header__link flex-column"
+                                class="header__link u-flex-column"
                             >
                                 <span class="es">Contacto</span>
                                 <span class="en">Contact</span>
@@ -50,23 +50,23 @@
             </header>
             <div class="content">
 <main class="gallery">
-	<nav class="categories">
+	<nav class="gallery__categories">
 		<!-- Category: Digital Art -->
-		<div class="category flex-column--start">
+		<div class="gallery__category u-flex-column--start">
 			<span class="es">Arte Digital</span>
 			<span class="en">Digital Art</span><a href="/gallery#digital-art">
 				<img src="/gallery/digital-art/2025-11-16/cover.png" alt="dulceilustra.com cover" />
 			</a></div>
 
 		<!-- Category: Paintings -->
-		<div class="category flex-column--start">
+		<div class="gallery__category u-flex-column--start">
 			<span class="es">Pinturas</span>
 			<span class="en">Paintings</span><a href="/gallery#paintings">
 				<img src="/gallery/paintings/2025-01-10/cover.png" alt="dulceilustra.com cover" />
 			</a></div>
 
 		<!-- Category: Drawings -->
-		<div class="category flex-column--start">
+		<div class="gallery__category u-flex-column--start">
 			<span class="es">Dibujos</span>
 			<span class="en">Drawings</span><a href="/gallery#drawings">
 				<img src="/gallery/drawings/2025-01-10/cover.png" alt="dulceilustra.com cover" />
@@ -98,8 +98,8 @@
 	
 
 	<!-- Section: Digital Art -->
-	<section id="digital-art" class="gallery__section--digital-art">
-		<div class="gallery__section_info">
+	<section id="digital-art" class="gallery__section gallery__section--digital-art">
+		<div class="gallery__section-info">
 			<h1 class="es">Arte Digital</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl nec risus
 laoreet scelerisque. Sed euismod, nisl sit amet convallis consequat, turpis ligula
@@ -115,7 +115,7 @@ aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit dui
 tristique sollicitudin nibh sit.</p>
 
 		</div>
-		<ul class="gallery__section_images"><li id="gallery+digital-art+2025-11-16">
+		<ul class="gallery__section-images"><li id="gallery+digital-art+2025-11-16">
 				<a href="/gallery/digital-art/2025-11-16/#digital-art">
 					<img src="/gallery/digital-art/2025-11-16/cover.png" alt="dulceilustra.com cover" />
 				</a>
@@ -131,8 +131,8 @@ tristique sollicitudin nibh sit.</p>
 	</section>
 
 	<!-- Section: Paintings -->
-	<section id="paintings" class="gallery__section--paintings">
-		<div class="gallery__section_info">
+	<section id="paintings" class="gallery__section gallery__section--paintings">
+		<div class="gallery__section-info">
 			<p class="es">Pinturas</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl nec risus
 laoreet scelerisque. Sed euismod, nisl sit amet convallis consequat, turpis ligula
@@ -148,7 +148,7 @@ aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit dui
 tristique sollicitudin nibh sit.</p>
 
 		</div>
-		<ul class="gallery__section_images"><li id="gallery+paintings+2025-01-10">
+		<ul class="gallery__section-images"><li id="gallery+paintings+2025-01-10">
 				<a href="/gallery/paintings/2025-01-10/#paintings">
 					<img src="/gallery/paintings/2025-01-10/cover.png" alt="dulceilustra.com cover" />
 				</a>
@@ -156,8 +156,8 @@ tristique sollicitudin nibh sit.</p>
 	</section>
 
 	<!-- Section: Drawings -->
-	<section id="drawings" class="gallery__section--drawings">
-		<div class="gallery__section_info">
+	<section id="drawings" class="gallery__section gallery__section--drawings">
+		<div class="gallery__section-info">
 			<h1 class="es">Dibujos</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl nec risus
 laoreet scelerisque. Sed euismod, nisl sit amet convallis consequat, turpis ligula
@@ -173,7 +173,7 @@ aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit dui
 tristique sollicitudin nibh sit.</p>
 
 		</div>
-		<ul class="gallery__section_images"><li id="gallery+drawings+2025-01-10">
+		<ul class="gallery__section-images"><li id="gallery+drawings+2025-01-10">
 				<a href="/gallery/drawings/2025-01-10/#drawings">
 					<img src="/gallery/drawings/2025-01-10/cover.png" alt="dulceilustra.com cover" />
 				</a>
@@ -213,7 +213,7 @@ tristique sollicitudin nibh sit.</p>
     })();
 </script>
 </div>
-            <footer class="home__footer">
+            <footer class="footer">
                 <p class="footer__text">
                     &copy; 2026 @DulceIlustra.
                     <span class="es">Todos los derechos reservados.</span>

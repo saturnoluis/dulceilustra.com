@@ -3,9 +3,9 @@ layout: main
 ---
 
 <main class="gallery">
-	<nav class="categories">
+	<nav class="gallery__categories">
 		<!-- Category: Digital Art -->
-		<div class="category flex-column--start">
+		<div class="gallery__category u-flex-column--start">
 			<span class="es">Arte Digital</span>
 			<span class="en">Digital Art</span>
 			{%- for item in collections.digitalArtLatest -%}
@@ -16,7 +16,7 @@ layout: main
 		</div>
 
 		<!-- Category: Paintings -->
-		<div class="category flex-column--start">
+		<div class="gallery__category u-flex-column--start">
 			<span class="es">Pinturas</span>
 			<span class="en">Paintings</span>
 			{%- for item in collections.paintingsLatest -%}
@@ -27,7 +27,7 @@ layout: main
 		</div>
 
 		<!-- Category: Drawings -->
-		<div class="category flex-column--start">
+		<div class="gallery__category u-flex-column--start">
 			<span class="es">Dibujos</span>
 			<span class="en">Drawings</span>
 			{%- for item in collections.drawingsLatest -%}
@@ -45,11 +45,11 @@ layout: main
 	{% endif %}
 
 	<!-- Section: Digital Art -->
-	<section id="digital-art" class="gallery__section--digital-art">
-		<div class="gallery__section_info">
+	<section id="digital-art" class="gallery__section gallery__section--digital-art">
+		<div class="gallery__section-info">
 			{{ gallery.digitalArtDescription | markdown }}
 		</div>
-		<ul class="gallery__section_images">
+		<ul class="gallery__section-images">
 			{%- for item in collections.digitalArt -%}
 			<li id="{{ item.urlHash }}">
 				<a href="{{ item.url }}#digital-art">
@@ -61,11 +61,11 @@ layout: main
 	</section>
 
 	<!-- Section: Paintings -->
-	<section id="paintings" class="gallery__section--paintings">
-		<div class="gallery__section_info">
+	<section id="paintings" class="gallery__section gallery__section--paintings">
+		<div class="gallery__section-info">
 			{{ gallery.paintingsDescription | markdown }}
 		</div>
-		<ul class="gallery__section_images">
+		<ul class="gallery__section-images">
 			{%- for item in collections.paintings -%}
 			<li id="{{ item.urlHash }}">
 				<a href="{{ item.url }}#paintings">
@@ -77,11 +77,11 @@ layout: main
 	</section>
 
 	<!-- Section: Drawings -->
-	<section id="drawings" class="gallery__section--drawings">
-		<div class="gallery__section_info">
+	<section id="drawings" class="gallery__section gallery__section--drawings">
+		<div class="gallery__section-info">
 			{{ gallery.drawingsDescription | markdown }}
 		</div>
-		<ul class="gallery__section_images">
+		<ul class="gallery__section-images">
 			{%- for item in collections.drawings -%}
 			<li id="{{ item.urlHash }}">
 				<a href="{{ item.url }}#drawings">

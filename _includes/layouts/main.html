@@ -14,19 +14,19 @@
     <body>
         <div class="main-container">
             <header class="header margin-bottom">
-                <nav class="header__nav" class="flex-between">
-                    <a href="/">
+                <nav class="header__nav u-flex-between">
+                    <a class="header__logo" href="/">
                         <img
                             src="/images/dulceilustra__firma.png"
                             alt="@dulceilustra"
                         />
                     </a>
-                    <ul class="flex-row">
+                    <ul class="u-flex-row">
                         {%- for link in navigation -%}
                         <li>
                             <a
                                 href="{{ link.url }}"
-                                class="header__link flex-column"
+                                class="header__link u-flex-column"
                             >
                                 <span class="es">{{ link.es }}</span>
                                 <span class="en">{{ link.en }}</span>
@@ -37,7 +37,7 @@
                 </nav>
             </header>
             <div class="content">{{ content }}</div>
-            <footer class="home__footer">
+            <footer class="footer">
                 <p class="footer__text">
                     &copy; {{ "now" | date: "%Y" }} @DulceIlustra.
                     <span class="es">Todos los derechos reservados.</span>

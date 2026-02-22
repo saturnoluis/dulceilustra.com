@@ -6,9 +6,9 @@ layout: layouts/main.html
 	<!-- New Art Section -->
 	<ul class="home__new-art">
 		<li>
-			<a href="/gallery" class="home__gallery-link flex-row--start">
-				<img class="home__new-art_decoration" src="/images/dulceilustra__estrellas.png" alt="Gallery" />
-				<div class="home__new-art_text flex-column">
+			<a href="/gallery" class="home__gallery-link u-flex-row--start">
+				<img class="home__new-art-decoration" src="/images/dulceilustra__estrellas.png" alt="Gallery" />
+				<div class="home__new-art-text u-flex-column">
 					{%- for i in (1..3) -%}
 					<span class="es">Lo más reciente</span>
 					<span class="en">New Art</span>
@@ -18,7 +18,7 @@ layout: layouts/main.html
 		</li>
 		{%- for item in collections.newArt -%}
 		<li>
-			<a href="{{ item.url }}" class="home__gallery-link_item flex-column">
+			<a href="{{ item.url }}" class="home__gallery-link-item u-flex-column">
 				<img src=".{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 			</a>
 		</li>
@@ -26,20 +26,20 @@ layout: layouts/main.html
 	</ul>
 
 	<!-- Animation & Comics Carousel Section -->
-	<div class="home__animation-comics flex-row">
+	<div class="home__animation-comics u-flex-row">
 		<!-- Home animation video -->
 		<!-- Ideal resolution: 2880x2160 -->
-		<video class="home__animation_video" autoplay loop muted playsinline>
+		<video class="home__animation-video" autoplay loop muted playsinline>
 			<source src="/media/home_animation.mp4" type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
 		<!-- Comics Carousel -->
-		<div class="flex-row">
-			<div class="home__comics_title flex-column">
+		<div class="u-flex-row">
+			<div class="home__comics-title u-flex-column">
 				<span class="es">Viñetas</span>
 				<span class="en">Comics</span>
 			</div>
-			<div class="carousel flex-row">
+			<div class="carousel u-flex-row">
 				<div class="carousel__button-container">
 					<button class="carousel__button carousel__button--prev" aria-label="Previous">
 						&#9664;
@@ -49,7 +49,7 @@ layout: layouts/main.html
 					<div class="carousel__track">
 						{%- for item in collections.comics -%}
 						<div class="carousel__slide">
-							<a href="/gallery#{{ item.url | replace: '/', '__' }}" class="home__gallery-link_item">
+							<a href="/gallery#{{ item.url | replace: '/', '__' }}" class="home__gallery-link-item">
 								<img src=".{{ item.url }}{{ item.data.cover }}" alt="{{ item.data.title }} cover" />
 							</a>
 						</div>
@@ -79,18 +79,18 @@ layout: layouts/main.html
 				<span class="es">Redes Sociales</span>
 				<span class="en">Social Media</span>
 			</h1>
-			<ul class="home__social-media-list flex-column">
-				<li class="instagram">
+			<ul class="home__social-media-list u-flex-column">
+				<li class="home__social-media-item home__social-media-item--instagram">
 					<a href="https://www.instagram.com/dulceilustra/" target="_blank" rel="noopener">
 						@dulceilustra
 					</a>
 				</li>
-				<li class="tiktok">
+				<li class="home__social-media-item home__social-media-item--tiktok">
 					<a href="https://www.tiktok.com/@dulceilustra" target="_blank" rel="noopener">
 						@dulceilustra
 					</a>
 				</li>
-				<li class="pinterest">
+				<li class="home__social-media-item home__social-media-item--pinterest">
 					<a href="https://www.pinterest.com/dulceilustra/" target="_blank" rel="noopener">
 						@dulceilustra
 					</a>
