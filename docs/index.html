@@ -275,5 +275,51 @@
                 </p>
             </footer>
         </div>
+        <script>
+            (() => {
+                const prefetched = new Set();
+
+                const isSameOrigin = (url) => {
+                    try {
+                        return new URL(url, window.location.href).origin === window.location.origin;
+                    } catch {
+                        return false;
+                    }
+                };
+
+                const normalizeHref = (href) => {
+                    if (!href) return null;
+                    const url = new URL(href, window.location.href);
+                    return url.pathname + url.search + url.hash;
+                };
+
+                const prefetchLink = (href) => {
+                    if (!href || !isSameOrigin(href)) return;
+                    const normalized = normalizeHref(href);
+                    if (!normalized || prefetched.has(normalized)) return;
+                    prefetched.add(normalized);
+
+                    const link = document.createElement("link");
+                    link.rel = "prefetch";
+                    link.href = normalized;
+                    link.as = "document";
+                    document.head.appendChild(link);
+                };
+
+                window.dulcePrefetch = {
+                    prefetchLink,
+                };
+
+                const prefetchGallery = () => {
+                    prefetchLink("/gallery/");
+                };
+
+                if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", prefetchGallery);
+                } else {
+                    prefetchGallery();
+                }
+            })();
+        </script>
     </body>
 </html>
