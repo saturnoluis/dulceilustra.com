@@ -2,11 +2,21 @@
 layout: gallery
 ---
 
-<dialog open class="gallery-item">
-	<a href="/gallery" id="go-back" class="gallery-item__back-link">
-		X
-	</a>
-	{{ content }}
+<dialog open class="u-flex-column">
+	<section class="gallery-item">
+		<header class="gallery-item__header u-flex-row">
+			<a href="/gallery" id="go-back" class="gallery-item__back-link">
+				X
+			</a>
+		</header>
+		<div class="gallery-item__content">
+			<div></div>
+			<div>
+				{{ content }}
+			</div>
+			<div></div>
+		</div>
+	</section>
 </dialog>
 
 <script>
@@ -15,6 +25,11 @@ layout: gallery
 		if (hash) {
 			const goBackLink = document.getElementById('go-back');
 			goBackLink.href = '/gallery' + hash;
+		}
+
+		const body = document.body;
+		if (body) {
+			body.style.overflow = 'hidden';
 		}
 	});
 </script>
