@@ -642,10 +642,20 @@ img.home__new-art-decoration {
 .gallery-item__content {
 	padding: 2rem;
 	height: calc(100% - 6rem);
+	overflow-y: auto;
+	padding-bottom: 6rem;
 }
 
 .gallery-item__content * {
 	font-size: 2rem;
+}
+
+.gallery-item__content img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
 }
 
 /*
@@ -705,4 +715,8 @@ img.home__new-art-decoration {
 
 .md-title {
 	text-align: center;
+}
+
+.md-right {
+	text-align: right;
 }
