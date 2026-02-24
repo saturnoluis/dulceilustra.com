@@ -51,7 +51,10 @@
 
                 const isSameOrigin = (url) => {
                     try {
-                        return new URL(url, window.location.href).origin === window.location.origin;
+                        return (
+                            new URL(url, window.location.href).origin ===
+                            window.location.origin
+                        );
                     } catch {
                         return false;
                     }
@@ -85,7 +88,10 @@
                 };
 
                 if (document.readyState === "loading") {
-                    document.addEventListener("DOMContentLoaded", prefetchGallery);
+                    document.addEventListener(
+                        "DOMContentLoaded",
+                        prefetchGallery,
+                    );
                 } else {
                     prefetchGallery();
                 }
