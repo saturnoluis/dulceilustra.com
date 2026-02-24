@@ -1,0 +1,151 @@
+---
+layout: main
+---
+
+<main class="gallery">
+    <nav class="gallery__categories">
+        <!-- Category: Digital Art -->
+        <div class="gallery__category u-flex-column--start">
+            <span class="es">Arte Digital</span>
+            <span class="en">Digital Art</span>
+            {%- for item in collections.digitalArtLatest -%}
+            <a href="/gallery#digital-art">
+                <img
+                    src="{{ item.url }}{{ item.data.cover }}"
+                    alt="{{ item.data.title }} cover"
+                />
+            </a>
+            {%- endfor -%}
+        </div>
+
+        <!-- Category: Paintings -->
+        <div class="gallery__category u-flex-column--start">
+            <span class="es">Pinturas</span>
+            <span class="en">Paintings</span>
+            {%- for item in collections.paintingsLatest -%}
+            <a href="/gallery#paintings">
+                <img
+                    src="{{ item.url }}{{ item.data.cover }}"
+                    alt="{{ item.data.title }} cover"
+                />
+            </a>
+            {%- endfor -%}
+        </div>
+
+        <!-- Category: Drawings -->
+        <div class="gallery__category u-flex-column--start">
+            <span class="es">Dibujos</span>
+            <span class="en">Drawings</span>
+            {%- for item in collections.drawingsLatest -%}
+            <a href="/gallery#drawings">
+                <img
+                    src="{{ item.url }}{{ item.data.cover }}"
+                    alt="{{ item.data.title }} cover"
+                />
+            </a>
+            {%- endfor -%}
+        </div>
+    </nav>
+
+    {% if content != '' %}
+    <div class="gallery__content">{{ content }}</div>
+    {% endif %}
+
+    <!-- Section: Digital Art -->
+    <section
+        id="digital-art"
+        class="gallery__section gallery__section--digital-art"
+    >
+        <div class="gallery__section-info">
+            {{ gallery.digitalArtDescription | markdown }}
+        </div>
+        <ul class="gallery__section-images">
+            {%- for item in collections.digitalArt -%}
+            <li id="{{ item.urlHash }}">
+                <a href="{{ item.url }}#digital-art">
+                    <img
+                        src="{{ item.url }}{{ item.data.cover }}"
+                        alt="{{ item.data.title }} cover"
+                    />
+                </a>
+            </li>
+            {%- endfor -%}
+        </ul>
+    </section>
+
+    <!-- Section: Paintings -->
+    <section
+        id="paintings"
+        class="gallery__section gallery__section--paintings"
+    >
+        <div class="gallery__section-info">
+            {{ gallery.paintingsDescription | markdown }}
+        </div>
+        <ul class="gallery__section-images">
+            {%- for item in collections.paintings -%}
+            <li id="{{ item.urlHash }}">
+                <a href="{{ item.url }}#paintings">
+                    <img
+                        src="{{ item.url }}{{ item.data.cover }}"
+                        alt="{{ item.data.title }} cover"
+                    />
+                </a>
+            </li>
+            {%- endfor -%}
+        </ul>
+    </section>
+
+    <!-- Section: Drawings -->
+    <section id="drawings" class="gallery__section gallery__section--drawings">
+        <div class="gallery__section-info">
+            {{ gallery.drawingsDescription | markdown }}
+        </div>
+        <ul class="gallery__section-images">
+            {%- for item in collections.drawings -%}
+            <li id="{{ item.urlHash }}">
+                <a href="{{ item.url }}#drawings">
+                    <img
+                        src="{{ item.url }}{{ item.data.cover }}"
+                        alt="{{ item.data.title }} cover"
+                    />
+                </a>
+            </li>
+            {%- endfor -%}
+        </ul>
+    </section>
+</main>
+
+<script>
+    (() => {
+        const prefetchLink = window.dulcePrefetch?.prefetchLink;
+        if (!prefetchLink) return;
+
+        const attachGalleryItemPrefetch = () => {
+            const gallery = document.querySelector(".gallery");
+            if (!gallery) return;
+
+            const selector = ".gallery a[href]";
+            const handleIntent = (event) => {
+                const anchor = event.target.closest(selector);
+                if (!anchor) return;
+                prefetchLink(anchor.getAttribute("href"));
+            };
+
+            gallery.addEventListener("mouseenter", handleIntent, true);
+            gallery.addEventListener("focus", handleIntent, true);
+            gallery.addEventListener("touchstart", handleIntent, {
+                passive: true,
+                capture: true,
+            });
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener(
+                "DOMContentLoaded",
+                attachGalleryItemPrefetch,
+            );
+        } else {
+            attachGalleryItemPrefetch();
+        }
+    })();
+</script>

@@ -1,0 +1,35 @@
+---
+layout: gallery
+---
+
+<dialog open class="gallery-item-dialog u-flex-column">
+    <section class="gallery-item">
+        <header class="gallery-item__header u-flex-row">
+            <a
+                href="/gallery"
+                id="close-buttton"
+                class="gallery-item__close-button"
+            >
+                <span class="close-label es">Cerrar</span>
+                <span class="close-icon">⛌</span>
+                <span class="close-label en">Close</span>
+            </a>
+        </header>
+        <div class="gallery-item__content">{{ content }}</div>
+    </section>
+</dialog>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hash = window.location.hash;
+        if (hash) {
+            const goBackLink = document.getElementById("close-buttton");
+            goBackLink.href = "/gallery" + hash;
+        }
+
+        const body = document.body;
+        if (body) {
+            body.style.overflow = "hidden";
+        }
+    });
+</script>

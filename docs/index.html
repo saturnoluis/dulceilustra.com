@@ -1,57 +1,325 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>@dulceilustra</title>
-		<meta name="robots" content="noindex, nofollow">
-		<style>
-		@font-face {
-			font-family: 'comic-sans'; /* The name you want to use for the font */
-			src: url('stuff/comic-sans.ttf') format('truetype'); /* Path to the font file and format */
-			font-weight: normal; /* Optional: You can define font weights like normal, bold, etc. */
-			font-style: normal;  /* Optional: Define the style, e.g., normal or italic */
-		}
-		html {
-			background-image: url('stuff/bg.jpg');
-		}
+<!doctype html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex, nofollow" />
 
-		p {
-			font-family: 'comic-sans', sans;
-			text-align: center;
-			vertical-align: middle;
-		}
+        <link rel="stylesheet" href="/css/pico.min.css" />
+        <link rel="stylesheet" href="/css/main.css" />
 
-		a {
-			color: #c5f5ff;
-			text-decoration: none;
-			font-size: 4em;
-			text-shadow: 0px 0px 50px black, 0px 0px 100px black;
-		}
-		</style>
-	</head>
-	<body>
-		<p>
-			<img src="stuff/construction_machine.gif" />
-			<img src="stuff/under_construction.gif" />
-			<img src="stuff/construction_machine.gif" style="transform: scaleX(-1)" />
-			
-		</p>
-		<p>
-			<img src="stuff/thunder.gif" />
-			<img src="stuff/sparks.gif" style="padding-bottom:40px" />
-			<a href="https://www.instagram.com/dulceilustra/">
-				@dulceilustra
+        <title>dulceilustra.com</title>
+    </head>
+
+    <body>
+        <div class="main-container">
+            <header class="header margin-bottom">
+                <nav class="header__nav u-flex-between">
+                    <a class="header__logo" href="/">
+                        <img
+                            src="/images/dulceilustra__firma.png"
+                            alt="@dulceilustra"
+                        />
+                    </a>
+                    <ul class="u-flex-row"><li>
+                            <a
+                                href="/"
+                                class="header__link u-flex-column"
+                            >
+                                <span class="es">Inicio</span>
+                                <span class="en">Home</span>
+                            </a>
+                        </li><li>
+                            <a
+                                href="/gallery"
+                                class="header__link u-flex-column"
+                            >
+                                <span class="es">Galería</span>
+                                <span class="en">Gallery</span>
+                            </a>
+                        </li><li>
+                            <a
+                                href="/contacto"
+                                class="header__link u-flex-column"
+                            >
+                                <span class="es">Contacto</span>
+                                <span class="en">Contact</span>
+                            </a>
+                        </li></ul>
+                </nav>
+            </header>
+            <div class="content">
+<main class="home">
+	<!-- New Art Section -->
+	<ul class="home__new-art">
+		<li>
+			<a href="/gallery" class="home__gallery-link u-flex-row--start">
+				<img class="home__new-art-decoration" src="/images/dulceilustra__estrellas.png" alt="Gallery" />
+				<div class="home__new-art-text u-flex-column"><span class="es">Lo más reciente</span>
+					<span class="en">New Art</span><span class="es">Lo más reciente</span>
+					<span class="en">New Art</span><span class="es">Lo más reciente</span>
+					<span class="en">New Art</span></div>
 			</a>
-			<img src="stuff/sparks.gif" style="padding-bottom:40px" />
-			<img src="stuff/thunder.gif" style="transform: scaleX(-1)" />
-		</p>
-		<p>
-			<img src="stuff/smiley.gif" />
-			<img src="stuff/smiley.gif" />
-			<img src="stuff/smiley.gif" />
-			<img src="stuff/smiley.gif" />
-			<img src="stuff/smiley.gif" />
-			<img src="stuff/smiley.gif" />
-			<img src="stuff/smiley.gif" />
-		</p>
-	</body>
-</html> 
+		</li><li>
+			<a href="/gallery/digital-art/2025-11-16/" class="home__gallery-link-item u-flex-column">
+				<img src="./gallery/digital-art/2025-11-16/cover.png" alt="dulceilustra.com cover" />
+			</a>
+		</li><li>
+			<a href="/gallery/digital-art/2025-11-13/" class="home__gallery-link-item u-flex-column">
+				<img src="./gallery/digital-art/2025-11-13/cover.png" alt="dulceilustra.com cover" />
+			</a>
+		</li></ul>
+
+	<!-- Animation & Comics Carousel Section -->
+	<div class="home__animation-comics u-flex-row">
+		<!-- Home animation video -->
+		<!-- Ideal resolution: 2880x2160 -->
+		<video class="home__animation-video" autoplay loop muted playsinline>
+			<source src="/media/home_animation.mp4" type="video/mp4" />
+			Your browser does not support the video tag.
+		</video>
+		<!-- Comics Carousel -->
+		<div class="u-flex-row">
+			<div class="home__comics-title u-flex-column">
+				<span class="es">Viñetas</span>
+				<span class="en">Comics</span>
+			</div>
+			<div class="carousel u-flex-row">
+				<div class="carousel__button-container">
+					<button class="carousel__button carousel__button--prev" aria-label="Previous">
+						&#9664;
+					</button>
+				</div>
+				<div class="carousel__track-container">
+					<div class="carousel__track"><div class="carousel__slide">
+							<a href="/gallery#__gallery__comics__2025-11-04__" class="home__gallery-link-item">
+								<img src="./gallery/comics/2025-11-04/cover.png" alt="dulceilustra.com cover" />
+							</a>
+						</div><div class="carousel__slide">
+							<a href="/gallery#__gallery__comics__2025-10-27__" class="home__gallery-link-item">
+								<img src="./gallery/comics/2025-10-27/cover.png" alt="dulceilustra.com cover" />
+							</a>
+						</div><div class="carousel__slide">
+							<a href="/gallery#__gallery__comics__2025-10-05__" class="home__gallery-link-item">
+								<img src="./gallery/comics/2025-10-05/cover.png" alt="dulceilustra.com cover" />
+							</a>
+						</div><div class="carousel__slide">
+							<a href="/gallery#__gallery__comics__2025-08-15__" class="home__gallery-link-item">
+								<img src="./gallery/comics/2025-08-15/cover.png" alt="dulceilustra.com cover" />
+							</a>
+						</div></div>
+				</div>
+				<div class="carousel__button-container">
+					<button class="carousel__button carousel__button--next" aria-label="Next">
+						&#9654;
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact Section -->
+	<div class="home__contact-wrapper">
+		<a href="" class="home__contact-section">
+			<h1>
+				<span class="es">Contácto</span>
+				<span class="en">Contact</span>
+			</h1>
+			<img class="home__contact-image" src="/images/dulceilustra__contacto.gif" alt="Contacto: @dulceilustra" />
+		</a>
+		<div class="home__contact-section">
+			<h1>
+				<span class="es">Redes Sociales</span>
+				<span class="en">Social Media</span>
+			</h1>
+			<ul class="home__social-media-list u-flex-column">
+				<li class="home__social-media-item home__social-media-item--instagram">
+					<a href="https://www.instagram.com/dulceilustra/" target="_blank" rel="noopener">
+						@dulceilustra
+					</a>
+				</li>
+				<li class="home__social-media-item home__social-media-item--tiktok">
+					<a href="https://www.tiktok.com/@dulceilustra" target="_blank" rel="noopener">
+						@dulceilustra
+					</a>
+				</li>
+				<li class="home__social-media-item home__social-media-item--pinterest">
+					<a href="https://www.pinterest.com/dulceilustra/" target="_blank" rel="noopener">
+						@dulceilustra
+					</a>
+				</li>
+			</ul>
+		</div>
+		<a href="/gallery" class="home__gallery-gallery"><span class="es">Galería</span>
+			<span class="en">Gallery</span><span class="es">Galería</span>
+			<span class="en">Gallery</span></a>
+	</div>
+
+	
+</main>
+
+<script>
+	// Carousel functionality
+	const track = document.querySelector(".carousel__track");
+	const slides = Array.from(track.children);
+	const nextButton = document.querySelector(".carousel__button--next");
+	const prevButton = document.querySelector(".carousel__button--prev");
+	const trackContainer = document.querySelector(".carousel__track-container");
+
+	let currentIndex = 0;
+	let touchStartX = 0;
+	let touchEndX = 0;
+	let isDragging = false;
+
+	const moveToSlide = (targetIndex) => {
+		// Wrap around if going past the end
+		if (targetIndex >= slides.length) {
+			targetIndex = 0;
+		} else if (targetIndex < 0) {
+			targetIndex = slides.length - 1;
+		}
+
+		currentIndex = targetIndex;
+
+		const amountToMove = -100 * currentIndex;
+		track.style.transform = `translateX(${amountToMove}%)`;
+	};
+
+	const handleSwipe = () => {
+		// Minimum distance in pixels to trigger a swipe
+		const swipeThreshold = 50;
+
+		const diff = touchStartX - touchEndX;
+
+		if (Math.abs(diff) > swipeThreshold) {
+			if (diff > 0) {
+				// Swiped left
+				moveToSlide(currentIndex + 1);
+			} else {
+				// Swiped right
+				moveToSlide(currentIndex - 1);
+			}
+		}
+	};
+
+	// Next button click
+	nextButton.addEventListener("click", () => {
+		moveToSlide(currentIndex + 1);
+	});
+
+	// Previous button click
+	prevButton.addEventListener("click", () => {
+		moveToSlide(currentIndex - 1);
+	});
+
+	// Touch events for mobile swipe
+	trackContainer.addEventListener(
+		"touchstart",
+		(e) => {
+			touchStartX = e.changedTouches[0].screenX;
+			isDragging = true;
+		},
+		{passive: true},
+	);
+
+	trackContainer.addEventListener(
+		"touchmove",
+		(e) => {
+			if (!isDragging) return;
+			touchEndX = e.changedTouches[0].screenX;
+		},
+		{passive: true},
+	);
+
+	trackContainer.addEventListener("touchend", () => {
+		if (!isDragging) return;
+		isDragging = false;
+		handleSwipe();
+	});
+
+	// Mouse events for desktop drag (optional, for better UX)
+	trackContainer.addEventListener("mousedown", (e) => {
+		touchStartX = e.screenX;
+		isDragging = true;
+		trackContainer.style.cursor = "grabbing";
+	});
+
+	trackContainer.addEventListener("mousemove", (e) => {
+		if (!isDragging) return;
+		touchEndX = e.screenX;
+	});
+
+	trackContainer.addEventListener("mouseup", () => {
+		if (!isDragging) return;
+		isDragging = false;
+		trackContainer.style.cursor = "grab";
+		handleSwipe();
+	});
+
+	trackContainer.addEventListener("mouseleave", () => {
+		if (isDragging) {
+			isDragging = false;
+			trackContainer.style.cursor = "grab";
+		}
+	});
+
+	// Set initial cursor style
+	trackContainer.style.cursor = "grab";
+</script>
+</div>
+            <footer class="footer">
+                <p class="footer__text">
+                    &copy; 2026 @DulceIlustra.
+                    <span class="es">Todos los derechos reservados.</span>
+                    <span class="en">All rights reserved.</span>
+                </p>
+            </footer>
+        </div>
+        <script>
+            (() => {
+                const prefetched = new Set();
+
+                const isSameOrigin = (url) => {
+                    try {
+                        return new URL(url, window.location.href).origin === window.location.origin;
+                    } catch {
+                        return false;
+                    }
+                };
+
+                const normalizeHref = (href) => {
+                    if (!href) return null;
+                    const url = new URL(href, window.location.href);
+                    return url.pathname + url.search + url.hash;
+                };
+
+                const prefetchLink = (href) => {
+                    if (!href || !isSameOrigin(href)) return;
+                    const normalized = normalizeHref(href);
+                    if (!normalized || prefetched.has(normalized)) return;
+                    prefetched.add(normalized);
+
+                    const link = document.createElement("link");
+                    link.rel = "prefetch";
+                    link.href = normalized;
+                    link.as = "document";
+                    document.head.appendChild(link);
+                };
+
+                window.dulcePrefetch = {
+                    prefetchLink,
+                };
+
+                const prefetchGallery = () => {
+                    prefetchLink("/gallery/");
+                };
+
+                if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", prefetchGallery);
+                } else {
+                    prefetchGallery();
+                }
+            })();
+        </script>
+    </body>
+</html>

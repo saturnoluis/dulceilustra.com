@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex, nofollow" />
+
+        <link rel="stylesheet" href="/css/pico.min.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+
+        <title>{{ title }}</title>
+    </head>
+
+    <body>
+        <div class="main-container">
+            <header class="header margin-bottom">
+                <nav class="header__nav u-flex-between">
+                    <a class="header__logo" href="/">
+                        <img
+                            src="/images/dulceilustra__firma.png"
+                            alt="@dulceilustra"
+                        />
+                    </a>
+                    <ul class="u-flex-row">
+                        {%- for link in navigation -%}
+                        <li>
+                            <a
+                                href="{{ link.url }}"
+                                class="header__link u-flex-column"
+                            >
+                                <span class="es">{{ link.es }}</span>
+                                <span class="en">{{ link.en }}</span>
+                            </a>
+                        </li>
+                        {%- endfor -%}
+                    </ul>
+                </nav>
+            </header>
+            <div class="content">{{ content }}</div>
+            <footer class="footer">
+                <p class="footer__text">
+                    &copy; {{ "now" | date: "%Y" }} @DulceIlustra.
+                    <span class="es">Todos los derechos reservados.</span>
+                    <span class="en">All rights reserved.</span>
+                </p>
+            </footer>
+        </div>
+        <script>
+            (() => {
+                const prefetched = new Set();
+
+                const isSameOrigin = (url) => {
+                    try {
+                        return (
+                            new URL(url, window.location.href).origin ===
+                            window.location.origin
+                        );
+                    } catch {
+                        return false;
+                    }
+                };
+
+                const normalizeHref = (href) => {
+                    if (!href) return null;
+                    const url = new URL(href, window.location.href);
+                    return url.pathname + url.search + url.hash;
+                };
+
+                const prefetchLink = (href) => {
+                    if (!href || !isSameOrigin(href)) return;
+                    const normalized = normalizeHref(href);
+                    if (!normalized || prefetched.has(normalized)) return;
+                    prefetched.add(normalized);
+
+                    const link = document.createElement("link");
+                    link.rel = "prefetch";
+                    link.href = normalized;
+                    link.as = "document";
+                    document.head.appendChild(link);
+                };
+
+                window.dulcePrefetch = {
+                    prefetchLink,
+                };
+
+                const prefetchGallery = () => {
+                    prefetchLink("/gallery/");
+                };
+
+                if (document.readyState === "loading") {
+                    document.addEventListener(
+                        "DOMContentLoaded",
+                        prefetchGallery,
+                    );
+                } else {
+                    prefetchGallery();
+                }
+            })();
+        </script>
+    </body>
+</html>
