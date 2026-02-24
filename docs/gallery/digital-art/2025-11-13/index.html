@@ -76,20 +76,18 @@
 	
 	<div class="gallery__content">
 		
-<dialog open class="u-flex-column">
+<dialog open class="gallery-item-dialog u-flex-column">
 	<section class="gallery-item">
 		<header class="gallery-item__header u-flex-row">
-			<a href="/gallery" id="go-back" class="gallery-item__back-link">
-				X
+			<a href="/gallery" id="close-buttton" class="gallery-item__close-button">
+				<span class="close-label es">Cerrar</span>
+				<span class="close-icon">⛌</span>
+				<span class="close-label en">Close</span>
 			</a>
 		</header>
 		<div class="gallery-item__content">
-			<div></div>
-			<div>
-				<p>Hola</p>
+			<p>Hola</p>
 
-			</div>
-			<div></div>
 		</div>
 	</section>
 </dialog>
@@ -98,7 +96,7 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		const hash = window.location.hash;
 		if (hash) {
-			const goBackLink = document.getElementById('go-back');
+			const goBackLink = document.getElementById('close-buttton');
 			goBackLink.href = '/gallery' + hash;
 		}
 
