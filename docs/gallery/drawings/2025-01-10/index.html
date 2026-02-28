@@ -50,43 +50,54 @@
             </header>
             <div class="content">
 <main class="gallery">
-	<nav class="gallery__categories">
-		<!-- Category: Digital Art -->
-		<div class="gallery__category u-flex-column--start">
-			<span class="es">Arte Digital</span>
-			<span class="en">Digital Art</span><a href="/gallery#digital-art">
-				<img src="/gallery/digital-art/2025-11-16/cover.png" alt="dulceilustra.com cover" />
-			</a></div>
+    <nav class="gallery__categories">
+        <!-- Category: Digital Art -->
+        <div class="gallery__category u-flex-column--start">
+            <span class="es">Arte Digital</span>
+            <span class="en">Digital Art</span><a href="/gallery#digital-art">
+                <img
+                    src="/gallery/digital-art/2025-11-16/cover.png"
+                    alt="dulceilustra.com cover"
+                />
+            </a></div>
 
-		<!-- Category: Paintings -->
-		<div class="gallery__category u-flex-column--start">
-			<span class="es">Pinturas</span>
-			<span class="en">Paintings</span><a href="/gallery#paintings">
-				<img src="/gallery/paintings/2025-01-10/cover.png" alt="dulceilustra.com cover" />
-			</a></div>
+        <!-- Category: Paintings -->
+        <div class="gallery__category u-flex-column--start">
+            <span class="es">Pinturas</span>
+            <span class="en">Paintings</span><a href="/gallery#paintings">
+                <img
+                    src="/gallery/paintings/2025-01-10/cover.png"
+                    alt="dulceilustra.com cover"
+                />
+            </a></div>
 
-		<!-- Category: Drawings -->
-		<div class="gallery__category u-flex-column--start">
-			<span class="es">Dibujos</span>
-			<span class="en">Drawings</span><a href="/gallery#drawings">
-				<img src="/gallery/drawings/2025-01-10/cover.png" alt="dulceilustra.com cover" />
-			</a></div>
-	</nav>
+        <!-- Category: Drawings -->
+        <div class="gallery__category u-flex-column--start">
+            <span class="es">Dibujos</span>
+            <span class="en">Drawings</span><a href="/gallery#drawings">
+                <img
+                    src="/gallery/drawings/2025-01-10/cover.png"
+                    alt="dulceilustra.com cover"
+                />
+            </a></div>
+    </nav>
 
-	
-	<div class="gallery__content">
-		
+    
+    <div class="gallery__content">
 <dialog open class="gallery-item-dialog u-flex-column">
-	<section class="gallery-item">
-		<header class="gallery-item__header u-flex-row">
-			<a href="/gallery" id="close-buttton" class="gallery-item__close-button">
-				<span class="close-label es">Cerrar</span>
-				<span class="close-icon">⛌</span>
-				<span class="close-label en">Close</span>
-			</a>
-		</header>
-		<div class="gallery-item__content">
-			<h1>Headers</h1>
+    <section class="gallery-item">
+        <header class="gallery-item__header u-flex-row">
+            <a
+                href="/gallery"
+                id="close-buttton"
+                class="gallery-item__close-button"
+            >
+                <span class="close-label es">Cerrar</span>
+                <span class="close-icon">⛌</span>
+                <span class="close-label en">Close</span>
+            </a>
+        </header>
+        <div class="gallery-item__content"><h1>Headers</h1>
 <pre><code># h1 Heading 8-)
 ## h2 Heading
 ### h3 Heading
@@ -378,19 +389,22 @@ namespace MyApplication
 }
 </code></pre>
 <pre><code class="language-css">@font-face {
-  font-family: Chunkfive; src: url('Chunkfive.otf');
+    font-family: Chunkfive;
+    src: url(&quot;Chunkfive.otf&quot;);
 }
 
-body, .usertext {
-  color: #F0F0F0; background: #600;
-  font-family: Chunkfive, sans;
+body,
+.usertext {
+    color: #f0f0f0;
+    background: #600;
+    font-family: Chunkfive, sans;
 }
 
 @import url(print.css);
 @media print {
-  a[href^=http]::after {
-    content: attr(href)
-  }
+    a[href^=&quot;http&quot;]::after {
+        content: attr(href);
+    }
 }
 </code></pre>
 <pre><code class="language-javascript">function $initHighlight(block, cls) {
@@ -731,33 +745,34 @@ Underscores
 <pre><code>[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 </code></pre>
 <p><a href="https://www.youtube.com/watch?v=ciawICBvQoE"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/YouTube_logo_2015.svg/1200px-YouTube_logo_2015.svg.png" alt="IMAGE ALT TEXT HERE"></a></p>
-
-		</div>
-	</section>
+</div>
+    </section>
 </dialog>
 
 <script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const hash = window.location.hash;
-		if (hash) {
-			const goBackLink = document.getElementById('close-buttton');
-			goBackLink.href = '/gallery' + hash;
-		}
+    document.addEventListener("DOMContentLoaded", function () {
+        const hash = window.location.hash;
+        if (hash) {
+            const goBackLink = document.getElementById("close-buttton");
+            goBackLink.href = "/gallery" + hash;
+        }
 
-		const body = document.body;
-		if (body) {
-			body.style.overflow = 'hidden';
-		}
-	});
+        const body = document.body;
+        if (body) {
+            body.style.overflow = "hidden";
+        }
+    });
 </script>
+</div>
+    
 
-	</div>
-	
-
-	<!-- Section: Digital Art -->
-	<section id="digital-art" class="gallery__section gallery__section--digital-art">
-		<div class="gallery__section-info">
-			<h1 class="es">Arte Digital</h1>
+    <!-- Section: Digital Art -->
+    <section
+        id="digital-art"
+        class="gallery__section gallery__section--digital-art"
+    >
+        <div class="gallery__section-info">
+            <h1 class="es">Arte Digital</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl nec risus
 laoreet scelerisque. Sed euismod, nisl sit amet convallis consequat, turpis ligula
 luctus elit, at dictum est erat sed mauris. Nam faucibus, justo vitae consequat
@@ -771,26 +786,38 @@ purus. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Nibh tortor id
 aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit duis
 tristique sollicitudin nibh sit.</p>
 
-		</div>
-		<ul class="gallery__section-images"><li id="gallery+digital-art+2025-11-16">
-				<a href="/gallery/digital-art/2025-11-16/#digital-art">
-					<img src="/gallery/digital-art/2025-11-16/cover.png" alt="dulceilustra.com cover" />
-				</a>
-			</li><li id="gallery+digital-art+2025-11-13">
-				<a href="/gallery/digital-art/2025-11-13/#digital-art">
-					<img src="/gallery/digital-art/2025-11-13/cover.png" alt="dulceilustra.com cover" />
-				</a>
-			</li><li id="gallery+digital-art+2025-11-05">
-				<a href="/gallery/digital-art/2025-11-05/#digital-art">
-					<img src="/gallery/digital-art/2025-11-05/cover.png" alt="dulceilustra.com cover" />
-				</a>
-			</li></ul>
-	</section>
+        </div>
+        <ul class="gallery__section-images"><li id="gallery+digital-art+2025-11-16">
+                <a href="/gallery/digital-art/2025-11-16/#digital-art">
+                    <img
+                        src="/gallery/digital-art/2025-11-16/cover.png"
+                        alt="dulceilustra.com cover"
+                    />
+                </a>
+            </li><li id="gallery+digital-art+2025-11-13">
+                <a href="/gallery/digital-art/2025-11-13/#digital-art">
+                    <img
+                        src="/gallery/digital-art/2025-11-13/cover.png"
+                        alt="dulceilustra.com cover"
+                    />
+                </a>
+            </li><li id="gallery+digital-art+2025-11-05">
+                <a href="/gallery/digital-art/2025-11-05/#digital-art">
+                    <img
+                        src="/gallery/digital-art/2025-11-05/cover.png"
+                        alt="dulceilustra.com cover"
+                    />
+                </a>
+            </li></ul>
+    </section>
 
-	<!-- Section: Paintings -->
-	<section id="paintings" class="gallery__section gallery__section--paintings">
-		<div class="gallery__section-info">
-			<p class="es">Pinturas</p>
+    <!-- Section: Paintings -->
+    <section
+        id="paintings"
+        class="gallery__section gallery__section--paintings"
+    >
+        <div class="gallery__section-info">
+            <p class="es">Pinturas</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl nec risus
 laoreet scelerisque. Sed euismod, nisl sit amet convallis consequat, turpis ligula
 luctus elit, at dictum est erat sed mauris. Nam faucibus, justo vitae consequat
@@ -804,18 +831,21 @@ purus. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Nibh tortor id
 aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit duis
 tristique sollicitudin nibh sit.</p>
 
-		</div>
-		<ul class="gallery__section-images"><li id="gallery+paintings+2025-01-10">
-				<a href="/gallery/paintings/2025-01-10/#paintings">
-					<img src="/gallery/paintings/2025-01-10/cover.png" alt="dulceilustra.com cover" />
-				</a>
-			</li></ul>
-	</section>
+        </div>
+        <ul class="gallery__section-images"><li id="gallery+paintings+2025-01-10">
+                <a href="/gallery/paintings/2025-01-10/#paintings">
+                    <img
+                        src="/gallery/paintings/2025-01-10/cover.png"
+                        alt="dulceilustra.com cover"
+                    />
+                </a>
+            </li></ul>
+    </section>
 
-	<!-- Section: Drawings -->
-	<section id="drawings" class="gallery__section gallery__section--drawings">
-		<div class="gallery__section-info">
-			<h1 class="es">Dibujos</h1>
+    <!-- Section: Drawings -->
+    <section id="drawings" class="gallery__section gallery__section--drawings">
+        <div class="gallery__section-info">
+            <h1 class="es">Dibujos</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl nec risus
 laoreet scelerisque. Sed euismod, nisl sit amet convallis consequat, turpis ligula
 luctus elit, at dictum est erat sed mauris. Nam faucibus, justo vitae consequat
@@ -829,13 +859,16 @@ purus. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Nibh tortor id
 aliquet lectus proin nibh nisl condimentum. Amet consectetur adipiscing elit duis
 tristique sollicitudin nibh sit.</p>
 
-		</div>
-		<ul class="gallery__section-images"><li id="gallery+drawings+2025-01-10">
-				<a href="/gallery/drawings/2025-01-10/#drawings">
-					<img src="/gallery/drawings/2025-01-10/cover.png" alt="dulceilustra.com cover" />
-				</a>
-			</li></ul>
-	</section>
+        </div>
+        <ul class="gallery__section-images"><li id="gallery+drawings+2025-01-10">
+                <a href="/gallery/drawings/2025-01-10/#drawings">
+                    <img
+                        src="/gallery/drawings/2025-01-10/cover.png"
+                        alt="dulceilustra.com cover"
+                    />
+                </a>
+            </li></ul>
+    </section>
 </main>
 
 <script>
@@ -863,7 +896,10 @@ tristique sollicitudin nibh sit.</p>
         };
 
         if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", attachGalleryItemPrefetch);
+            document.addEventListener(
+                "DOMContentLoaded",
+                attachGalleryItemPrefetch,
+            );
         } else {
             attachGalleryItemPrefetch();
         }
@@ -884,7 +920,10 @@ tristique sollicitudin nibh sit.</p>
 
                 const isSameOrigin = (url) => {
                     try {
-                        return new URL(url, window.location.href).origin === window.location.origin;
+                        return (
+                            new URL(url, window.location.href).origin ===
+                            window.location.origin
+                        );
                     } catch {
                         return false;
                     }
@@ -918,7 +957,10 @@ tristique sollicitudin nibh sit.</p>
                 };
 
                 if (document.readyState === "loading") {
-                    document.addEventListener("DOMContentLoaded", prefetchGallery);
+                    document.addEventListener(
+                        "DOMContentLoaded",
+                        prefetchGallery,
+                    );
                 } else {
                     prefetchGallery();
                 }
