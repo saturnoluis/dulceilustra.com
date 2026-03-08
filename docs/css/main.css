@@ -159,31 +159,38 @@ h6 {
 * Home Layout
 * ****************************************** */
 
-/* Home > Top: New Art Section */
-
 .home {
     min-height: 100dvh;
 }
 
 .home__section {
     margin: 0;
-    padding: 0;
+	margin-bottom: 6rem;
 }
 
 .home__section--top {
     display: grid;
     grid-template-columns: 1fr 1fr;
+	gap: 2rem;
 }
+
+.home__section--middle {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	gap: 2rem;
+}
+
+/* Home > New Art */
 
 .home__new-art--link {
 	display: block;
 	text-decoration: none;
-	transform: scale(0.9);
+	transform: scale(1);
 	transition: transform 0.1s ease;
 }
 
 .home__new-art--link:hover {
-	transform: scale(1);
+	transform: scale(1.05);
 }
 
 .home__new-art--title {
@@ -221,7 +228,7 @@ h6 {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 1rem;
+	gap: 2rem;
 	padding: 0;
 	margin: 0;
 }
@@ -237,102 +244,84 @@ h6 {
 	width: 100%;
 	height: auto;
 	object-fit: contain;
-	transform: scale(0.9);
+	transform: scale(1);
 	transition: transform 0.1s ease;
 }
 
 .home__new-art--pictures img:hover {
-	transform: scale(1);
-}
-/* Home > Middle: Animation and Comics Section */
-
-.home__animation-comics {
-    margin: 0;
-    margin-bottom: 6rem;
+	transform: scale(1.05);
 }
 
-.home__animation-video {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 50%;
-    max-height: 80vh;
-    padding: 0 6rem 0 1rem;
+/* Home > Animation */
+
+.home__animation video {
+	width: 100%;
+	padding: 2rem 0;
 }
 
-.home__animation-comics {
-    grid-column: 2;
+.home__comics {
+	--comics-button-size: 3rem;
+
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	align-items: center;
+	justify-content: flex-end;
+
+	/* Translate the element so that the carousel
+	 * image aligns with the grid of the page. */
+	transform: translateX(var(--comics-button-size));
 }
 
-.home__comics-title {
-    font-family: var(--font-family-heading);
-    font-size: 8rem;
-    line-height: 0.8;
-    font-weight: bold;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+.home__comics--title {
+    font-size: 6rem;
     text-transform: uppercase;
-    transform: rotate(-90deg);
+	text-align: center;
+
+	writing-mode: vertical-rl;
+	text-orientation: sideways;
+	transform: rotate(180deg);
 }
 
-.home__comics-title .es {
-    color: var(--text-color-primary);
+.home__comics--title span {
+	display: block;
 }
 
-.home__comics-title .en {
-    color: var(--text-color-secondary);
+.home__comics--carousel {
+	display: flex;
+	flex-direction: row;
+	gap: 0.25rem;
+	align-items: center;
+	justify-content: center;
 }
 
-/* Home > Carousel of images */
+.carousel__button--left,
+.carousel__button--right {
+	width: 3rem;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	background: none;
+	transform: scale(1);
+	transition: transform 0.1s ease;
+}
 
-.carousel {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    width: 100%;
+.carousel__button--left:hover,
+.carousel__button--right:hover {
+	transform: scale(1.2);
+}
+
+.carousel__button--right img {
+	transform: rotate(180deg);
 }
 
 .carousel__track-container {
-    overflow: hidden;
-    aspect-ratio: 293 / 435;
-    max-height: 90vh;
-}
-
-.carousel__track {
-    display: flex;
-    transition: transform 0.5s ease-in;
-    height: 100%;
-}
-
-.carousel__slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 100%;
-    height: 100%;
-}
-
-.carousel__slide a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel__slide img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-}
-
-.carousel__button-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 0.5rem;
+	overflow: hidden;
+	aspect-ratio: 1080 / 1920;
+	height: 100%;
+	width: 26rem;
+	background: blue;
 }
 
 /* Home > Bottom: Contact Section */
