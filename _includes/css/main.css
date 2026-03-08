@@ -30,7 +30,7 @@ html {
     font-family: var(--font-family-base);
     background-color: var(--background-color);
 
-    scroll-padding-top: 6rem;
+    scroll-padding-top: 4rem;
 }
 
 body {
@@ -38,7 +38,7 @@ body {
     min-height: 100dvh;
     background-color: var(--background-color);
 
-    scroll-padding-top: 6rem;
+    scroll-padding-top: 4rem;
 }
 
 h1,
@@ -80,7 +80,7 @@ h6 {
 .main-container {
     position: relative;
     margin: 0 auto;
-    padding: 1rem 2rem 4rem 2rem;
+    padding: 0rem 4rem;
     max-width: 120rem;
 }
 
@@ -101,8 +101,8 @@ h6 {
 
 .header {
     border-bottom: 0.2rem solid var(--border-color);
-    padding: 2rem 1rem;
-    margin-bottom: 6rem;
+    padding: 2rem 0rem;
+    margin-bottom: 4rem;
 }
 
 .header__logo {
@@ -145,7 +145,7 @@ h6 {
 
 .footer {
     padding: 13rem 0 0 0;
-    margin-top: 4rem;
+    margin: 0 4rem;
     font-size: calc(var(--font-size-base) * 2);
     color: var(--text-color-secondary);
     text-align: center;
@@ -161,90 +161,89 @@ h6 {
 
 /* Home > Top: New Art Section */
 
-.home__new-art {
+.home {
+    min-height: 100dvh;
+}
+
+.home__section {
+    margin: 0;
+    padding: 0;
+}
+
+.home__section--top {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin-bottom: 4rem;
+    grid-template-columns: 1fr 1fr;
 }
 
-.home__new-art li {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
+.home__new-art--link {
+	display: block;
+	text-decoration: none;
+	transform: scale(0.9);
+	transition: transform 0.1s ease;
 }
 
-.home__new-art li a {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+.home__new-art--link:hover {
+	transform: scale(1);
 }
 
-.home__new-art li:nth-child(1) {
-    grid-column: 1 / span 2;
+.home__new-art--title {
+	--new-art-font-size: 6rem;
+
+	display: block;
+	height: calc(var(--new-art-font-size) * 6);
+	padding-top: calc(var(--new-art-font-size) * 0.4);
+	padding-left: 12rem;
+
+	text-align: center;
+	background-image: url("../images/dulceilustra__estrellas.png");
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
-.home__new-art li:nth-child(2) {
-    grid-column: 3;
+.home__new-art--title .es {
+	display: block;
+	font-size: var(--new-art-font-size);
+	text-shadow:
+		0 calc(var(--new-art-font-size) * 2) 0 var(--text-color-primary),
+		0 calc(var(--new-art-font-size) * 4) 0 var(--text-color-primary);
 }
 
-.home__new-art li:nth-child(3) {
-    grid-column: 4;
+.home__new-art--title .en {
+	display: block;
+	font-size: calc(var(--new-art-font-size) * 0.9);
+	text-shadow:
+		0 calc(var(--new-art-font-size) * 2) 0 var(--text-color-secondary),
+		0 calc(var(--new-art-font-size) * 4) 0 var(--text-color-secondary);
 }
 
-img.home__new-art-decoration {
-    display: block;
-    width: 13rem;
-    height: auto;
-    margin: 0;
-    padding: 0 0 2rem 0;
+.home__new-art--pictures {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+	padding: 0;
+	margin: 0;
 }
 
-.home__new-art-text {
-    line-height: 1;
-    text-align: center;
-    padding: 0 2rem 0 0;
+.home__new-art--pictures li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
-.home__new-art-text span {
-    display: block;
-    transform: scale(1);
-    transition: transform 0.4s ease;
-    white-space: nowrap;
+.home__new-art--pictures img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	transform: scale(0.9);
+	transition: transform 0.1s ease;
 }
 
-.home__new-art-text span:hover {
-    transform: scale(1.1);
+.home__new-art--pictures img:hover {
+	transform: scale(1);
 }
-
-.home__new-art-text span.es {
-    font-size: 4rem;
-    font-family: var(--font-family-base);
-    padding-top: 1rem;
-}
-
-.home__new-art-text span.en {
-    font-size: 4rem;
-    text-transform: uppercase;
-    margin-top: 0.5rem;
-}
-
-.home__gallery-link {
-    gap: 6rem;
-}
-
-.home__gallery-link-item {
-    display: block;
-    transition: transform 0.1s ease;
-}
-
-.home__gallery-link-item:hover {
-    transform: scale(1.04);
-}
-
 /* Home > Middle: Animation and Comics Section */
 
 .home__animation-comics {
@@ -698,12 +697,10 @@ img.home__new-art-decoration {
 }
 
 .es {
-    font-size: 1em;
     color: var(--text-color-primary);
 }
 
 .en {
-    font-size: 0.9em;
     color: var(--text-color-secondary);
 }
 

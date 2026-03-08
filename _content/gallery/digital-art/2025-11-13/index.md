@@ -1,6 +1,6 @@
 ---
 title: dulceilustra.com
-cover: cover.png
+cover: cover_1.webp
 layout: gallery.item
 ---
 
