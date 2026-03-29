@@ -160,6 +160,8 @@ h6 {
 * ****************************************** */
 
 .home {
+	--art-image-width: 26rem;
+
     min-height: 100dvh;
 }
 
@@ -228,6 +230,7 @@ h6 {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: flex-end;
 	gap: 2rem;
 	padding: 0;
 	margin: 0;
@@ -237,6 +240,14 @@ h6 {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+.home__new-art--pictures a {
+	display: block;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+	width: var(--art-image-width);
 }
 
 .home__new-art--pictures img {
@@ -290,9 +301,13 @@ h6 {
 .home__comics--carousel {
 	display: flex;
 	flex-direction: row;
-	gap: 0.25rem;
 	align-items: center;
 	justify-content: center;
+	user-select: none;
+}
+
+.carousel__button {
+	width: var(--comics-button-size);
 }
 
 .carousel__button--left,
@@ -320,8 +335,22 @@ h6 {
 	overflow: hidden;
 	aspect-ratio: 1080 / 1920;
 	height: 100%;
-	width: 26rem;
+	width: var(--art-image-width);
 	background: blue;
+}
+
+.carousel__track {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: max-content;
+	transition: transform 0.3s ease;
+}
+
+.carousel__slide {
+	width: var(--art-image-width);
 }
 
 /* Home > Bottom: Contact Section */

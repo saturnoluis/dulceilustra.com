@@ -61,7 +61,6 @@
         <ul class="home__new-art--pictures"><li>
                 <a
                     href="/gallery/digital-art/2025-11-16/"
-                    class="home__gallery-link-item u-flex-column"
                 >
                     <img
                         src="./gallery/digital-art/2025-11-16/cover_2.webp"
@@ -71,7 +70,6 @@
             </li><li>
                 <a
                     href="/gallery/digital-art/2025-11-13/"
-                    class="home__gallery-link-item u-flex-column"
                 >
                     <img
                         src="./gallery/digital-art/2025-11-13/cover_1.webp"
@@ -101,7 +99,6 @@
 					</button>
 				</div>
 				<div class="carousel__track-container">
-					<!-- --
 					<div class="carousel__track"><div class="carousel__slide">
 							<img
 								src="./gallery/comics/2025-11-04/cover.png"
@@ -123,7 +120,6 @@
 								alt="dulceilustra.com cover"
 							/>
 						</div></div>
-					<!-- -->
 				</div>
 				<div class="carousel__button">
 					<button class="carousel__button--right">
@@ -263,20 +259,22 @@
             </li>
         </ul>
     </div>
-    <a href="/gallery" class="home__gallery-gallery"><span class="es">Galería</span>
-        <span class="en">Gallery</span><span class="es">Galería</span>
-        <span class="en">Gallery</span></a>
+    <a href="/gallery" class="home__gallery-gallery">
+        <span class="es">Galería</span>
+        <span class="en">Gallery</span>
+    </a>
 </div>
 
 
 
 <script>
     // Carousel functionality
+	const trackContainer = document.querySelector(".carousel__track-container");
     const track = document.querySelector(".carousel__track");
     const slides = Array.from(track.children);
-    const nextButton = document.querySelector(".carousel__button--next");
-    const prevButton = document.querySelector(".carousel__button--prev");
-    const trackContainer = document.querySelector(".carousel__track-container");
+
+    const leftButton = document.querySelector(".carousel__button--left");
+    const rightButton = document.querySelector(".carousel__button--right");
 
     let currentIndex = 0;
     let touchStartX = 0;
@@ -284,6 +282,8 @@
     let isDragging = false;
 
     const moveToSlide = (targetIndex) => {
+		if (!slides.length) return;
+
         // Wrap around if going past the end
         if (targetIndex >= slides.length) {
             targetIndex = 0;
@@ -293,7 +293,8 @@
 
         currentIndex = targetIndex;
 
-        const amountToMove = -100 * currentIndex;
+		const percentage = 100 / slides.length;
+        const amountToMove = percentage * currentIndex * -1;
         track.style.transform = `translateX(${amountToMove}%)`;
     };
 
@@ -315,13 +316,13 @@
     };
 
     // Next button click
-    nextButton.addEventListener("click", () => {
-        moveToSlide(currentIndex + 1);
+    leftButton.addEventListener("click", () => {
+        moveToSlide(currentIndex - 1);
     });
 
     // Previous button click
-    prevButton.addEventListener("click", () => {
-        moveToSlide(currentIndex - 1);
+    rightButton.addEventListener("click", () => {
+        moveToSlide(currentIndex + 1);
     });
 
     // Touch events for mobile swipe
