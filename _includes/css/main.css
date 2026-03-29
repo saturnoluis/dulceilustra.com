@@ -1,30 +1,20 @@
 /*
 * Main elements & Variables
 * ****************************************** */
-
-@font-face {
-    font-family: "Paper Flowers";
-    src: url("fonts/Paper Flowers.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Shantell Sans";
-    src: url("fonts/ShantellSans-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
 
 html {
     --font-size-base: 9px;
-    --font-family-heading: "Paper Flowers", cursive;
-    --font-family-base: "Shantell Sans", sans-serif;
-    --background-color: #ebebeb;
-    --backdrop-color: rgba(235, 235, 235, 0.7);
-    --border-color: #3c3c3c;
+    --font-family-heading: "Modak", system-ui;
+    --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+	--background-color: #ebebeb;
+	--backdrop-color: rgba(235, 235, 235, 0.7);
+	--border-color: #3c3c3c;
     --text-color-primary: #3c3c3c;
     --text-color-secondary: #98979a;
+
+	--image-size-preview: 26rem;
 
     font-size: var(--font-size-base);
     font-family: var(--font-family-base);
@@ -48,8 +38,8 @@ h4,
 h5,
 h6 {
     font-family: var(--font-family-heading);
-    font-weight: bold;
     font-size: calc(var(--font-size-base) * 3);
+	font-weight: 400;
     line-height: 0.9;
     margin: 0;
     padding: 0;
@@ -71,6 +61,11 @@ h4,
 h5,
 h6 {
     font-size: calc(var(--font-size-base) * 1);
+}
+
+p {
+	line-height: 1.2;
+	letter-spacing: 0.05em;
 }
 
 /*
@@ -130,9 +125,9 @@ h6 {
 }
 
 .header__link {
-    font-size: calc(var(--font-size-base) * 3);
-    font-weight: bold;
+    font-size: calc(var(--font-size-base) * 2);
     color: var(--text-color--primary);
+	font-weight: 600;
 }
 
 .header__link span {
@@ -160,14 +155,12 @@ h6 {
 * ****************************************** */
 
 .home {
-	--art-image-width: 26rem;
-
     min-height: 100dvh;
 }
 
 .home__section {
     margin: 0;
-	margin-bottom: 6rem;
+	margin-bottom: 4rem;
 }
 
 .home__section--top {
@@ -182,13 +175,30 @@ h6 {
 	gap: 2rem;
 }
 
+.home__section--bottom {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 2rem;
+}
+
 /* Home > New Art */
 
 .home__new-art--link {
-	display: block;
+	--new-art-font-size: 4.6rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+
 	text-decoration: none;
-	transform: scale(1);
+	background-image: url("../images/dulceilustra__estrellas.png");
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
 	transition: transform 0.1s ease;
+	transform: scale(1);
 }
 
 .home__new-art--link:hover {
@@ -196,34 +206,29 @@ h6 {
 }
 
 .home__new-art--title {
-	--new-art-font-size: 6rem;
-
-	display: block;
-	height: calc(var(--new-art-font-size) * 6);
-	padding-top: calc(var(--new-art-font-size) * 0.4);
-	padding-left: 12rem;
-
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
-	background-image: url("../images/dulceilustra__estrellas.png");
-	background-position: left center;
-	background-repeat: no-repeat;
-	background-size: contain;
+	text-transform: uppercase;
+	padding-bottom: 3rem;
 }
 
 .home__new-art--title .es {
 	display: block;
 	font-size: var(--new-art-font-size);
 	text-shadow:
-		0 calc(var(--new-art-font-size) * 2) 0 var(--text-color-primary),
-		0 calc(var(--new-art-font-size) * 4) 0 var(--text-color-primary);
+		0 calc(var(--new-art-font-size) * -1) 0 var(--text-color-primary),
+		0 calc(var(--new-art-font-size) * -2) 0 var(--text-color-primary);
 }
 
 .home__new-art--title .en {
 	display: block;
-	font-size: calc(var(--new-art-font-size) * 0.9);
+	font-size: calc(var(--new-art-font-size) * 1.95);
 	text-shadow:
-		0 calc(var(--new-art-font-size) * 2) 0 var(--text-color-secondary),
-		0 calc(var(--new-art-font-size) * 4) 0 var(--text-color-secondary);
+		0 calc(var(--new-art-font-size) * 1.5) 0 var(--text-color-secondary),
+		0 calc(var(--new-art-font-size) * 3) 0 var(--text-color-secondary);
 }
 
 .home__new-art--pictures {
@@ -247,7 +252,7 @@ h6 {
 	text-decoration: none;
 	padding: 0;
 	margin: 0;
-	width: var(--art-image-width);
+	width: var(--image-size-preview);
 }
 
 .home__new-art--pictures img {
@@ -335,7 +340,7 @@ h6 {
 	overflow: hidden;
 	aspect-ratio: 1080 / 1920;
 	height: 100%;
-	width: var(--art-image-width);
+	width: var(--image-size-preview);
 	background: blue;
 }
 
@@ -350,7 +355,7 @@ h6 {
 }
 
 .carousel__slide {
-	width: var(--art-image-width);
+	width: var(--image-size-preview);
 }
 
 /* Home > Bottom: Contact Section */
