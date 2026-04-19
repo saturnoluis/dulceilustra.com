@@ -14,19 +14,19 @@
     <body>
         <div class="main-container">
             <header class="header margin-bottom">
-                <nav class="header__nav u-flex-between">
+                <nav class="header__nav">
                     <a class="header__logo" href="/">
                         <img
                             src="/images/dulceilustra__firma.png"
                             alt="@dulceilustra"
                         />
                     </a>
-                    <ul class="u-flex-row">
+                    <ul>
                         {%- for link in navigation -%}
                         <li>
                             <a
                                 href="{{ link.url }}"
-                                class="header__link u-flex-column"
+                                class="header__link"
                             >
                                 <span class="es">{{ link.es }}</span>
                                 <span class="en">{{ link.en }}</span>

@@ -96,6 +96,10 @@ p {
 }
 
 .header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     height: 10rem;
 }
 
@@ -105,10 +109,18 @@ p {
 }
 
 .header__nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 0;
 }
 
 .header__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: calc(var(--font-size-base) * 2);
     color: var(--text-color--primary);
     font-weight: 600;
@@ -575,6 +587,10 @@ p {
 }
 
 .gallery__category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     transition: transform 0.2s ease;
 }
 
@@ -687,6 +703,10 @@ p {
    ======================================== */
 
 .gallery-item-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--backdrop-color);
 }
 
@@ -696,6 +716,10 @@ p {
 }
 
 .gallery-item__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 6rem;
     background: var(--background-color);
@@ -761,41 +785,6 @@ p {
 /* ========================================
    Utilities
    ======================================== */
-
-.u-flex-between {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.u-flex-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.u-flex-column--start {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.u-flex-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.u-flex-row--start {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
 
 .es {
     color: var(--text-color-primary);
