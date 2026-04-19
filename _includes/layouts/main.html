@@ -37,14 +37,16 @@
                 </nav>
             </header>
             <div class="content">{{ content }}</div>
-            <footer class="footer">
-                <p class="footer__text">
-                    &copy; {{ "now" | date: "%Y" }} @DulceIlustra.
-                    <span class="es">Todos los derechos reservados.</span>
-                    <span class="en">All rights reserved.</span>
-                </p>
-            </footer>
         </div>
+		<footer class="footer">
+			<div class="footer__content">
+				<p class="copyright">
+					&copy; {{ "now" | date: "%Y" }} @DulceIlustra.
+					<span class="es">Todos los derechos reservados.</span>
+					<span class="en">All rights reserved.</span>
+				</p>
+			</div>
+		</footer>
         <script>
             (() => {
                 const prefetched = new Set();
