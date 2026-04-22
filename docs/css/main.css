@@ -145,7 +145,7 @@ p {
 .footer {
     padding: 0;
     margin: 0 auto;
-    width: 99vw;
+    width: 100%;
     height: calc(99vw / 10);
     font-size: calc(var(--font-size-base) * 2);
     color: var(--text-color-secondary);
@@ -576,11 +576,13 @@ p {
    Gallery Page
    ======================================== */
 
+.gallery {
+	padding-bottom: 12rem;
+}
+
 .gallery__categories {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
     padding: 0 0 6rem;
     margin: 0 0 6rem;
     border-bottom: 0.2rem solid var(--border-color);
@@ -591,11 +593,14 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    transition: transform 0.2s ease;
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+	text-transform: uppercase;
+	font-family: var(--font-family-heading);
 }
 
 .gallery__category:hover {
-    transform: scale(1.05);
+    transform: scale(1);
 }
 
 .gallery__category a {
@@ -669,8 +674,8 @@ p {
 }
 
 .gallery__section-images {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
     padding: 0 4rem;
     margin: 0;
@@ -680,6 +685,11 @@ p {
     list-style: none;
     padding: 0;
     margin: 0;
+	transition: all 0.1s ease;
+}
+
+.gallery__section-images li:hover {
+	transform: scale(1.05);
 }
 
 #gallery__modal-wrapper {

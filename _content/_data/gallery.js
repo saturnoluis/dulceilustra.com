@@ -21,7 +21,7 @@ tristique sollicitudin nibh sit.
 
     paintingsDescription: `
 
-Pinturas{.es}
+## Pinturas{.es}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nisl nec risus
 laoreet scelerisque. Sed euismod, nisl sit amet convallis consequat, turpis ligula
