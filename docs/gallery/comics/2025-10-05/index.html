@@ -22,26 +22,17 @@
                         />
                     </a>
                     <ul><li>
-                            <a
-                                href="/"
-                                class="header__link"
-                            >
+                            <a href="/" class="header__link">
                                 <span class="es">Inicio</span>
                                 <span class="en">Home</span>
                             </a>
                         </li><li>
-                            <a
-                                href="/gallery"
-                                class="header__link"
-                            >
+                            <a href="/gallery" class="header__link">
                                 <span class="es">Galería</span>
                                 <span class="en">Gallery</span>
                             </a>
                         </li><li>
-                            <a
-                                href="/contacto"
-                                class="header__link"
-                            >
+                            <a href="/contacto" class="header__link">
                                 <span class="es">Contacto</span>
                                 <span class="en">Contact</span>
                             </a>
@@ -86,19 +77,49 @@
     <div class="gallery__content">
 <dialog open class="gallery-item-dialog">
     <section class="gallery-item">
-        <header class="gallery-item__header">
-            <a
-                href="/gallery"
-                id="close-buttton"
-                class="gallery-item__close-button"
-            >
-                <span class="close-label es">Cerrar</span>
-                <span class="close-icon">⛌</span>
-                <span class="close-label en">Close</span>
-            </a>
-        </header>
-        <div class="gallery-item__content"><p>Comic de 05 de Octubre</p>
+        <div class="gallery-item__container">
+            <header class="gallery-item__header">
+                <a
+                    href="/gallery"
+                    id="close-buttton"
+                    class="gallery-item__close-button"
+                >
+                    <span class="close-label es">Cerrar</span>
+                    <span class="close-icon">⛌</span>
+                    <span class="close-label en">Close</span>
+                </a>
+            </header>
+            <div class="gallery-item__content"><p>Comic de 05 de Octubre</p>
 </div>
+            <footer class="gallery-item__footer">
+                <a href="/" class="gallery-item__footer-button">
+                    <img
+                        src="/images/dulceilustra_arrow.svg"
+                        alt="Next image"
+                    />
+                    <div class="gallery-item__footer-button__legend">
+                        <span class="es">siguiente</span>
+                        <span class="en">next</span>
+                    </div>
+                </a>
+                <a href="/" class="gallery-item__logo">
+                    <img
+                        src="/images/dulceilustra__firma.png"
+                        alt="@dulceilustra"
+                    />
+                </a>
+                <a href="/" class="gallery-item__footer-button right">
+                    <div class="gallery-item__footer-button__legend">
+                        <span class="es">anterior</span>
+                        <span class="en">previous</span>
+                    </div>
+                    <img
+                        src="/images/dulceilustra_arrow.svg"
+                        alt="Prev image"
+                    />
+                </a>
+            </footer>
+        </div>
     </section>
 </dialog>
 
@@ -147,10 +168,24 @@ tristique sollicitudin nibh sit.</p>
                         alt="dulceilustra.com cover"
                     />
                 </a>
+            </li><li id="gallery+digital-art+2026-04-22 (Copy)">
+                <a href="/gallery/digital-art/2026-04-22 (Copy)/#digital-art">
+                    <img
+                        src="/gallery/digital-art/2026-04-22 (Copy)/other-cat.opti.webp"
+                        alt="dulceilustra.com cover"
+                    />
+                </a>
             </li><li id="gallery+digital-art+2025-11-16">
                 <a href="/gallery/digital-art/2025-11-16/#digital-art">
                     <img
                         src="/gallery/digital-art/2025-11-16/cover_2.webp"
+                        alt="dulceilustra.com cover"
+                    />
+                </a>
+            </li><li id="gallery+digital-art+2025-11-16 (Copy)">
+                <a href="/gallery/digital-art/2025-11-16 (Copy)/#digital-art">
+                    <img
+                        src="/gallery/digital-art/2025-11-16 (Copy)/cover_2.webp"
                         alt="dulceilustra.com cover"
                     />
                 </a>
@@ -161,10 +196,24 @@ tristique sollicitudin nibh sit.</p>
                         alt="dulceilustra.com cover"
                     />
                 </a>
+            </li><li id="gallery+digital-art+2025-11-13 (Copy)">
+                <a href="/gallery/digital-art/2025-11-13 (Copy)/#digital-art">
+                    <img
+                        src="/gallery/digital-art/2025-11-13 (Copy)/cover_1.webp"
+                        alt="dulceilustra.com cover"
+                    />
+                </a>
             </li><li id="gallery+digital-art+2025-11-05">
                 <a href="/gallery/digital-art/2025-11-05/#digital-art">
                     <img
-                        src="/gallery/digital-art/2025-11-05/cover.png"
+                        src="/gallery/digital-art/2025-11-05/cover.jpg"
+                        alt="dulceilustra.com cover"
+                    />
+                </a>
+            </li><li id="gallery+digital-art+2025-11-05 (Copy)">
+                <a href="/gallery/digital-art/2025-11-05 (Copy)/#digital-art">
+                    <img
+                        src="/gallery/digital-art/2025-11-05 (Copy)/cover.jpg"
                         alt="dulceilustra.com cover"
                     />
                 </a>
@@ -281,15 +330,15 @@ tristique sollicitudin nibh sit.</p>
 </script>
 </div>
         </div>
-		<footer class="footer">
-			<div class="footer__content">
-				<p class="copyright">
-					&copy; 2026 @DulceIlustra.
-					<span class="es">Todos los derechos reservados.</span>
-					<span class="en">All rights reserved.</span>
-				</p>
-			</div>
-		</footer>
+        <footer class="footer">
+            <div class="footer__content">
+                <p class="copyright">
+                    &copy; 2026 @DulceIlustra.
+                    <span class="es">Todos los derechos reservados.</span>
+                    <span class="en">All rights reserved.</span>
+                </p>
+            </div>
+        </footer>
         <script>
             (() => {
                 const prefetched = new Set();

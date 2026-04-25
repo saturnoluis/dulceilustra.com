@@ -2,10 +2,11 @@
    CSS Variables & Base Elements
    ======================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 html {
+    --page-width: 120rem;
     --font-size-base: 9px;
     --font-family-heading: "Staatliches", system-ui;
     --font-family-base: "Roboto", sans-serif;
@@ -20,7 +21,7 @@ html {
     --text-color-secondary--lighter: #d8d7d8;
     --image-border-radius: 0rem;
     --image-size-preview: 26rem;
-    
+
     font-size: var(--font-size-base);
     font-family: var(--font-family-base);
     background-color: var(--background-color);
@@ -33,7 +34,12 @@ body {
     scroll-padding-top: 4rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-family-heading);
     font-size: calc(var(--font-size-base) * 3);
     font-weight: 400;
@@ -42,10 +48,20 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
 }
 
-h1 { font-size: calc(var(--font-size-base) * 8); }
-h2 { font-size: calc(var(--font-size-base) * 5); }
-h3 { font-size: calc(var(--font-size-base) * 3); }
-h4, h5, h6 { font-size: calc(var(--font-size-base) * 1); }
+h1 {
+    font-size: calc(var(--font-size-base) * 8);
+}
+h2 {
+    font-size: calc(var(--font-size-base) * 5);
+}
+h3 {
+    font-size: calc(var(--font-size-base) * 3);
+}
+h4,
+h5,
+h6 {
+    font-size: calc(var(--font-size-base) * 1);
+}
 
 p {
     line-height: 1.2;
@@ -60,7 +76,7 @@ p {
     position: relative;
     margin: 0 auto;
     padding: 0 4rem;
-    max-width: 120rem;
+    max-width: var(--page-width);
 }
 
 #main-modal-container {
@@ -237,7 +253,8 @@ p {
     font-size: var(--new-art-font-size);
     text-shadow:
         0 calc(var(--new-art-font-size) * -1) 0 var(--text-color-primary--light),
-        0 calc(var(--new-art-font-size) * -2) 0 var(--text-color-primary--lighter);
+        0 calc(var(--new-art-font-size) * -2) 0
+            var(--text-color-primary--lighter);
     transition: text-shadow 0.1s;
 }
 
@@ -245,8 +262,10 @@ p {
     display: block;
     font-size: calc(var(--new-art-font-size) * 1.95);
     text-shadow:
-        0 calc(var(--new-art-font-size) * 1.5) 0 var(--text-color-secondary--light),
-        0 calc(var(--new-art-font-size) * 3) 0 var(--text-color-secondary--lighter);
+        0 calc(var(--new-art-font-size) * 1.5) 0
+            var(--text-color-secondary--light),
+        0 calc(var(--new-art-font-size) * 3) 0
+            var(--text-color-secondary--lighter);
     transition: text-shadow 0.1s;
 }
 
@@ -327,7 +346,9 @@ p {
     gap: 2rem;
     align-items: center;
     justify-content: flex-end;
-    transform: translateX(var(--comics-button-size)); /* Align carousel with grid */
+    transform: translateX(
+        var(--comics-button-size)
+    ); /* Align carousel with grid */
 }
 
 .home__comics--title {
@@ -564,12 +585,14 @@ p {
 }
 
 .home__gallery-link span.es {
-    text-shadow: 0 calc(var(--font-size-base) * 17.5) var(--text-color-primary--light);
+    text-shadow: 0 calc(var(--font-size-base) * 17.5)
+        var(--text-color-primary--light);
 }
 
 .home__gallery-link span.en {
     font-size: calc(var(--font-size-base) * 8.5);
-    text-shadow: 0 calc(var(--font-size-base) * 17.5) var(--text-color-secondary--light);
+    text-shadow: 0 calc(var(--font-size-base) * 17.5)
+        var(--text-color-secondary--light);
 }
 
 /* ========================================
@@ -577,12 +600,12 @@ p {
    ======================================== */
 
 .gallery {
-	padding-bottom: 12rem;
+    padding-bottom: 12rem;
 }
 
 .gallery__categories {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 0 0 6rem;
     margin: 0 0 6rem;
     border-bottom: 0.2rem solid var(--border-color);
@@ -595,8 +618,8 @@ p {
     align-items: flex-start;
     transform: scale(0.95);
     transition: transform 0.1s ease;
-	text-transform: uppercase;
-	font-family: var(--font-family-heading);
+    text-transform: uppercase;
+    font-family: var(--font-family-heading);
 }
 
 .gallery__category:hover {
@@ -675,7 +698,7 @@ p {
 
 .gallery__section-images {
     display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
     padding: 0 4rem;
     margin: 0;
@@ -685,11 +708,11 @@ p {
     list-style: none;
     padding: 0;
     margin: 0;
-	transition: all 0.1s ease;
+    transition: all 0.1s ease;
 }
 
 .gallery__section-images li:hover {
-	transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 #gallery__modal-wrapper {
@@ -722,7 +745,16 @@ p {
 
 .gallery-item {
     height: 100dvh;
-    width: 96rem;
+    width: 100%;
+    overflow: auto;
+    margin: 0;
+}
+
+.gallery-item__container {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 4rem;
+    padding-top: 0;
 }
 
 .gallery-item__header {
@@ -731,10 +763,7 @@ p {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 6rem;
-    background: var(--background-color);
-    border-bottom: 0.1rem solid var(--border-color);
-    box-shadow: 0 1rem 2rem var(--background-color);
+    height: 10rem;
 }
 
 .gallery-item__close-button {
@@ -753,10 +782,15 @@ p {
 
 .gallery-item__close-button .close-label {
     display: block;
-    font-size: 2.4rem;
+    font-size: 2.7rem;
     text-transform: lowercase;
     opacity: 0;
     transition: opacity 0.2s ease;
+    width: 10rem;
+}
+
+.gallery-item__close-button .close-label.es {
+    text-align: right;
 }
 
 .gallery-item__close-button:hover .close-label {
@@ -765,23 +799,26 @@ p {
 
 .gallery-item__close-button .close-icon {
     display: block;
-    font-size: 4.2rem;
+    font-size: 5.4rem;
     color: var(--text-color-primary);
     transition: transform 0.2s ease;
 }
 
 .gallery-item__close-button:hover .close-icon {
-    transform: scale(1.2) rotate(90deg);
+    transform: scale(1.2) rotate(180deg) translateY(-0.5rem);
 }
 
 .gallery-item__content {
-    padding: 2rem 2rem 6rem;
-    height: calc(100% - 6rem);
-    overflow-y: auto;
+    position: relative;
+    min-height: 13rem;
+    max-width: var(--max-content-width);
+    padding-bottom: 2rem;
+    border-bottom: 0.2rem solid var(--border-color);
 }
 
 .gallery-item__content * {
     font-size: 2rem;
+    text-shadow: 0 0 0.2rem var(--backdrop-color);
 }
 
 .gallery-item__content img {
@@ -790,6 +827,65 @@ p {
     max-width: 100%;
     height: auto;
     object-fit: contain;
+    box-shadow: 0 0 27px var(--backdrop-color);
+}
+
+.gallery-item__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 0;
+    height: 8rem;
+}
+
+.gallery-item__footer .gallery-item__footer-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+    text-decoration: none;
+    width: 13rem;
+}
+
+.gallery-item__footer .gallery-item__footer-button img {
+    height: 100%;
+}
+
+.gallery-item__footer .gallery-item__footer-button__legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-size: 1.7rem;
+    line-height: 1.2;
+}
+
+.gallery-item__footer .gallery-item__footer-button.right {
+    justify-content: flex-end;
+}
+
+.gallery-item__footer .gallery-item__footer-button.right img {
+    transform: rotate(180deg);
+}
+
+.gallery-item__footer
+    .gallery-item__footer-button.right
+    .gallery-item__footer-button__legend {
+    text-align: right;
+}
+
+.gallery-item__footer .gallery-item__logo,
+.gallery-item__footer .gallery-item__logo img {
+    display: block;
+    height: 100%;
+    transition: transform 0.1s ease;
+    transform: scale(1);
+}
+
+.gallery-item__footer .gallery-item__logo:hover {
+    transform: scale(1.1);
 }
 
 /* ========================================

@@ -1,5 +1,7 @@
 ---
 title: dulceilustra.com
-cover: yet-another-cat.opti.webp
+cover: cover_1.webp
 layout: gallery.item
 ---
+
+Hola

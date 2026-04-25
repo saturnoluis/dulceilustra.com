@@ -24,10 +24,7 @@
                     <ul>
                         {%- for link in navigation -%}
                         <li>
-                            <a
-                                href="{{ link.url }}"
-                                class="header__link"
-                            >
+                            <a href="{{ link.url }}" class="header__link">
                                 <span class="es">{{ link.es }}</span>
                                 <span class="en">{{ link.en }}</span>
                             </a>
@@ -38,15 +35,15 @@
             </header>
             <div class="content">{{ content }}</div>
         </div>
-		<footer class="footer">
-			<div class="footer__content">
-				<p class="copyright">
-					&copy; {{ "now" | date: "%Y" }} @DulceIlustra.
-					<span class="es">Todos los derechos reservados.</span>
-					<span class="en">All rights reserved.</span>
-				</p>
-			</div>
-		</footer>
+        <footer class="footer">
+            <div class="footer__content">
+                <p class="copyright">
+                    &copy; {{ "now" | date: "%Y" }} @DulceIlustra.
+                    <span class="es">Todos los derechos reservados.</span>
+                    <span class="en">All rights reserved.</span>
+                </p>
+            </div>
+        </footer>
         <script>
             (() => {
                 const prefetched = new Set();
