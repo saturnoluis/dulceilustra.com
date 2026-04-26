@@ -94,14 +94,19 @@
 <p class="md-right">25cm x 48cm.</p>
 </div>
             <footer class="gallery-item__footer">
-                <a href="/" class="gallery-item__footer-button">
+                <a
+                    href="#"
+                    id="prev-button"
+                    class="gallery-item__footer-button gallery-item__footer-button--prev"
+                    style="opacity: 0; pointer-events: none"
+                >
                     <img
                         src="/images/dulceilustra_arrow.svg"
-                        alt="Next image"
+                        alt="Previous image"
                     />
                     <div class="gallery-item__footer-button__legend">
-                        <span class="es">siguiente</span>
-                        <span class="en">next</span>
+                        <span class="es">anterior</span>
+                        <span class="en">previous</span>
                     </div>
                 </a>
                 <a href="/" class="gallery-item__logo">
@@ -110,14 +115,19 @@
                         alt="@dulceilustra"
                     />
                 </a>
-                <a href="/" class="gallery-item__footer-button right">
+                <a
+                    href="#"
+                    id="next-button"
+                    class="gallery-item__footer-button gallery-item__footer-button--next right"
+                    style="opacity: 0; pointer-events: none"
+                >
                     <div class="gallery-item__footer-button__legend">
-                        <span class="es">anterior</span>
-                        <span class="en">previous</span>
+                        <span class="es">siguiente</span>
+                        <span class="en">next</span>
                     </div>
                     <img
                         src="/images/dulceilustra_arrow.svg"
-                        alt="Prev image"
+                        alt="Next image"
                     />
                 </a>
             </footer>
@@ -126,13 +136,68 @@
 </dialog>
 
 <script>
+    // Extract category from current URL and setup prev/next navigation
+    const currentUrl = "/gallery/digital-art/2026-04-22 (Copy)/";
+    const match = currentUrl.match(/\/gallery\/([^/]+)\//);
+
+    if (match) {
+        const categorySlug = match[1];
+        let collection = [];
+
+        // Get the appropriate collection based on category
+        switch(categorySlug) {
+            case 'digital-art':
+                collection = [{ url: "/gallery/digital-art/2026-04-22/" },{ url: "/gallery/digital-art/2026-04-22 (Copy)/" },{ url: "/gallery/digital-art/2025-11-16/" },{ url: "/gallery/digital-art/2025-11-16 (Copy)/" },{ url: "/gallery/digital-art/2025-11-13/" },{ url: "/gallery/digital-art/2025-11-13 (Copy)/" },{ url: "/gallery/digital-art/2025-11-05/" },{ url: "/gallery/digital-art/2025-11-05 (Copy)/" },];
+                break;
+            case 'paintings':
+                collection = [{ url: "/gallery/paintings/2026-04-22/" },{ url: "/gallery/paintings/2025-01-10/" },];
+                break;
+            case 'drawings':
+                collection = [{ url: "/gallery/drawings/2026-04-22/" },{ url: "/gallery/drawings/2025-01-10/" },];
+                break;
+            case 'comics':
+                collection = [{ url: "/gallery/comics/2025-11-04/" },{ url: "/gallery/comics/2025-10-27/" },{ url: "/gallery/comics/2025-10-05/" },{ url: "/gallery/comics/2025-08-15/" },];
+                break;
+        }
+
+        // Find current index
+        const currentIndex = collection.findIndex(item => item.url === currentUrl);
+
+        if (currentIndex !== -1) {
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const hash = window.location.hash;
+
+            // Setup previous button
+            if (currentIndex > 0) {
+                const prevUrl = collection[currentIndex - 1].url + (hash || '');
+                prevButton.href = prevUrl;
+                prevButton.style.opacity = '1';
+                prevButton.style.pointerEvents = 'auto';
+            }
+
+            // Setup next button
+            if (currentIndex < collection.length - 1) {
+                const nextUrl = collection[currentIndex + 1].url + (hash || '');
+                nextButton.href = nextUrl;
+                nextButton.style.opacity = '1';
+                nextButton.style.pointerEvents = 'auto';
+            }
+        }
+    }
+</script>
+
+<script>
     document.addEventListener("DOMContentLoaded", function () {
         const hash = window.location.hash;
+
+        // Update close button with hash
         if (hash) {
             const goBackLink = document.getElementById("close-buttton");
             goBackLink.href = "/gallery" + hash;
         }
 
+        // Disable body scrolling while modal is open
         const body = document.body;
         if (body) {
             body.style.overflow = "hidden";
