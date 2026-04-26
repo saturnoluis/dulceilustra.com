@@ -889,6 +889,64 @@ p {
 }
 
 /* ========================================
+	Media queries
+   ======================================== */
+@media (max-width: 980px) {
+	html {
+		--font-size-base: 8px;
+	}
+
+	.home__new-art--link {
+		padding-left: 33%;
+	}
+
+	.home__new-art--pictures a {
+		width: auto;
+	}
+}
+
+@media (max-width: 790px) {
+	.home__new-art--link {
+		--new-art-font-size: 3.8rem;
+	}
+}
+
+@media (max-width: 670px) {
+	.home__section--top {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.home__new-art--link {
+		justify-content: center;
+		align-items: center;
+		padding-left: 0;
+	}
+
+	.home__new-art--title {
+		padding-bottom: 0;
+	}
+
+	.home__new-art--title .es,
+	.home__new-art--title .en {
+		text-shadow: none;
+	}
+
+	.home__new-art--link:hover {
+		transform: none;
+	}
+
+	.home__new-art--link:hover .home__new-art--title .es {
+		text-shadow: none;
+	}
+
+	.home__new-art--link:hover .home__new-art--title .en {
+		text-shadow: none;
+	}
+
+}
+
+/* ========================================
    Utilities
    ======================================== */
 
