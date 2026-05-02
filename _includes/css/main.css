@@ -21,6 +21,8 @@ html {
     --text-color-secondary--lighter: #d8d7d8;
     --image-border-radius: 0rem;
     --image-size-preview: 26rem;
+    --carousel-size: 26rem;
+    --carousel-button-size: 4rem;
 
     font-size: var(--font-size-base);
     font-family: var(--font-family-base);
@@ -207,7 +209,7 @@ p {
 .home__section--middle {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .home__section--bottom {
@@ -340,15 +342,14 @@ p {
 /* Comics Section */
 
 .home__comics {
-    --comics-button-size: 3rem;
     display: flex;
     flex-direction: row;
     gap: 2rem;
     align-items: center;
     justify-content: flex-end;
     transform: translateX(
-        var(--comics-button-size)
-    ); /* Align carousel with grid */
+        var(--carousel-button-size)
+    ); /* Align comics image with grid */
 }
 
 .home__comics--title {
@@ -373,7 +374,7 @@ p {
 }
 
 .carousel__button {
-    width: var(--comics-button-size);
+    width: var(--carousel-button-size);
 }
 
 .carousel__button--left,
@@ -400,7 +401,7 @@ p {
     overflow: hidden;
     aspect-ratio: 1080 / 1920;
     height: 100%;
-    width: var(--image-size-preview);
+    width: var(--carousel-size);
     border-radius: var(--image-border-radius);
 }
 
@@ -415,7 +416,7 @@ p {
 }
 
 .carousel__slide {
-    width: var(--image-size-preview);
+    width: var(--carousel-size);
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -906,15 +907,28 @@ p {
 }
 
 @media (max-width: 790px) {
+	html {
+		--font-size-base: 7px;
+	}
+	
 	.home__new-art--link {
 		--new-art-font-size: 3.8rem;
 	}
 }
 
 @media (max-width: 670px) {
+	html {
+		--carousel-size: 70dvw;
+	}
+
+	.home__section {
+		margin: 0 0 2rem;
+	}
+
 	.home__section--top {
 		display: flex;
 		flex-direction: column;
+		gap: 2rem;
 	}
 
 	.home__new-art--link {
@@ -942,6 +956,31 @@ p {
 
 	.home__new-art--link:hover .home__new-art--title .en {
 		text-shadow: none;
+	}
+
+	.home__section--middle {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 4rem;
+		gap: 2rem;
+	}
+
+	.home__comics {
+		display: flex;
+		flex-direction: column;
+		transform: none;
+		padding: 4rem 0;
+	}
+
+	.home__comics--title {
+		writing-mode: horizontal-tb;
+		transform: none;
+	}
+}
+
+@media (max-width: 480px) {
+	html {
+		--font-size-base: 6.5px;
 	}
 
 }
