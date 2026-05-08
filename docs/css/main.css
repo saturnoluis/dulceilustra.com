@@ -862,7 +862,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: 0;
-    font-size: 1.7rem;
+    font-size: 2rem;
     line-height: 1.2;
 }
 
@@ -872,6 +872,11 @@ p {
 
 .gallery-item__footer .gallery-item__footer-button.right img {
     transform: rotate(180deg);
+}
+
+#prev-button > div > span.en,
+#next-button > div > span.en {
+		color: var(--text-color-primary);
 }
 
 .gallery-item__footer
