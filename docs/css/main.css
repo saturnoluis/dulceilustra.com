@@ -1029,6 +1029,10 @@ p {
 		--font-size-base: 6.5px;
 	}
 
+	.main-container {
+		padding: 0 2rem;
+	}
+
 	.header__nav {
 		height: auto;
 		flex-direction: column;
@@ -1036,6 +1040,18 @@ p {
 		align-items: center;
 		gap: 1rem;
 		padding: 2rem 0;
+	}
+
+	.gallery__section-info,
+	.gallery__section-images
+	{
+		padding: 0;
+		gap: 2rem;
+	}
+	
+	.gallery__section .gallery__section-info h1,
+	.gallery__section .gallery__section-info h2 {
+		font-size: calc(var(--font-size-base) * 4);
 	}
 }
 
