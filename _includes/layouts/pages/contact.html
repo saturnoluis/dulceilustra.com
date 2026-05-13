@@ -3,7 +3,66 @@ layout: main
 ---
 
 <main class="contact-page">
-    <section class="contact-page__content">
-        {{ content }}
-    </section>
+    <div class="contact-page__container">
+        <!-- Right panel on desktop (top on mobile): Social media, email, and content -->
+        <div class="contact-page__info">
+            <!-- Social Media Links -->
+            <div class="contact-page__social-media">
+                <h2>
+                    <span class="es">Redes Sociales</span>
+                    <span class="en">Social Media</span>
+                </h2>
+                <ul>
+                    <li class="instagram">
+                        <a
+                            href="https://www.instagram.com/dulceilustra/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            @dulceilustra
+                        </a>
+                    </li>
+                    <li class="tiktok">
+                        <a
+                            href="https://www.tiktok.com/@dulceilustra"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            @dulceilustra
+                        </a>
+                    </li>
+                    <li class="pinterest">
+                        <a
+                            href="https://www.pinterest.com/dulceilustra/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            @dulceilustra
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Email Link -->
+            <div class="contact-page__email">
+                <a href="mailto:hello@dulceilustra.com">
+                    hello@dulceilustra.com
+                </a>
+            </div>
+
+            <!-- Page Content -->
+            <div class="contact-page__content">
+                {{ content }}
+            </div>
+        </div>
+
+        <!-- Left panel on desktop (bottom on mobile): Contact image -->
+        <div class="contact-page__image">
+            <img
+                src="/images/dulceilustra__contacto.gif"
+                alt=""
+                role="presentation"
+            />
+        </div>
+    </div>
 </main>
