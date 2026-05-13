@@ -7,7 +7,8 @@ layout: main
         <!-- Right panel on desktop (top on mobile): Social media, email, and content -->
         <div class="contact-page__info">
             <!-- Social Media Links -->
-            {% include "components/social-links.html", containerClass: "contact-page__social-media", headingTag: "h2", showHeading: true %}
+            {% include "components/social-links.html", containerClass:
+            "contact-page__social-media", showHeading: true %}
 
             <!-- Email Link -->
             <div class="contact-page__email">
@@ -17,9 +18,7 @@ layout: main
             </div>
 
             <!-- Page Content -->
-            <div class="contact-page__content">
-                {{ content }}
-            </div>
+            <div class="contact-page__content">{{ content }}</div>
         </div>
 
         <!-- Left panel on desktop (bottom on mobile): Contact image -->

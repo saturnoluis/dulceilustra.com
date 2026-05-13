@@ -13,15 +13,18 @@ export default async function (eleventyConfig) {
     /**	******************** Layouts ******************** **/
 
     // Layout aliases
-	eleventyConfig.addLayoutAlias("notfound", "layouts/404.html");
+    eleventyConfig.addLayoutAlias("notfound", "layouts/404.html");
     eleventyConfig.addLayoutAlias("main", "layouts/main.html");
     eleventyConfig.addLayoutAlias("home", "layouts/pages/home.html");
-	eleventyConfig.addLayoutAlias("contact", "layouts/pages/contact.html");
+    eleventyConfig.addLayoutAlias("contact", "layouts/pages/contact.html");
     eleventyConfig.addLayoutAlias("gallery", "layouts/pages/gallery.html");
-    eleventyConfig.addLayoutAlias("gallery.item", "layouts/pages/gallery/item.html");
+    eleventyConfig.addLayoutAlias(
+        "gallery.item",
+        "layouts/pages/gallery/item.html",
+    );
 
     /**	******************** Dev Server ******************** **/
-    
+
     // Configure dev server to show custom 404 page
     eleventyConfig.setServerOptions({
         showVersion: true,
