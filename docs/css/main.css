@@ -5,6 +5,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* ========================================
+   CSS Reset & Base Styles (extracted from Pico.css)
+   ======================================== */
+
+/* Box-sizing reset for all elements */
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+::after,
+::before {
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+
+/* Text selection color */
+::-moz-selection {
+    background-color: rgba(60, 60, 60, 0.2);
+}
+
+::selection {
+    background-color: rgba(60, 60, 60, 0.2);
+}
+
+/* ========================================
+   CSS Variables & Base Elements
+   ======================================== */
+
 html {
     --page-width: 120rem;
     --font-size-base: 9px;
@@ -32,6 +63,8 @@ html {
 
 body {
     position: relative;
+    width: 100%;
+    margin: 0;
     min-height: 100dvh;
     scroll-padding-top: 4rem;
 }
@@ -68,6 +101,65 @@ h6 {
 p {
     line-height: 1.2;
     letter-spacing: 0.05em;
+}
+
+/* Base styles for links */
+a {
+    outline: 0;
+    text-decoration: none;
+    text-underline-offset: 0.125em;
+    transition:
+        background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out,
+        text-decoration 0.2s ease-in-out;
+}
+
+/* Base styles for buttons */
+button {
+    margin: 0;
+    overflow: visible;
+    font-family: inherit;
+    text-transform: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    outline: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/* Base styles for lists in navigation */
+nav ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0;
+}
+
+/* Base styles for images */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Base styles for video */
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* Base styles for main */
+main {
+    display: block;
 }
 
 /* ========================================
