@@ -43,7 +43,7 @@ html {
     --font-family-base: "Roboto", sans-serif;
     --background-color: #ebebeb;
     --backdrop-color: rgba(235, 235, 235, 0.9);
-	--backdrop-blur: 0.2rem;
+    --backdrop-blur: 0.2rem;
     --border-color: #3c3c3c;
     --text-color-primary: #3c3c3c;
     --text-color-primary--light: #5c5c5c;
@@ -164,15 +164,15 @@ main {
 
 /* Base styles for dialog */
 dialog {
-	position: fixed;
+    position: fixed;
     top: 0;
     right: 0;
     height: 100dvh;
     width: 100dvw;
-	border: none;
-	padding: 0;
-	margin: 0;
-	background: var(--backdrop-color);
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: var(--backdrop-color);
 }
 
 /* ========================================
@@ -1027,8 +1027,8 @@ dialog {
     gap: 0;
     text-decoration: none;
     transition: all 0.2s ease;
-	width: 50%;
-	padding: 1rem;
+    width: 50%;
+    padding: 1rem;
 }
 
 .gallery-item__close-button:hover {
@@ -1042,7 +1042,7 @@ dialog {
     opacity: 0;
     transition: opacity 0.2s ease;
     width: 30%;
-	text-shadow: 0 0 0.5rem var(--backdrop-color);
+    text-shadow: 0 0 0.5rem var(--backdrop-color);
 }
 
 .gallery-item__close-button .close-label.es {
@@ -1255,7 +1255,7 @@ dialog {
     .home__social-media {
         border: 0.5rem solid var(--border-color);
         padding: 6rem 4rem;
-		transform: scale(0.9);
+        transform: scale(0.9);
     }
 
     .home__social-media .social-media__link {
