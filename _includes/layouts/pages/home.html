@@ -73,7 +73,7 @@ layout: layouts/main.html
 
     <!-- ⬇️ Home "Bottom" section -->
     <section class="home__section home__section--bottom">
-        <a href="" class="home__contact-link">
+        <a href="/contact" class="home__contact-link">
             <h1>
                 <span class="es">Contacto</span>
                 <span class="en">Contact</span>
@@ -83,41 +83,8 @@ layout: layouts/main.html
                 alt="Contacto: @dulceilustra"
             />
         </a>
-        <div class="home__social-media">
-            <h1>
-                <span class="es">Redes Sociales</span>
-                <span class="en">Social Media</span>
-            </h1>
-            <ul>
-                <li class="instagram">
-                    <a
-                        href="https://www.instagram.com/dulceilustra/"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        @dulceilustra
-                    </a>
-                </li>
-                <li class="tiktok">
-                    <a
-                        href="https://www.tiktok.com/@dulceilustra"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        @dulceilustra
-                    </a>
-                </li>
-                <li class="pinterest">
-                    <a
-                        href="https://www.pinterest.com/dulceilustra/"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        @dulceilustra
-                    </a>
-                </li>
-            </ul>
-        </div>
+        {% include "components/social-links.html", containerClass:
+        "home__social-media", showHeading: true %}
         <a href="/gallery" class="home__gallery-link">
             <span class="es">Galería</span>
             <span class="en">Gallery</span>
