@@ -56,8 +56,11 @@ layout: main
         id="digital-art"
         class="gallery__section gallery__section--digital-art"
     >
-        <div class="gallery__section-info">
-            {{ gallery.digitalArtDescription | markdown }}
+        <div class="gallery__section-description">
+			<h1>Arte Digital</h1>
+			<div>
+				{{ gallery.digitalArtEs | markdown }}
+			</div>
         </div>
         <ul class="gallery__section-images">
             {%- for item in collections.digitalArt -%}
