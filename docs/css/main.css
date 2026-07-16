@@ -905,7 +905,41 @@ dialog {
 }
 
 .gallery__section-description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0 4rem;
+    padding-bottom: 4rem;
+}
 
+.gallery__section-description h1,
+.gallery__section-description p {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    text-justify: inter-word;
+    text-wrap: pretty;
+}
+
+.gallery__section-description h1 {
+    font-size: 4.8rem;
+    margin-bottom: 1rem;
+}
+
+.gallery__section-description p {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.gallery__section-description--left h1,
+.gallery__section-description--left p {
+    text-align-last: end;
+}
+
+.gallery__section-description--right p {
+    color: var(--text-color-primary--light);
 }
 
 .gallery__section-images {

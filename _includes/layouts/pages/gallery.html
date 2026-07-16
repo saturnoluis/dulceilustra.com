@@ -57,10 +57,14 @@ layout: main
         class="gallery__section gallery__section--digital-art"
     >
         <div class="gallery__section-description">
-			<h1>Arte Digital</h1>
-			<div>
-				{{ gallery.digitalArtEs | markdown }}
-			</div>
+            <div class="gallery__section-description--left">
+                <h1 class="es">Arte Digital</h1>
+                {{ gallery.digitalArtEs | markdown }}
+            </div>
+            <div class="gallery__section-description--right">
+                <h1 class="en">Digital Art</h1>
+                {{ gallery.digitalArtEn | markdown }}
+            </div>
         </div>
         <ul class="gallery__section-images">
             {%- for item in collections.digitalArt -%}
@@ -81,8 +85,15 @@ layout: main
         id="paintings"
         class="gallery__section gallery__section--paintings"
     >
-        <div class="gallery__section-info">
-            {{ gallery.paintingsDescription | markdown }}
+        <div class="gallery__section-description">
+            <div class="gallery__section-description--left">
+                <h1 class="es">Pintura</h1>
+                {{ gallery.paintingEs | markdown }}
+            </div>
+            <div class="gallery__section-description--right">
+                <h1 class="en">Painting</h1>
+                {{ gallery.paintingEn | markdown }}
+            </div>
         </div>
         <ul class="gallery__section-images">
             {%- for item in collections.paintings -%}
@@ -100,8 +111,15 @@ layout: main
 
     <!-- Section: Drawings -->
     <section id="drawings" class="gallery__section gallery__section--drawings">
-        <div class="gallery__section-info">
-            {{ gallery.drawingsDescription | markdown }}
+        <div class="gallery__section-description">
+            <div class="gallery__section-description--left">
+                <h1 class="es">Dibujo</h1>
+                {{ gallery.drawingEs | markdown }}
+            </div>
+            <div class="gallery__section-description--right">
+                <h1 class="en">Drawing</h1>
+                {{ gallery.drawingEn | markdown }}
+            </div>
         </div>
         <ul class="gallery__section-images">
             {%- for item in collections.drawings -%}
