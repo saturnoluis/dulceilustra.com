@@ -21,14 +21,14 @@ ideas into animation. Beyond its technical versatility, its immediate nature pro
 me with direct and constant feedback from those who find my work on social media.
 `,
 
-	paintingEs: ` El trabajo con óleo sobre lienzo o papel (generalmente en formatos
+    paintingEs: ` El trabajo con óleo sobre lienzo o papel (generalmente en formatos
 medianos a pequeños) es mi cable a tierra. Pintar en este medio tan tradicional es una
 forma de honrar y mantener vigente el oficio de la pintura, desarrollando la paciencia
 y recordando que no todo debe ser inmediato. Esta práctica me resulta fundamental para
 lograr un equilibrio consciente con la tecnología, porque ofrece un contrapunto
 tangible y duradero a la fugacidad de la pantalla. `,
 
-	paintingEn: ` Working with oil on canvas or paper (generally in small to medium
+    paintingEn: ` Working with oil on canvas or paper (generally in small to medium
 formats) is my grounding wire. Painting in this highly traditional medium is a way to
 honor and preserve the craft of painting, developing patience and serving as a
 reminder that not everything has to be immediate. This practice is essential for me to
