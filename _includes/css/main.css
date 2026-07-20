@@ -953,10 +953,26 @@ Gallery Page
 }
 
 .gallery__section-images li {
+	position: relative;
     list-style: none;
     padding: 0;
     margin: 0;
     transition: all 0.1s ease;
+	z-index: 0;
+}
+
+.gallery__section-images li::before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 0.7rem solid white;
+	box-sizing: border-box;
+	pointer-events: none;
+    transition: all 0.1s ease;
+	z-index: 1;
 }
 
 .gallery__section-images li:hover {
@@ -989,6 +1005,7 @@ Gallery Item (Modal)
     justify-content: center;
     align-items: center;
     background-color: var(--backdrop-color);
+	z-index: 100;
 }
 
 .gallery-item {
