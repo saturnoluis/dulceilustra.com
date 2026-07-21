@@ -123,7 +123,7 @@ layout: main
         </div>
         <ul class="gallery__section-images">
             {%- for item in collections.drawings -%}
-            <li id="{{ item.urlHash }}">
+            <li id="{{ item.urlHash }}" class="with-border">
                 <a href="{{ item.url }}#drawings">
                     <img
                         src="{{ item.url }}{{ item.data.cover }}"
