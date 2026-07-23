@@ -911,7 +911,6 @@ Gallery Page
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    padding: 0 4rem;
     padding-bottom: 4rem;
 }
 
@@ -923,6 +922,7 @@ Gallery Page
     text-align: justify;
     text-justify: inter-word;
     text-wrap: pretty;
+    hyphens: auto;
 }
 
 .gallery__section-description h1 {
@@ -932,7 +932,7 @@ Gallery Page
 
 .gallery__section-description p {
     font-size: 1.5rem;
-    line-height: 1.2;
+    line-height: 1.8;
     margin-bottom: 1rem;
 }
 
@@ -1176,8 +1176,14 @@ Bio page
 	}
 
 	h2 {
-		margin-top: 8rem;
+		margin-top: 4rem;
 		margin-bottom: 2rem;
+	}
+}
+
+.bio div[lang="es"] {
+	h1, h2, p {
+		text-align-last: end;
 	}
 }
 
@@ -1368,6 +1374,7 @@ Media queries
     }
 
     .gallery__section-images {
+		grid-template-columns: 1fr 1fr;
         padding: 0;
         gap: 2rem;
     }
@@ -1385,11 +1392,15 @@ Utilities
     color: var(--text-color-secondary);
 }
 
-.two-columns-wrapper {
-	display: flex;
-	flex-direction: row;
-	gap: 8rem;
+.two-columns-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
 	margin-bottom: 4rem;
+
+	div {
+		padding: 0 2rem;
+	}
 }
 
 /* Screen reader only utility to keep HTML semantic but visually hidden */
