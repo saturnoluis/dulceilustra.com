@@ -1,7 +1,0 @@
----
-title: dulceilustra.com
-cover: cover.png
-layout: gallery.item
----
-
-Comic 27 de Oct
