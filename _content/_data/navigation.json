@@ -4,6 +4,11 @@
         "en": "Home",
         "url": "/"
     },
+	{
+        "es": "Bio",
+        "en": "Bio",
+        "url": "/bio"
+    },
     {
         "es": "Galería",
         "en": "Gallery",
