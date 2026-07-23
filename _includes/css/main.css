@@ -189,6 +189,7 @@ Main Layout
     margin: 0 auto;
     padding: 0 4rem;
     max-width: var(--page-width);
+    min-height: calc(100dvh - calc(99vw / 9));
 }
 
 #main-modal-container {
@@ -953,26 +954,26 @@ Gallery Page
 }
 
 .gallery__section-images li {
-	position: relative;
+    position: relative;
     list-style: none;
     padding: 0;
     margin: 0;
     transition: all 0.1s ease;
-	z-index: 0;
+    z-index: 0;
 }
 
 .gallery__section-images li.with-border::before {
-	content: '';
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	border: 0.7rem solid white;
-	box-sizing: border-box;
-	pointer-events: none;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0.7rem solid white;
+    box-sizing: border-box;
+    pointer-events: none;
     transition: all 0.1s ease;
-	z-index: 1;
+    z-index: 1;
 }
 
 .gallery__section-images li:hover {
@@ -1005,7 +1006,7 @@ Gallery Item (Modal)
     justify-content: center;
     align-items: center;
     background-color: var(--backdrop-color);
-	z-index: 100;
+    z-index: 100;
 }
 
 .gallery-item {
@@ -1157,6 +1158,33 @@ Gallery Item (Modal)
 
 .gallery-item__footer .gallery-item__logo:hover {
     transform: scale(1.1);
+}
+
+/* ========================================
+Bio page
+======================================== */
+.bio {
+	padding-top: 4rem;
+
+	p {
+		font-size: 1.4rem;
+		text-align: justify;
+		text-justify: inter-word;
+		text-wrap: pretty;
+		hyphens: auto;
+		line-height: 1.8;
+	}
+
+	h2 {
+		margin-top: 8rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.bio__picture {
+	width: 40%;
+	padding: 4rem 4rem 8rem 4rem;
+	margin: 0 auto;
 }
 
 /* ========================================
@@ -1355,6 +1383,13 @@ Utilities
 
 .en {
     color: var(--text-color-secondary);
+}
+
+.two-columns-wrapper {
+	display: flex;
+	flex-direction: row;
+	gap: 8rem;
+	margin-bottom: 4rem;
 }
 
 /* Screen reader only utility to keep HTML semantic but visually hidden */
